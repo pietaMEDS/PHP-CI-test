@@ -48,15 +48,19 @@ document.getElementById('roofPrice').addEventListener('click', () => {
 })
 
 let stappingPrice = 0;
-document.getElementById('#').addEventListener('click', () => {
-    stappingPrice = stappingTotalPrice(length, width, step);
+document.getElementById('GorizObvDob').addEventListener('click', () => {
+    stappingPrice = stappingTotalPrice("GorizObvDob", length, width, step);
+    update();
+});
+document.getElementById('vertObvDob').addEventListener('click', () => {
+    stappingPrice = stappingTotalPrice("vertObvDob", length, width, step);
     update();
 });
 
 // Обновляет изменения при клике на добавить)
 function update(e) {
     let main = document.getElementById('totalNumber');
-    let RESULT = wallPrice + svaiPrice + roofPrice; // ...
+    let RESULT = wallPrice + svaiPrice + roofPrice + stappingPrice; // ...
     main.innerText = RESULT;
 }
 
@@ -66,4 +70,5 @@ wallHeightPrice(length, width, 'smallWallBtn');
 svai(jelezBtn.id, kolSvai);
 svai(vintPricePlusBtn.id, kolSvai);
 roof(length, width);
-stappingTotalPrice(length, width, step)
+stappingTotalPrice("vertObvDob", length, width, step);
+stappingTotalPrice("GorizObvDob", length, width, step);

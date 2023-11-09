@@ -257,38 +257,46 @@ require './../Header/Head.php';
     <div class='modalStraping'>
       <div class="modal_main">
         <h1>Обвязка теплового контура</h1>
-        <button class='modal_btn' id="vertObv">Вертикальная обвязка</button>
-        <button class='modal_btn' id="gorizObv">Горизонтальная обвязка</button>
 
-        <!-- Вторая модалка mineral -->
+        <button class='modal_btn' id="vertObv">Обвязка вертикальная</button>
+        <button class='modal_btn' id="gorizObv">Обвязка горизонтальная</button>
+
+
+
+
+        <!-- Вторая модалка  -->
         <div class="win2">
           <div class='frstObv'>
-            <h1 class="modalZag">Горизонтальная обвязка</h1>
-            <p class='modalDescr'>Минеральная (базальовая или кварцевая) <br />
-              вата - материал сделанный из натурального...</p>
 
-            <div class="material">
+            <h1 class="modalZag">Обвязка горизонтальная</h1>
+            <p class='modalDescr'>Применяется для горизонтальной обвязки на паллетах упаковок с стеклотарой, 
+              стройматериалами (кирпич, плитка), сельхозпродукцией и др. при использовании упаковочных защитных уголков.</p>
+            
+
+
+
+            <!-- <div class="material">
               <div class="contName">
-                <h2>Материалы:</h2>
+                <h2>Расчет:</h2>
                 <ul>
                   <li>Фундамент теплового контура</li>
                   <li>Фундамент крыльца</li>
                   <li>Фундамент террасы</li>
                   <li>Доставка фундамента</li>
                 </ul>
-              </div>
+              </div> -->
 
-              <div class="contConst">
+              <!-- <div class="contConst">
                 <li id="fundCost"></li>
                 <li>12 938</li>
                 <li>7 763</li>
                 <li>10 000</li>
               </div>
-            </div>
+            </div> -->
 
             <div class="price">
-              <h3 id="totalCost"></h3>
-              <button class="modal_btn" id="vintPricePlus">Добавить</button>
+              <h3 id="gorizTtl"></h3>
+              <button class="modal_btn" id="GorizObvDob">Добавить</button>
             </div>
           </div>
         </div>
@@ -296,14 +304,15 @@ require './../Header/Head.php';
         <!-- Вторая модалка пенополист -->
         <div class="win2">
           <div class='scndObv'>
-            <h1 class="modalZag">Вертикальная обвязка</h1>
-            <p class='modalDescr'>Минеральная (базальовая или кварцевая) <br />
-              вата - материал сделанный из натурального...</p>
+            <h1 class="modalZag">Обвязка вертикальная</h1>
+            <p class='modalDescr'>Вертикальная обвязка с использованием картонных защитных уголков применяется для 
+              вертикальной обвязки на паллетах упаковок с гофрокартонными ящиками...</p>
+
             
 
             <div class="material">
               <div class="contName">
-                <h2>Материалы:</h2>
+                <!-- <h2>Расчет:</h2>
                 <ul>
                   <li>Фундамент теплового контура</li>
                   <li>Фундамент крыльца</li>
@@ -318,11 +327,11 @@ require './../Header/Head.php';
                 <li>8 415</li>
                 <li>15 000</li>
               </div>
-            </div>
+            </div> -->
 
             <div class="price">
-              <h3 id="jelezTotalCost"></h3>
-              <button class="modal_btn" id="jelezPricePlus">Добавить</button>
+              <h3 id="vertTtl"></h3>
+              <button class="modal_btn" id="vertObvDob">Добавить</button>
             </div>
           </div>
         </div>

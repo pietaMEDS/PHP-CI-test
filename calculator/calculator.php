@@ -30,19 +30,19 @@ require './../Header/Head.php';
           <div class="Empty"></div>
         </div>
         <div class="container_choice" id="wall">
-          <div class="circle"></div>
-          <div class="line"></div>
-          <div class="Empty"></div>
+          <div class="circle" id="circleWall"></div>
+          <div class="line" id="lineWall"></div>
+          <div class="Empty" id="emptyWall"></div>
         </div>
         <div class="container_choice" id="support">
-          <div class="circle"></div>
-          <div class="line"></div>
-          <div class="Empty"></div>
+          <div class="circle" id="circleSupport"></div>
+          <div class="line" id="lineSupport"></div>
+          <div class="Empty" id="emptySupport"></div>
         </div>
         <div class="container_choice" id="foundation">
-          <div class="circle"></div>
-          <div class="line"></div>
-          <div class="Empty"></div>
+          <div class="circle" id="circleFoundation"></div>
+          <div class="line" id="lineFoundation"></div>
+          <div class="Empty" id="emptyFoundation"></div>
         </div>
         <div class="container_choice" id="chimney">
           <div class="Empty"></div>
@@ -50,9 +50,9 @@ require './../Header/Head.php';
           <div class="circle"></div>
         </div>
         <div class="container_choice" id="floor">
-          <div class="Empty"></div>
-          <div class="line"></div>
-          <div class="circle"></div>
+          <div class="Empty" id="emptyFloor"></div>
+          <div class="line" id="lineFloor"></div>
+          <div class="circle" id="circleFloor"></div>
         </div>
         <div class="container_choice" id="outerwall">
           <div class="Empty"></div>
@@ -73,6 +73,13 @@ require './../Header/Head.php';
       </div>
     </div>
 
+
+
+    <div class="smeta">
+      <div class="matherials_table">
+        
+      </div>
+    </div>
     <!-- Модалка стен -->
     <div class="modalWall">
       <div class="modal_main">
@@ -110,7 +117,7 @@ require './../Header/Head.php';
             </p>
             <div class="price">
               <h3 id="bigWallPrice"></h3>
-              <button class="modal_btn" id="bigWallBtn">Добавить</button>
+              <button class="modal_btn" id="bigWallBtn" onclick="activeCircleLine('circleWall', 'lineWall', 'emptyWall')">Добавить</button>
             </div>
           </div>
         </div>
@@ -125,7 +132,7 @@ require './../Header/Head.php';
         <div class="win2">
           <div class='flor'>
             <h1 class="krov">Кровля</h1>
-            <p class = 'modalDescr'>Кровля — верхний элемент покрытия здания, подвергающийся атмосферным воздействиям. Главной её функцией является защита внутренних помещений от атмосферных осадков и воздействий. </p>
+            <p class='modalDescr'>Кровля — верхний элемент покрытия здания, подвергающийся атмосферным воздействиям. Главной её функцией является защита внутренних помещений от атмосферных осадков и воздействий. </p>
             <div class="material">
               <div class="contNames">
                 <h2>Материалы:</h2>
@@ -144,17 +151,17 @@ require './../Header/Head.php';
             </div>
             <div class="prices">
               <h3 class="summ"></h3>
-              <button class="modal_btn" id="roofPrice">Добавить</button>
+              <button class="modal_btn" id="roofPrice" onclick="activeCircleLine('circleFloor', 'lineFloor', 'emptyFloor')">Добавить</button>
 
-              
+
 
             </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-        
-       
+
+
     <!-- Модалка фундамента -->
     <div class='modalFoundation'>
       <div class="modal_main">
@@ -198,7 +205,7 @@ require './../Header/Head.php';
 
             <div class="price">
               <h3 id="totalCost"></h3>
-              <button class="modal_btn" id="vintPricePlus">Добавить</button>
+              <button class="modal_btn" id="vintPricePlus" onclick="activeCircleLine('circleFoundation', 'lineFoundation', 'emptyFoundation')">Добавить</button>
             </div>
           </div>
         </div>
@@ -239,7 +246,7 @@ require './../Header/Head.php';
 
             <div class="price">
               <h3 id="jelezTotalCost"></h3>
-              <button class="modal_btn" id="jelezPricePlus">Добавить</button>
+              <button class="modal_btn" id="jelezPricePlus" onclick="activeCircleLine('circleFoundation', 'lineFoundation', 'emptyFoundation')">Добавить</button>
             </div>
           </div>
         </div>
@@ -252,7 +259,7 @@ require './../Header/Head.php';
 
 
 
-        <!-- обвязка -->
+    <!-- обвязка -->
 
     <div class='modalStraping'>
       <div class="modal_main">
@@ -269,9 +276,9 @@ require './../Header/Head.php';
           <div class='frstObv'>
 
             <h1 class="modalZag">Обвязка горизонтальная</h1>
-            <p class='modalDescr'>Применяется для горизонтальной обвязки на паллетах упаковок с стеклотарой, 
+            <p class='modalDescr'>Применяется для горизонтальной обвязки на паллетах упаковок с стеклотарой,
               стройматериалами (кирпич, плитка), сельхозпродукцией и др. при использовании упаковочных защитных уголков.</p>
-            
+
 
 
 
@@ -286,7 +293,7 @@ require './../Header/Head.php';
                 </ul>
               </div> -->
 
-              <!-- <div class="contConst">
+            <!-- <div class="contConst">
                 <li id="fundCost"></li>
                 <li>12 938</li>
                 <li>7 763</li>
@@ -296,7 +303,7 @@ require './../Header/Head.php';
 
             <div class="price">
               <h3 id="gorizTtl"></h3>
-              <button class="modal_btn" id="GorizObvDob">Добавить</button>
+              <button class="modal_btn" id="GorizObvDob" onclick="activeCircleLine('circleSupport', 'lineSupport', 'emptySupport')">Добавить</button>
             </div>
           </div>
         </div>
@@ -305,10 +312,10 @@ require './../Header/Head.php';
         <div class="win2">
           <div class='scndObv'>
             <h1 class="modalZag">Обвязка вертикальная</h1>
-            <p class='modalDescr'>Вертикальная обвязка с использованием картонных защитных уголков применяется для 
+            <p class='modalDescr'>Вертикальная обвязка с использованием картонных защитных уголков применяется для
               вертикальной обвязки на паллетах упаковок с гофрокартонными ящиками...</p>
 
-            
+
 
             <div class="material">
               <div class="contName">
@@ -329,17 +336,18 @@ require './../Header/Head.php';
               </div>
             </div> -->
 
-            <div class="price">
-              <h3 id="vertTtl"></h3>
-              <button class="modal_btn" id="vertObvDob">Добавить</button>
+                <div class="price">
+                  <h3 id="vertTtl"></h3>
+                  <button class="modal_btn" id="vertObvDob" onclick="activeCircleLine('circleSupport', 'lineSupport', 'emptySupport')">Добавить</button>
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
 
-      </div>
-    </div>
-
   </main>
+  <script src="./circle.js"></script>
   <script type="module" src='math.js'></script>
   <script src="./../calculator/modal.js"></script>
   <script src='./../main/slider.js'></script>

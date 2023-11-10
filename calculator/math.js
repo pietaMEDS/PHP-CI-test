@@ -8,21 +8,19 @@ let width = Number(localStorage.getItem('width'));
 const step = 2;
 let kolSvai = (length / step + 1) * (width / step + 1);
 
-
-
 // винтовая свая
-let svaiPrice = 0;
+let svaiPrice = {price: 0};
 const vintPricePlusBtn = document.getElementById('vintPricePlus');
 vintPricePlusBtn.addEventListener('click', (e) => {
     svaiPrice = svai(vintPricePlusBtn.id, kolSvai);
-    update(e);
+    update(svaiPrice);
 });
 
 // Железобетоная свая
 const jelezBtn = document.getElementById('jelezPricePlus');
 jelezBtn.addEventListener('click', (e) => {
     svaiPrice = svai(jelezBtn.id, kolSvai);
-    update(e);
+    update(svaiPrice);
 });
 
 
@@ -37,6 +35,7 @@ document.getElementById('smallWallBtn').addEventListener('click', () => {
 // при клике на стену 2.8 метра
 document.getElementById('bigWallBtn').addEventListener('click', () => {
     wallPrice = wallHeightPrice(length, width, 'bigWallBtn');
+    console.log(wallPrice);
     update();
 });
 
@@ -58,10 +57,17 @@ document.getElementById('vertObvDob').addEventListener('click', () => {
 });
 
 // Обновляет изменения при клике на добавить)
-function update(e) {
+function update(current) {
     let main = document.getElementById('totalNumber');
-    let RESULT = wallPrice + svaiPrice + roofPrice + stappingPrice; // ...
+    let RESULT = wallPrice + svaiPrice.price + roofPrice + stappingPrice; // ...
     main.innerText = RESULT;
+
+
+
+    // пытаюсь делать смету не трогайте g;:)
+    // console.log(current);
+    // let smetaTable = document.querySelector('.matherials_table');
+    // smetaTable.innerHTML = svaiPrice.f1;
 }
 
 // При переходе на калькулятор подругажет стоимость всех функций у модалок :)

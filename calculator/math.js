@@ -78,3 +78,4 @@ svai(vintPricePlusBtn.id, kolSvai);
 roof(length, width);
 stappingTotalPrice("vertObvDob", length, width, step);
 stappingTotalPrice("GorizObvDob", length, width, step);
+

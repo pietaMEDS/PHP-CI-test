@@ -546,3 +546,59 @@ button .Empty {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+/* ЭТАПЫ ВЫБОРА  И МОДАЛКА*/
+.stage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1%;
+}
+.circleStage {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #36363E;
+  border: 2px solid #FF855D;
+  overflow: hidden;
+}
+
+.lineStage {
+  width: 350px;
+  height: 2px;
+  background-color: #FF855D;
+  z-index: 10;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 20;
+}
+
+.modal-content {
+  background-color: #39363E;
+  color: #fff;
+  margin: 43% auto;
+  padding: 20px;
+  border: 2px solid #FF855D;
+  height: 18%;
+  max-width: 900px;
+  text-align: center;
+  z-index: 20;
+}
+
+
+
+
+
+
+
+

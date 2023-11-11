@@ -61,6 +61,9 @@ require './../Header/Head.php';
         </div>
       </div>
     </div>
+
+    </div>
+    
     <div class="itog-flex">
       <div class="container">
         <p class="totalPrice">Стоимость составляющих</p>
@@ -68,10 +71,23 @@ require './../Header/Head.php';
           <span id="totalNumber"></span>
           <span class="currency">руб</span>
         </p>
-
         <button class="button">Итоговая цена</button>
       </div>
     </div>
+    <!-- ЭТАПЫ ВЫБОРКИ -->
+    <div class="stage">
+  <div class="circleStage"></div>
+  <div class="lineStage"></div>
+  <div class="circleStage"></div>
+  <div class="lineStage"></div>
+  <div class="circleStage"></div>
+</div>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <p>ВЛАДОС Я ВЕРЮ В ТЕБЯ ЧТО ТЫ РАЗБЕРЁШЬСЯ КАК СЮДА ЗАПИСАТЬ ЗНАЧЕНИЕ</p>
+  </div>
+</div>
 
 
 
@@ -104,7 +120,7 @@ require './../Header/Head.php';
 
             <div class="price">
               <h3 id="smallWallPrice"></h3>
-              <button class="modal_btn" id="smallWallBtn">Добавить</button>
+              <button class="modal_btn" id="smallWallBtn" onclick="activeCircleLine('circleWall', 'lineWall', 'emptyWall')">Добавить</button>
             </div>
           </div>
         </div>
@@ -351,4 +367,5 @@ require './../Header/Head.php';
   <script type="module" src='math.js'></script>
   <script src="./../calculator/modal.js"></script>
   <script src='./../main/slider.js'></script>
+  <script src='./../calculator/modalStage.js'></script>
 </body>

@@ -8,12 +8,12 @@ html {
 .container_home {
   display: flex;
   justify-content: center;
-  margin-left: -3%;
+  margin-left: -30%;
   height:80%;
 }
 
 .home {
-  margin-top: -12%;
+  margin-top: -8%;
   position: absolute;
   height: 80%;
 }
@@ -32,7 +32,7 @@ html {
   display: flex;
   align-items: center;
   margin-top: -31%;
-  margin-left: 13%;
+  margin-left: 10%;
 }
 
 .circle {
@@ -45,7 +45,6 @@ html {
 }
 
 .line {
-  width: 350px;
   height: 2px;
   background-color: #FF855D;
   z-index: 10;
@@ -67,32 +66,24 @@ html {
   margin-left: 7.5%;
 }
 
-#window .line {
-  width: 300px;
-
-}
 
 #wall {
   display: flex;
   align-items: center;
-  margin-top: 2%;
+  margin-top: 7%;
   margin-left: 15%;
 }
 
-#wall .line {
-  width: 340px;
-
-}
 
 #support {
   display: flex;
   align-items: center;
   margin-top: 8%;
-  margin-left: 13%;
+  margin-left: 10%;
 }
 
 #support .line {
-  width: 370px;
+  width: 220px;
 
 }
 
@@ -100,23 +91,23 @@ html {
   display: flex;
   align-items: center;
   margin-top: 4%;
-  margin-left: 10%;
+  margin-left: 15%;
 }
 
 #foundation .line {
-  width: 300px;
+  width: 290px;
 
 }
 
 #chimney {
   display: flex;
   align-items: center;
-  margin-top: -39%;
+  margin-top: -40.5%;
   margin-left: 55%;
 }
 
 #chimney .line {
-  width: 340px;
+  width: 300px;
 
 }
 
@@ -143,25 +134,7 @@ html {
   z-index: 10;
 }
 
-#window .line {
-  width: 340px;
-}
 
-#window .circle {
-  background-color: #36363E;
-  border: 2px solid #FF855D;
-  overflow: hidden;
-  z-index: 10;
-}
-
-#window .Empty {
-  background-color: #FF855D;
-  z-index: 10;
-}
-
-#support .line {
-  width: 340px;
-}
 
 #support .circle {
   background-color: #36363E;
@@ -175,9 +148,7 @@ html {
   z-index: 10;
 }
 
-#foundation .line {
-  width: 340px;
-}
+
 
 #foundation .circle {
   background-color: #36363E;
@@ -192,7 +163,7 @@ html {
 }
 
 #wall .line {
-  width: 340px;
+  width: 280px;
 }
 
 #wall .circle {
@@ -216,12 +187,12 @@ html {
 #floor {
   display: flex;
   align-items: center;
-  margin-top: 7%;
+  margin-top: 6%;
   margin-left: 68%;
 }
 
 #floor .line {
-  width: 240px;
+  width: 220px;
 
 }
 
@@ -243,11 +214,11 @@ html {
   display: flex;
   align-items: center;
   margin-top: 8%;
-  margin-left: 73%;
+  margin-left: 70%;
 }
 
 #outerwall .line {
-  width: 240px;
+  width: 180px;
 
 }
 
@@ -320,15 +291,15 @@ button .Empty {
 }
 
 .roof img {
-  width: 1400px;
+  width: 1200px;
 }
 
 .floor1 img {
-  width: 1400px;
+  width: 1200px;
 }
 
 .foundation img {
-  width: 1400px;
+  width: 1200px;
 }
 
 
@@ -547,53 +518,6 @@ button .Empty {
   flex-wrap: wrap;
 }
 
-/* ЭТАПЫ ВЫБОРА  И МОДАЛКА*/
-.stage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1%;
-}
-.circleStage {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background-color: #36363E;
-  border: 2px solid #FF855D;
-  overflow: hidden;
-}
-
-.lineStage {
-  width: 350px;
-  height: 2px;
-  background-color: #FF855D;
-  z-index: 10;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4);
-  z-index: 20;
-}
-
-.modal-content {
-  background-color: #39363E;
-  color: #fff;
-  margin: 43% auto;
-  padding: 20px;
-  border: 2px solid #FF855D;
-  height: 18%;
-  max-width: 900px;
-  text-align: center;
-  z-index: 20;
-}
 
 
 

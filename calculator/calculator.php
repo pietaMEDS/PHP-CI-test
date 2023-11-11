@@ -24,11 +24,6 @@ require './../Header/Head.php';
           <div class="line"></div>
           <div class="Empty"></div>
         </div>
-        <div class="container_choice" id="window">
-          <div class="circle"></div>
-          <div class="line"></div>
-          <div class="Empty"></div>
-        </div>
         <div class="container_choice" id="wall">
           <div class="circle" id="circleWall"></div>
           <div class="line" id="lineWall"></div>
@@ -74,20 +69,7 @@ require './../Header/Head.php';
         <button class="button">Итоговая цена</button>
       </div>
     </div>
-    <!-- ЭТАПЫ ВЫБОРКИ -->
-    <div class="stage">
-  <div class="circleStage"></div>
-  <div class="lineStage"></div>
-  <div class="circleStage"></div>
-  <div class="lineStage"></div>
-  <div class="circleStage"></div>
-</div>
 
-<div id="myModal" class="modal">
-  <div class="modal-content">
-    <p>ВЛАДОС Я ВЕРЮ В ТЕБЯ ЧТО ТЫ РАЗБЕРЁШЬСЯ КАК СЮДА ЗАПИСАТЬ ЗНАЧЕНИЕ</p>
-  </div>
-</div>
 
 
 

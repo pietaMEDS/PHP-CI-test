@@ -13,10 +13,15 @@ export function svai(id, kolSvai) {
         ttlJelez.innerText = price + " руб.";
 
         return {
-             f1:"Фундамент теплового контура" + jelezFirst,
-            "Фундамент крыльца": 14025,
-            "Фундамент терассы": 8415,
-            "Доставка фундамента": 15000,
+            name: 'Фундамент дома',
+            styleName: 'foundation',
+            secondName: 'Железобетонные сваи',
+            styleSecondName: 'jelezoBeton',
+            id: 'jelezSvai',
+            f1: "Фундамент теплового контура " + jelezFirst,
+            f2: "Фундамент крыльца " + 14025,
+            f3: "Фундамент терассы " + 8415,
+            f4: "Доставка фундамента " + 15000,
             price,
         }
     }
@@ -34,10 +39,15 @@ export function svai(id, kolSvai) {
         ttlCost.innerText = price + " руб.";
 
         return {
-            "Фундамент теплового контура": vintFundCost,
-            "Фундамент крыльца": 12938,
-            "Фундамент терассы": 7763,
-            "Доставка фундамента": 10000,
+            name: 'Фундамент дома',
+            styleName: 'foundation',
+            secondName: 'Винтовые сваи',
+            styleSecondName: 'vintovayaSvai',
+            id: 'vintSvai',
+            f1: "Фундамент теплового контура " + vintFundCost,
+            f2: "Фундамент крыльца " + 12938,
+            f3: "Фундамент терассы " + 7763,
+            f4: "Доставка фундамента " + 10000,
             price,
         }
     }

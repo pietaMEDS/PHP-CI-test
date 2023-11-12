@@ -5,7 +5,7 @@ require './../Header/Head.php';
 
 <body>
   <?php require './../Header/Header.php'; ?>
-  <main>
+  <main class="main" id="main">
     <div class="container_home">
       <div class="home">
         <!-- {/* ЧАСТИ ДОМА */} -->

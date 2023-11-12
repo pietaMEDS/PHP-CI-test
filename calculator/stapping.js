@@ -17,8 +17,8 @@ export function stappingTotalPrice(id, length, width, step) {
         return {
             name: 'Обвязка фундамента',
             styleName: 'stappingHouse',
-            secondName: 'Обвязка горизонтальная',
-            styleSecondName: 'gorizStapping',
+            secondName: 'Обвязка вертикальная',
+            styleSecondName: 'vertStapping',
             id: 'stappingGoriz',
             price,
         }
@@ -39,8 +39,8 @@ export function stappingTotalPrice(id, length, width, step) {
         return {
             name: 'Обвязка фундамента',
             styleName: 'stappingHouse',
-            secondName: 'Обвязка вертикальная',
-            styleSecondName: 'vertStapping',
+            secondName: 'Обвязка горизонтальная',
+            styleSecondName: 'gorizStapping',
             id: 'stappingVert',
             price,
         }

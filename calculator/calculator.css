@@ -28,13 +28,6 @@ html {
   position: absolute;
 }
 
-#attic {
-  display: flex;
-  align-items: center;
-  margin-top: -31%;
-  margin-left: 10%;
-}
-
 .circle {
   width: 25px;
   height: 25px;
@@ -59,18 +52,12 @@ html {
   overflow: hidden;
 }
 
-#window {
-  display: flex;
-  align-items: center;
-  margin-top: 4%;
-  margin-left: 7.5%;
-}
 
 
 #wall {
   display: flex;
   align-items: center;
-  margin-top: 7%;
+  margin-top: -22%;
   margin-left: 15%;
 }
 
@@ -78,8 +65,8 @@ html {
 #support {
   display: flex;
   align-items: center;
-  margin-top: 8%;
-  margin-left: 10%;
+  margin-top: 12.5%;
+  margin-left: 66%;
 }
 
 #support .line {
@@ -90,7 +77,7 @@ html {
 #foundation {
   display: flex;
   align-items: center;
-  margin-top: 4%;
+  margin-top: 10%;
   margin-left: 15%;
 }
 
@@ -98,42 +85,6 @@ html {
   width: 290px;
 
 }
-
-#chimney {
-  display: flex;
-  align-items: center;
-  margin-top: -40.5%;
-  margin-left: 55%;
-}
-
-#chimney .line {
-  width: 300px;
-
-}
-
-#chimney .circle {
-  background-color: #36363E;
-  border: 2px solid #FF855D;
-  overflow: hidden;
-  z-index: 10;
-}
-
-#attic .line {
-  width: 340px;
-}
-
-#attic .circle {
-  background-color: #36363E;
-  border: 2px solid #FF855D;
-  overflow: hidden;
-  z-index: 10;
-}
-
-#attic .Empty {
-  background-color: #FF855D;
-  z-index: 10;
-}
-
 
 
 #support .circle {
@@ -178,16 +129,13 @@ html {
   z-index: 10;
 }
 
-#chimney .Empty {
-  background-color: #FF855D;
-  z-index: 10;
-}
+
 
 
 #floor {
   display: flex;
   align-items: center;
-  margin-top: 6%;
+  margin-top: -27%;
   margin-left: 68%;
 }
 
@@ -205,32 +153,6 @@ html {
 }
 
 #floor .Empty {
-
-  background-color: #FF855D;
-  z-index: 10;
-}
-
-#outerwall {
-  display: flex;
-  align-items: center;
-  margin-top: 8%;
-  margin-left: 70%;
-}
-
-#outerwall .line {
-  width: 180px;
-
-}
-
-#outerwall .circle {
-
-  background-color: #36363E;
-  border: 2px solid #FF855D;
-  overflow: hidden;
-  z-index: 10;
-}
-
-#outerwall .Empty {
 
   background-color: #FF855D;
   z-index: 10;
@@ -287,32 +209,13 @@ button .Empty {
 
   cursor: pointer;
 
-
 }
-
-.roof img {
+.home img{
   width: 1200px;
 }
-
-.floor1 img {
-  width: 1200px;
-}
-
-.foundation img {
-  width: 1200px;
-}
-
-
 
 /* modalka */
 
-.plusi {
-  margin-top: 20px;
-}
-
-.plusi h3 {
-  color: #53C541;
-}
 
 .clock_text {
   color: rgb(153, 153, 153);
@@ -396,27 +299,14 @@ button .Empty {
   margin-left: 22px;
 }
 
-.plusi {
-  display: flex;
-}
 
-.plusi img {
-  width: 37px;
-  height: 39px;
-  margin-left: 36px;
-}
-
-.plusi h3 {
-  margin-left: 26px;
-  line-height: 5px;
-  font-size: 22px;
-}
 
 .price {
   border: 3px solid #FF855D;
   border-radius: 20px;
   width: 400px;
   margin-left: 42px;
+  margin-top: 30%;
   text-align: center;
   height: 180px;
 }
@@ -521,17 +411,33 @@ button .Empty {
 .smeta {
   position: absolute;
   margin-left: 75%;
-  margin-top: 7%;
+  margin-top: -45%;
   color: white;
   font-size: 24px;
-  background: #4c4c4c;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, .5);
+  background-color: #39363E;
+  border: 2px solid #FF855D;
   padding: 10px;
 }
-
+.heightWall,
+.stappingHouse,
+.roofKrovlya{
+ font-size: 22px;
+}
+.small_Wall,
+.big_Wall,
+.gorizStapping,
+.vertStapping,
+.jelezoBeton,
+.vintovayaSvai,
+.undefined{
+  font-size: 25px;
+  color: rgb(155, 250, 14);
+  padding-bottom: 10px;
+}
 .matherials_table h4{
   margin-top: 1%;
 }
+
 
 .houseprice {
   display: flex;

@@ -19,40 +19,26 @@ require './../Header/Head.php';
           <img src="./pictures/foundation.png" alt="foundation" />
         </div>
         <!-- {/* ЛИНИИ ВЫБОРА */} -->
-        <div class="container_choice" id="attic">
-          <div class="circle"></div>
-          <div class="line"></div>
-          <div class="Empty"></div>
-        </div>
         <div class="container_choice" id="wall">
           <div class="circle" id="circleWall"></div>
           <div class="line" id="lineWall"></div>
           <div class="Empty" id="emptyWall"></div>
         </div>
-        <div class="container_choice" id="support">
-          <div class="circle" id="circleSupport"></div>
-          <div class="line" id="lineSupport"></div>
-          <div class="Empty" id="emptySupport"></div>
-        </div>
+  
         <div class="container_choice" id="foundation">
           <div class="circle" id="circleFoundation"></div>
           <div class="line" id="lineFoundation"></div>
           <div class="Empty" id="emptyFoundation"></div>
-        </div>
-        <div class="container_choice" id="chimney">
-          <div class="Empty"></div>
-          <div class="line"></div>
-          <div class="circle"></div>
         </div>
         <div class="container_choice" id="floor">
           <div class="Empty" id="emptyFloor"></div>
           <div class="line" id="lineFloor"></div>
           <div class="circle" id="circleFloor"></div>
         </div>
-        <div class="container_choice" id="outerwall">
-          <div class="Empty"></div>
-          <div class="line"></div>
-          <div class="circle"></div>
+        <div class="container_choice" id="support">
+          <div class="Empty" id="emptySupport"></div>
+          <div class="line" id="lineSupport"></div>
+          <div class="circle" id="circleSupport"></div>
         </div>
       </div>
     </div>
@@ -67,10 +53,7 @@ require './../Header/Head.php';
         <button class="button">Итоговая цена</button>
       </div>
     </div>
-
-
     </div>
-
     <div class="smeta">
       <div class="matherials_table">
         <h4>Стоимость материалов дома</h4>
@@ -93,12 +76,7 @@ require './../Header/Head.php';
                 <br> Уют и безопасность: Ниже потолок создает более уютную атмосферу и помогает уменьшить ветровые потоки, особенно в больших помещениях, обеспечивая ощущение комфорта и безопасности.<br />
                 вата - материал сделанный из натурального...
               </p>
-              <div class="material">
-                <h2>Материалы:</h2>
-                <ul>
-                  <li>СИП панели стен: <span id="#">0</span> руб.</li>
-                </ul>
-              </div>
+             
 
               <div class="price">
                 <h3 id="smallWallPrice"></h3>
@@ -171,16 +149,8 @@ require './../Header/Head.php';
           <div class="win2">
             <div class='mineral'>
               <h1 class="modalZag">Винтовые сваи</h1>
-              <p class='modalDescr'>Минеральная (базальовая или кварцевая) <br />
-                вата - материал сделанный из натурального...</p>
-              <div class="plusi">
-                <img src="img/list.png" />
-                <h3>компоненты</h3>
-              </div>
-              <div class="plusi">
-                <img src="img/fire.png" />
-                <h3>Негорючесть</h3>
-              </div>
+              <p class='modalDescr'>Винтовая свая — свая, состоящая из металлического наконечника с лопастью или многовитковой спиралью и трубчатого металлического ствола, погружаемая в грунт методом завинчивания в сочетании с вдавливанием. </p>
+          
 
               <div class="material">
                 <div class="contName">
@@ -212,16 +182,8 @@ require './../Header/Head.php';
           <div class="win2">
             <div class='penopolist mineral'>
               <h1 class="modalZag">Железобетонные сваи</h1>
-              <p class='modalDescr'>Минеральная (базальовая или кварцевая) <br />
-                вата - материал сделанный из натурального...</p>
-              <div class="plusi">
-                <img src="img/list.png" />
-                <h3>компоненты</h3>
-              </div>
-              <div class="plusi">
-                <img src="img/fire.png" />
-                <h3>Негорючесть</h3>
-              </div>
+              <p class='modalDescr'> Железобетонные сваи - это конструкция вертикального или наклонного расположения, погружаемая в грунт, или формируемая уже в самом грунте – путем армирования и заливки скважины бетонным раствором.</p>
+      
 
               <div class="material">
                 <div class="contName">
@@ -278,27 +240,6 @@ require './../Header/Head.php';
                 стройматериалами (кирпич, плитка), сельхозпродукцией и др. при использовании упаковочных защитных уголков.</p>
 
 
-
-
-              <!-- <div class="material">
-              <div class="contName">
-                <h2>Расчет:</h2>
-                <ul>
-                  <li>Фундамент теплового контура</li>
-                  <li>Фундамент крыльца</li>
-                  <li>Фундамент террасы</li>
-                  <li>Доставка фундамента</li>
-                </ul>
-              </div> -->
-
-              <!-- <div class="contConst">
-                <li id="fundCost"></li>
-                <li>12 938</li>
-                <li>7 763</li>
-                <li>10 000</li>
-              </div>
-            </div> -->
-
               <div class="price">
                 <h3 id="gorizTtl"></h3>
                 <button class="modal_btn" id="GorizObvDob" onclick="activeCircleLine('circleSupport', 'lineSupport', 'emptySupport')">Добавить</button>
@@ -317,22 +258,7 @@ require './../Header/Head.php';
 
               <div class="material">
                 <div class="contName">
-                  <!-- <h2>Расчет:</h2>
-                <ul>
-                  <li>Фундамент теплового контура</li>
-                  <li>Фундамент крыльца</li>
-                  <li>Фундамент террасы</li>
-                  <li>Доставка фундамента</li>
-                </ul>
-              </div>
 
-              <div class="contConst">
-                <li id="jelezFundCost"></li>
-                <li>14 025</li>
-                <li>8 415</li>
-                <li>15 000</li>
-              </div>
-            </div> -->
 
                   <div class="price">
                     <h3 id="vertTtl"></h3>

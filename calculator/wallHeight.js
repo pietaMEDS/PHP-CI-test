@@ -11,7 +11,7 @@ export function wallHeightPrice(length, width, id) {
             name: 'Высота потолка',
             styleName: 'heightWall',
             secondName: 'Стена 2.5 метра',
-            styleSecondName: 'bigWallHZHZH',
+            styleSecondName: 'big_Wall',
             id: 'wallSmall25',
             price,
         }
@@ -25,7 +25,7 @@ export function wallHeightPrice(length, width, id) {
             name: 'Высота потолка',
             styleName: 'heightWall',
             secondName: 'Стена 2.8 метра',
-            styleSecondName: 'smallWallHZHZ',
+            styleSecondName: 'small_Wall',
             id: 'wallBig28',
             price,
         }

@@ -13,7 +13,6 @@ html {
 }
 
 .home {
-  margin-top: -8%;
   position: absolute;
   height: 80%;
 }
@@ -21,11 +20,29 @@ html {
 .roof {
   position: absolute;
   z-index: 5;
-
+}
+#img_roof_ready{
+  display: none;
 }
 
 .floor1 {
   position: absolute;
+  z-index: 3;
+}
+#img_floor1_ready{
+  display: none;
+}
+
+.floor{
+  position: absolute;
+  z-index: 2;
+}
+
+.foundation{
+  position: absolute;
+}
+.foundation img{
+  display: none;
 }
 
 .circle {
@@ -57,16 +74,16 @@ html {
 #wall {
   display: flex;
   align-items: center;
-  margin-top: -22%;
-  margin-left: 15%;
+  margin-top: -25%;
+  margin-left: 12%;
 }
 
 
 #support {
   display: flex;
   align-items: center;
-  margin-top: 12.5%;
-  margin-left: 66%;
+  margin-top: 18%;
+  margin-left: 74%;
 }
 
 #support .line {
@@ -77,7 +94,7 @@ html {
 #foundation {
   display: flex;
   align-items: center;
-  margin-top: 10%;
+  margin-top: 16%;
   margin-left: 15%;
 }
 
@@ -135,8 +152,8 @@ html {
 #floor {
   display: flex;
   align-items: center;
-  margin-top: -27%;
-  margin-left: 68%;
+  margin-top: -34%;
+  margin-left: 78%;
 }
 
 #floor .line {

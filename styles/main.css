@@ -91,6 +91,7 @@ main div{
     min-height: 800px;
     background: url(../assets/picture.png);
     background-repeat: no-repeat;
+    background-position: center;
 }
 .heading{
     text-align: center;

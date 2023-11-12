@@ -10,13 +10,23 @@ require './../Header/Head.php';
       <div class="home">
         <!-- {/* ЧАСТИ ДОМА */} -->
         <div class="roof">
-          <img src="./pictures/roof.png" alt="roof" />
+          <img src="./pictures/roof.png" alt="roof" id="img_roof" />
+          <img src="./pictures/roof_ready.png" alt="roof" id="img_roof_ready" />
         </div>
         <div class="floor1">
-          <img src="./pictures/floor1.png" alt="floor1" />
+          <img src="./pictures/First-floor.png" alt="floor1" id="img_floor1"/>
+          <img src="./pictures/First-floor_ready.png" alt="floor1" id="img_floor1_ready"/>
         </div>
+        <div class="floor">
+          <img src="./pictures/floor_ready.png" alt="floor"  />
+        </div> 
+          
         <div class="foundation">
-          <img src="./pictures/foundation.png" alt="foundation" />
+          <img src="./pictures/Svai_JB.png" alt="floor" id="Svai_JB" />
+          <img src="./pictures/Svai_Vint.png" alt="floor" id="Svai_Vint"/>
+        </div>
+        <div class="nothing">
+        <img src="./pictures/nothing.png" alt="err" id="nothing"/>
         </div>
         <!-- {/* ЛИНИИ ВЫБОРА */} -->
         <div class="container_choice" id="wall">

@@ -18,7 +18,7 @@ require './../Header/Head.php';
                 </div>
                 <div class="text">Калькулятор представляет из себя интерфейс для расчёта<br />затрат стоимости дома, исходя из ваших пожеланий </div>
             </div>
-            <div class="calc-block">
+            <div class="calc-block" id="calc-block">
                 <h1 class="title">Калькулятор строительства</h1>
                 <div class="maincalc">
                     <div class='home_container'>
@@ -37,7 +37,7 @@ require './../Header/Head.php';
                             <select class='select' id="floors">
                                 <option class='option' selected disabled>Количество этажей</option>
                                     <option class='option'>1</option>
-                                    <option class='option'>2</option>
+                                    <option class='option' disabled >2</option>
                             </select>
                             <button type="submit" class='continue'>Далее</button>
                         </form>

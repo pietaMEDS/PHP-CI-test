@@ -135,7 +135,6 @@ function checkLocalStorageTimestamp() {
         const selectedElements = JSON.parse(selectedElementsString);
         const timestamp = selectedElements.timestamp;
 
-        // Проверяем, истекло ли время хранения (15 минут)
         if (timestamp && Date.now() < timestamp) {
             wallPrice = selectedElements.wallPrice || { price: 0 };
             svaiPrice = selectedElements.svaiPrice || { price: 0 };

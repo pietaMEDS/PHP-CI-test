@@ -473,3 +473,70 @@ button .Empty {
 
 
 
+@media (max-width:1600px) {
+  .smeta{
+    margin-top: -20%;
+  }
+  .itog-flex{
+    margin-top: 10.5%;
+  }
+}
+@media (max-width:1300px) {
+  .home{
+    position: static;
+    display: flex;
+    justify-content: center;
+    height: 80%;
+  }
+  .home img{
+    max-width: 90%;
+  }
+  .home div{
+    display: flex;
+    justify-content: center;
+  }
+  .container_home{
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+    height: 80%;
+  }
+  .line{
+    display: none !important;
+  }
+  .Empty{
+    display: none !important;
+  }
+  #wall{
+    display: flex;
+    align-items: center;
+    margin-top: 11%;
+    margin-left: 112%;
+  }
+  #foundation{
+    display: flex;
+    align-items: center;
+    margin-top: 46%;
+    margin-left: 15%;
+  }
+  #floor{
+    display: flex;
+    align-items: center;
+    margin-top: -22%;
+    margin-left: 32%;
+  }
+  #support{
+    display: flex;
+    align-items: center;
+    margin-top: 4%;
+    margin-left: 5%;
+    margin-right: 103%;
+  }
+  .itog-flex{
+    margin-top: -28px;
+  }
+  .smeta{
+    margin-left: 67%;
+    margin-top: -51%;
+  }
+}

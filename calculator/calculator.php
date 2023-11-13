@@ -6,6 +6,8 @@ require './../Header/Head.php';
 <body>
   <?php require './../Header/Header.php'; ?>
   <main class="main" id="main">
+    <button id="btn">ПДФ АХА</button>
+    <a href="/mern.pdf" download="myDoc.pdf">Get pdf</a>
     <div class="container_home">
       <div class="home">
         <!-- {/* ЧАСТИ ДОМА */} -->
@@ -14,19 +16,19 @@ require './../Header/Head.php';
           <img src="./pictures/roof_ready.png" alt="roof" id="img_roof_ready" />
         </div>
         <div class="floor1">
-          <img src="./pictures/First-floor.png" alt="floor1" id="img_floor1"/>
-          <img src="./pictures/First-floor_ready.png" alt="floor1" id="img_floor1_ready"/>
+          <img src="./pictures/First-floor.png" alt="floor1" id="img_floor1" />
+          <img src="./pictures/First-floor_ready.png" alt="floor1" id="img_floor1_ready" />
         </div>
         <div class="floor">
-          <img src="./pictures/floor_ready.png" alt="floor"  />
-        </div> 
-          
+          <img src="./pictures/floor_ready.png" alt="floor" />
+        </div>
+
         <div class="foundation">
           <img src="./pictures/Svai_JB.png" alt="floor" id="Svai_JB" />
-          <img src="./pictures/Svai_Vint.png" alt="floor" id="Svai_Vint"/>
+          <img src="./pictures/Svai_Vint.png" alt="floor" id="Svai_Vint" />
         </div>
         <div class="nothing">
-        <img src="./pictures/nothing.png" alt="err" id="nothing"/>
+          <img src="./pictures/nothing.png" alt="err" id="nothing" />
         </div>
         <!-- {/* ЛИНИИ ВЫБОРА */} -->
         <div class="container_choice" id="wall">
@@ -34,7 +36,7 @@ require './../Header/Head.php';
           <div class="line" id="lineWall"></div>
           <div class="Empty" id="emptyWall"></div>
         </div>
-  
+
         <div class="container_choice" id="foundation">
           <div class="circle" id="circleFoundation"></div>
           <div class="line" id="lineFoundation"></div>
@@ -68,7 +70,7 @@ require './../Header/Head.php';
       <div class="matherials_table">
         <h4>Стоимость материалов дома</h4>
         <div class="matherials_row"></div>
-        <div class="houseprice">  
+        <div class="houseprice">
         </div>
       </div>
       <!-- Модалка стен -->
@@ -86,7 +88,7 @@ require './../Header/Head.php';
                 <br> Уют и безопасность: Ниже потолок создает более уютную атмосферу и помогает уменьшить ветровые потоки, особенно в больших помещениях, обеспечивая ощущение комфорта и безопасности.<br />
                 вата - материал сделанный из натурального...
               </p>
-             
+
 
               <div class="price">
                 <h3 id="smallWallPrice"></h3>
@@ -160,7 +162,7 @@ require './../Header/Head.php';
             <div class='mineral'>
               <h1 class="modalZag">Винтовые сваи</h1>
               <p class='modalDescr'>Винтовая свая — свая, состоящая из металлического наконечника с лопастью или многовитковой спиралью и трубчатого металлического ствола, погружаемая в грунт методом завинчивания в сочетании с вдавливанием. </p>
-          
+
 
               <div class="material">
                 <div class="contName">
@@ -193,7 +195,7 @@ require './../Header/Head.php';
             <div class='penopolist mineral'>
               <h1 class="modalZag">Железобетонные сваи</h1>
               <p class='modalDescr'> Железобетонные сваи - это конструкция вертикального или наклонного расположения, погружаемая в грунт, или формируемая уже в самом грунте – путем армирования и заливки скважины бетонным раствором.</p>
-      
+
 
               <div class="material">
                 <div class="contName">
@@ -280,7 +282,9 @@ require './../Header/Head.php';
             </div>
           </div>
 
+
   </main>
+  <script src="pdf.js"></script>
   <script src="./circle.js"></script>
   <script type="module" src='math.js'></script>
   <script src="./../calculator/modal.js"></script>

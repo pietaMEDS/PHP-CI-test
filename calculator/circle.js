@@ -23,7 +23,7 @@ function activeCircleLine(circle, line, empty) {
 
     localStorage.setItem('object', JSON.stringify(object));
 
-    const timestamp = Date.now() + 5000; // 5 сек так же как и в маф джсе
+    const timestamp = Date.now() + 0.1 * 60 * 1000; // 5 сек так же как и в маф джсе
     localStorage.setItem('timestamp', timestamp.toString());
 }
 

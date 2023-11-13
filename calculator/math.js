@@ -1,7 +1,9 @@
 import { roof } from "./roof.js";
 import { stappingTotalPrice } from "./stapping.js";
+import { afasf } from "./toaliets.js";
 import { svai } from "./vintovieSvai.js";
 import { wallHeightPrice } from "./wallHeight.js";
+import { zero } from "./zero_overlap.js";
 
 let length = Number(localStorage.getItem('length'));
 let width = Number(localStorage.getItem('width'));
@@ -127,7 +129,7 @@ function saveSelectedElements() {
     localStorage.setItem('selectedElements', JSON.stringify(selectedElements));
 }
 
-
+afasf();
 // Функция для проверки временной метки в localStorage при загрузке страницы
 function checkLocalStorageTimestamp() {
     const selectedElementsString = localStorage.getItem('selectedElements');
@@ -166,3 +168,4 @@ svai(vintPricePlusBtn.id, kolSvai);
 roof(length, width);
 stappingTotalPrice("vertObvDob", length, width, step);
 stappingTotalPrice("GorizObvDob", length, width, step);
+zero(length,width);

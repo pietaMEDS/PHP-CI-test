@@ -3,6 +3,7 @@ html {
   padding: 0;
   margin: 0;
   background-color: #36363E;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .container_home {
@@ -541,3 +542,4 @@ button .Empty {
     margin-top: -51%;
   }
 }
+

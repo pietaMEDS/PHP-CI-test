@@ -3,3 +3,5 @@ document.getElementById("itogBtn").addEventListener('click', (e) => {
 
     window.location.href = './../finalSmeta/smeta.php';
 });
+
+

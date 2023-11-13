@@ -1,3 +1,5 @@
+let object = {};
+
 function activeCircleLine(circle, line, empty) {
     let currentCircle = document.getElementById(circle);
     let currentLine = document.getElementById(line);
@@ -8,25 +10,46 @@ function activeCircleLine(circle, line, empty) {
     currentEmpty.style.background = 'lime';
     currentLine.style.background = 'lime';
 
-    localStorage.setItem('activeCircle', circle);
-    localStorage.setItem('activeLine', line);
-    localStorage.setItem('activeEmpty', empty);
 
-    const timestamp = Date.now() + 6000; // 6 сек так же как и в маф джсе
+    if (!object.circle) {
+        object[circle] = circle;
+    }
+    if (!object.line) {
+        object[line] = line;
+    }
+    if (!object.empty) {
+        object[empty] = empty;
+    }
+
+    localStorage.setItem('object', JSON.stringify(object));
+
+    const timestamp = Date.now() + 5000; // 5 сек так же как и в маф джсе
     localStorage.setItem('timestamp', timestamp.toString());
+}
+
+function localTimeStamp() {
+    const objectCircles = JSON.parse(localStorage.getItem('object'));
+    const timestamp = localStorage.getItem('timestamp');
+    console.log(timestamp);
+    if (timestamp && Date.now() < parseInt(timestamp) && objectCircles) {
+
+        console.log(objectCircles['circleFoundation']);
+        // activeCircleLine(activeCircle, activeLine, activeEmpty);
+        if (objectCircles['circleFoundation']) {
+            activeCircleLine('circleFoundation', 'lineFoundation', 'emptyFoundation')
+        }
+        if (objectCircles['circleSupport']) {
+            activeCircleLine('circleSupport', 'lineSupport', 'emptySupport')
+        }
+        if (objectCircles['circleFloor']) {
+            activeCircleLine('circleFloor', 'lineFloor', 'emptyFloor')
+        }
+        if (objectCircles['circleWall']) {
+            activeCircleLine('circleWall', 'lineWall', 'emptyWall')
+        }
+    }
 }
 
 window.addEventListener('load', () => {
     localTimeStamp();
 });
-
-function localTimeStamp() {
-    const activeCircle = localStorage.getItem('activeCircle');
-    const activeLine = localStorage.getItem('activeLine');
-    const activeEmpty = localStorage.getItem('activeEmpty');
-    const timestamp = localStorage.getItem('timestamp');
-
-    if (timestamp && Date.now() < parseInt(timestamp) && activeCircle && activeLine && activeEmpty) {
-        activeCircleLine(activeCircle, activeLine, activeEmpty);
-    }
-}

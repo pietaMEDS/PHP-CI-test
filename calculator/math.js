@@ -15,8 +15,8 @@ vintPricePlusBtn.addEventListener('click', (e) => {
     svaiPrice = svai(vintPricePlusBtn.id, kolSvai);
     update(svaiPrice);
     saveSelectedElements();
-    document.getElementById('Svai_JB').style.display="none";
-    document.getElementById('Svai_Vint').style.display="block";
+    document.getElementById('Svai_JB').style.display = "none";
+    document.getElementById('Svai_Vint').style.display = "block";
 });
 
 // Железобетоная свая
@@ -25,8 +25,8 @@ jelezBtn.addEventListener('click', (e) => {
     svaiPrice = svai(jelezBtn.id, kolSvai);
     update(svaiPrice);
     saveSelectedElements();
-    document.getElementById('Svai_Vint').style.display="none";
-    document.getElementById('Svai_JB').style.display="block";
+    document.getElementById('Svai_Vint').style.display = "none";
+    document.getElementById('Svai_JB').style.display = "block";
 });
 
 
@@ -37,8 +37,8 @@ document.getElementById('smallWallBtn').addEventListener('click', () => {
     wallPrice = wallHeightPrice(length, width, 'smallWallBtn');
     update(wallPrice);
     saveSelectedElements();
-    document.getElementById('img_floor1').style.display="none";
-    document.getElementById('img_floor1_ready').style.display="block";
+    document.getElementById('img_floor1').style.display = "none";
+    document.getElementById('img_floor1_ready').style.display = "block";
 })
 
 // при клике на стену 2.8 метра
@@ -46,8 +46,8 @@ document.getElementById('bigWallBtn').addEventListener('click', () => {
     wallPrice = wallHeightPrice(length, width, 'bigWallBtn');
     update(wallPrice);
     saveSelectedElements();
-    document.getElementById('img_floor1').style.display="none";
-    document.getElementById('img_floor1_ready').style.display="block";
+    document.getElementById('img_floor1').style.display = "none";
+    document.getElementById('img_floor1_ready').style.display = "block";
 });
 
 // крыша
@@ -96,7 +96,7 @@ function update(current) {
                     flag = false;
                 } else if ((child.classList.contains(current.styleName))) {
                     let el = document.getElementById(child.id);
-                    secondElement.innerHTML = current.secondName + ' ' + current.price;
+                    secondElement.innerHTML = current.secondName + ' ' + current.price + ' руб.';
                     el.innerHTML = current.name;
                     el.id = current.id;
                     el.appendChild(secondElement);

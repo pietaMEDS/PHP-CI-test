@@ -19,3 +19,10 @@ document.getElementById('formcalc').addEventListener('submit', (e) => {
 }
 });
 
+
+
+document.getElementById("login").addEventListener('click', (e) => {
+    e.preventDefault();
+
+    window.location.href = './../admin/admin.php';
+});

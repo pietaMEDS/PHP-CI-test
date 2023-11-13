@@ -14,7 +14,7 @@ export function svai(id, kolSvai) {
 
         return {
             name: 'Фундамент дома',
-            styleName: 'foundation',
+            styleName: 'foundationS',
             secondName: 'Железобетонные сваи',
             styleSecondName: 'jelezoBeton',
             id: 'jelezSvai',
@@ -40,7 +40,7 @@ export function svai(id, kolSvai) {
 
         return {
             name: 'Фундамент дома',
-            styleName: 'foundation',
+            styleName: 'foundationS',
             secondName: 'Винтовые сваи',
             styleSecondName: 'vintovayaSvai',
             id: 'vintSvai',

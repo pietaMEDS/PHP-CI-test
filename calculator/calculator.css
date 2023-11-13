@@ -3,13 +3,14 @@ html {
   padding: 0;
   margin: 0;
   background-color: #36363E;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .container_home {
   display: flex;
   justify-content: center;
   margin-left: -30%;
-  height:80%;
+  height: 80%;
 }
 
 .home {
@@ -21,7 +22,8 @@ html {
   position: absolute;
   z-index: 5;
 }
-#img_roof_ready{
+
+#img_roof_ready {
   display: none;
 }
 
@@ -29,19 +31,21 @@ html {
   position: absolute;
   z-index: 3;
 }
-#img_floor1_ready{
+
+#img_floor1_ready {
   display: none;
 }
 
-.floor{
+.floor {
   position: absolute;
   z-index: 2;
 }
 
-.foundation{
+.foundation {
   position: absolute;
 }
-.foundation img{
+
+.foundation img {
   display: none;
 }
 
@@ -75,7 +79,7 @@ html {
   display: flex;
   align-items: center;
   margin-top: -25%;
-  margin-left: 12%;
+  margin-left: 2%;
 }
 
 
@@ -94,12 +98,12 @@ html {
 #foundation {
   display: flex;
   align-items: center;
-  margin-top: 16%;
-  margin-left: 15%;
+  margin-top: 15%;
+  margin-left: -3%;
 }
 
 #foundation .line {
-  width: 290px;
+  width: 220px;
 
 }
 
@@ -131,7 +135,7 @@ html {
 }
 
 #wall .line {
-  width: 280px;
+  width: 320px;
 }
 
 #wall .circle {
@@ -152,12 +156,12 @@ html {
 #floor {
   display: flex;
   align-items: center;
-  margin-top: -34%;
-  margin-left: 78%;
+  margin-top: -37%;
+  margin-left: 80%;
 }
 
 #floor .line {
-  width: 220px;
+  width: 170px;
 
 }
 
@@ -227,8 +231,9 @@ button .Empty {
   cursor: pointer;
 
 }
-.home img{
-  width: 1200px;
+
+.home img {
+  width: 1000px;
 }
 
 /* modalka */
@@ -257,6 +262,7 @@ button .Empty {
   visibility: auto;
   display: none;
 }
+
 .modalFloor.active,
 .modalFoundation.active,
 .modalWall.active,
@@ -336,7 +342,8 @@ button .Empty {
 .price button {
   margin: 0;
 }
-.contName{
+
+.contName {
   margin-top: -25%;
 }
 
@@ -391,35 +398,50 @@ button .Empty {
 
 
 
-.material{
+.material {
   display: flex;
   justify-content: space-around;
   margin-top: 45%;
 }
 
-.material h2{
+.material h2 {
   font-size: 28px;
   margin-left: 20px;
+}
+
+.contWall {
+  margin-top: 30%;
+}
+
+.matherialsWall {
+  margin-top: 50%;
+  list-style-type: none;
+  font-size: 22px;
+  text-align: right;
+  color: #53C541;
 }
 
 .material ul li {
   font-size: 22px;
 }
-.contConsts{
+
+.contConsts {
   margin-top: 16%;
   list-style-type: none;
   font-size: 22px;
   text-align: right;
   color: #53C541;
 }
-.contConst{
+
+.contConst {
   margin-top: -9%;
   list-style-type: none;
   font-size: 22px;
   text-align: right;
   color: #53C541;
 }
-.material_ul{
+
+.material_ul {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -428,30 +450,33 @@ button .Empty {
 .smeta {
   position: absolute;
   margin-left: 75%;
-  margin-top: -45%;
+  margin-top: -42%;
   color: white;
   font-size: 24px;
   background-color: #39363E;
   border: 2px solid #FF855D;
   padding: 10px;
 }
+
 .heightWall,
 .stappingHouse,
-.roofKrovlya{
- font-size: 22px;
+.roofKrovlya {
+  font-size: 22px;
 }
+
 .small_Wall,
 .big_Wall,
 .gorizStapping,
 .vertStapping,
 .jelezoBeton,
 .vintovayaSvai,
-.undefined{
+.undefined {
   font-size: 25px;
   color: rgb(155, 250, 14);
   padding-bottom: 10px;
 }
-.matherials_table h4{
+
+.matherials_table h4 {
   margin-top: 1%;
 }
 
@@ -473,70 +498,84 @@ button .Empty {
 
 
 
-@media (max-width:1600px) {
-  .smeta{
+@media (max-width:1500px) {
+  .smeta {
     margin-top: -20%;
   }
-  .itog-flex{
+
+  .itog-flex {
     margin-top: 10.5%;
   }
 }
+
 @media (max-width:1300px) {
-  .home{
+  .home {
     position: static;
     display: flex;
     justify-content: center;
     height: 80%;
   }
-  .home img{
+
+  .home img {
     max-width: 90%;
   }
-  .home div{
+
+  .home div {
     display: flex;
     justify-content: center;
   }
-  .container_home{
+
+  .container_home {
     display: flex;
     justify-content: center;
     margin-left: 0;
     height: 80%;
   }
-  .line{
+
+  .line {
     display: none !important;
   }
-  .Empty{
+
+  .Empty {
     display: none !important;
   }
-  #wall{
+
+  #wall {
     display: flex;
     align-items: center;
     margin-top: 11%;
     margin-left: 112%;
   }
-  #foundation{
+
+  #foundation {
     display: flex;
     align-items: center;
     margin-top: 46%;
     margin-left: 15%;
   }
-  #floor{
+
+  #floor {
     display: flex;
     align-items: center;
     margin-top: -22%;
     margin-left: 32%;
   }
-  #support{
+
+  #support {
     display: flex;
     align-items: center;
     margin-top: 4%;
     margin-left: 5%;
     margin-right: 103%;
   }
-  .itog-flex{
+
+  .itog-flex {
     margin-top: -28px;
   }
-  .smeta{
+
+  .smeta {
     margin-left: 67%;
     margin-top: -51%;
   }
 }
+

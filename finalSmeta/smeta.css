@@ -1,0 +1,8 @@
+body,
+html{
+    color: white;
+}
+h1:first-child{
+    margin-left: 8.5%;
+    margin-top: 5%;
+}

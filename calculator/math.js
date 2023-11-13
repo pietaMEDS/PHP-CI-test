@@ -1,5 +1,6 @@
 import { roof } from "./roof.js";
 import { stappingTotalPrice } from "./stapping.js";
+import { afasf } from "./toaliets.js";
 import { svai } from "./vintovieSvai.js";
 import { wallHeightPrice } from "./wallHeight.js";
 
@@ -127,7 +128,7 @@ function saveSelectedElements() {
     localStorage.setItem('selectedElements', JSON.stringify(selectedElements));
 }
 
-
+afasf();
 // Функция для проверки временной метки в localStorage при загрузке страницы
 function checkLocalStorageTimestamp() {
     const selectedElementsString = localStorage.getItem('selectedElements');

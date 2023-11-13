@@ -6,7 +6,7 @@ require './../Header/Head.php';
 <body>
   <?php require './../Header/Header.php'; ?>
   <main class="main" id="main">
-    <button id="btn">ПДФ АХА</button>
+    <!-- <button id="btn">ПДФ АХА</button> -->
     <a href="/mern.pdf" download="myDoc.pdf">Get pdf</a>
     <div class="container_home">
       <div class="home">
@@ -89,6 +89,20 @@ require './../Header/Head.php';
                 вата - материал сделанный из натурального...
               </p>
 
+              <div style="display: flex;">
+                <div class="contWall">
+                  <h2>Материалы:</h2>
+                  <ul>
+                    <li>СИП панели стен </li>
+                    <li>Пиломатериал на стены </li>
+                  </ul>
+                </div>
+
+                <div class="matherialsWall">
+                  <li id="sipPanel"></li>
+                  <li id="pilomaterialWall"></li>
+                </div>
+              </div>
 
               <div class="price">
                 <h3 id="smallWallPrice"></h3>
@@ -97,12 +111,31 @@ require './../Header/Head.php';
             </div>
           </div>
 
+
+
+
           <div class="win2">
             <div class="bigWall">
               <h1 class="modalZag">Высота стены 2.8</h1>
               <p class='modalDescr'>Простор и свобода: Высокие потолки дают ощущение простора и свободы в помещении, делая его более величественным и впечатляющим.
                 <br> Комфорт в использовании: Помещение с потолком высотой 2.8 метров может быть более комфортным для проведения деятельности, требующей вертикального пространства, например, для подвешивания светильников или наличия высокой мебели.
               </p>
+
+              <div style="display: flex;">
+                <div class="contWall">
+                  <h2>Материалы:</h2>
+                  <ul>
+                    <li>СИП панели стен </li>
+                    <li>Пиломатериал на стены </li>
+                  </ul>
+                </div>
+
+                <div class="matherialsWall">
+                  <li id="sipPanel1"></li>
+                  <li id="pilomaterialWall1"></li>
+                </div>
+              </div>
+
               <div class="price">
                 <h3 id="bigWallPrice"></h3>
                 <button class="modal_btn" id="bigWallBtn" onclick="activeCircleLine('circleWall', 'lineWall', 'emptyWall')">Добавить</button>

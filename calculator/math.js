@@ -106,7 +106,7 @@ function update(current) {
         }
 
         if (flag) {
-            secondElement.innerHTML = current.secondName + ' ' + current.price;
+            secondElement.innerHTML = current.secondName + ' ' + current.price + ' руб.';
             childElement.innerHTML = current.name;
             childElement.appendChild(secondElement);
             smetaRow.appendChild(childElement);

@@ -9,7 +9,6 @@ export function stappingTotalPrice(id, length, width, step) {
         let obiemGoriz = (lenghtGorizDsk * 0.2 * 0.05);
         let obiemPilomat = obiemVert + obiemGoriz;
         obiemPilomat += (obiemPilomat * 0.15);
-        console.log(obiemPilomat);
         let resultObvazkaFund = Math.round(obiemPilomat * 24725);
         document.getElementById("vertTtl").innerText = resultObvazkaFund + ' руб.';
         price = resultObvazkaFund;

@@ -474,14 +474,14 @@ button .Empty {
 
 
 
-@media (max-width:1600px) {
+@media (max-width:1500px) {
   .smeta{
     margin-top: -20%;
   }
   .itog-flex{
     margin-top: 10.5%;
   }
-}
+} 
 @media (max-width:1300px) {
   .home{
     position: static;

@@ -2,6 +2,7 @@ import { roof } from "./roof.js";
 import { stappingTotalPrice } from "./stapping.js";
 import { svai } from "./vintovieSvai.js";
 import { wallHeightPrice } from "./wallHeight.js";
+import { zero } from "./zero_overlap.js";
 
 let length = Number(localStorage.getItem('length'));
 let width = Number(localStorage.getItem('width'));
@@ -96,7 +97,7 @@ function update(current) {
                     flag = false;
                 } else if ((child.classList.contains(current.styleName))) {
                     let el = document.getElementById(child.id);
-                    secondElement.innerHTML = current.secondName + ' ' + current.price;
+                    secondElement.innerHTML = current.secondName + ' ' + current.price + ' руб.';
                     el.innerHTML = current.name;
                     el.id = current.id;
                     el.appendChild(secondElement);
@@ -106,7 +107,7 @@ function update(current) {
         }
 
         if (flag) {
-            secondElement.innerHTML = current.secondName + ' ' + current.price;
+            secondElement.innerHTML = current.secondName + ' ' + current.price + ' руб.';
             childElement.innerHTML = current.name;
             childElement.appendChild(secondElement);
             smetaRow.appendChild(childElement);
@@ -166,3 +167,4 @@ svai(vintPricePlusBtn.id, kolSvai);
 roof(length, width);
 stappingTotalPrice("vertObvDob", length, width, step);
 stappingTotalPrice("GorizObvDob", length, width, step);
+zero(length,width);

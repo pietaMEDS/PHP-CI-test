@@ -75,7 +75,7 @@ html {
   display: flex;
   align-items: center;
   margin-top: -25%;
-  margin-left: 12%;
+  margin-left: 2%;
 }
 
 
@@ -94,12 +94,12 @@ html {
 #foundation {
   display: flex;
   align-items: center;
-  margin-top: 16%;
-  margin-left: 15%;
+  margin-top: 15%;
+  margin-left: -3%;
 }
 
 #foundation .line {
-  width: 290px;
+  width: 220px;
 
 }
 
@@ -131,7 +131,7 @@ html {
 }
 
 #wall .line {
-  width: 280px;
+  width: 320px;
 }
 
 #wall .circle {
@@ -152,12 +152,12 @@ html {
 #floor {
   display: flex;
   align-items: center;
-  margin-top: -34%;
-  margin-left: 78%;
+  margin-top: -37%;
+  margin-left: 80%;
 }
 
 #floor .line {
-  width: 220px;
+  width: 170px;
 
 }
 
@@ -228,7 +228,7 @@ button .Empty {
 
 }
 .home img{
-  width: 1200px;
+  width: 1000px;
 }
 
 /* modalka */
@@ -428,7 +428,7 @@ button .Empty {
 .smeta {
   position: absolute;
   margin-left: 75%;
-  margin-top: -45%;
+  margin-top: -42%;
   color: white;
   font-size: 24px;
   background-color: #39363E;
@@ -440,6 +440,7 @@ button .Empty {
 .roofKrovlya{
  font-size: 22px;
 }
+
 .small_Wall,
 .big_Wall,
 .gorizStapping,

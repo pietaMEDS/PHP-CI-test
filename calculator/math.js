@@ -1,5 +1,6 @@
 import { roof } from "./roof.js";
 import { stappingTotalPrice } from "./stapping.js";
+import { afasf } from "./toaliets.js";
 import { svai } from "./vintovieSvai.js";
 import { wallHeightPrice } from "./wallHeight.js";
 import { zero } from "./zero_overlap.js";
@@ -16,8 +17,8 @@ vintPricePlusBtn.addEventListener('click', (e) => {
     svaiPrice = svai(vintPricePlusBtn.id, kolSvai);
     update(svaiPrice);
     saveSelectedElements();
-    document.getElementById('Svai_JB').style.display="none";
-    document.getElementById('Svai_Vint').style.display="block";
+    document.getElementById('Svai_JB').style.display = "none";
+    document.getElementById('Svai_Vint').style.display = "block";
 });
 
 // Железобетоная свая
@@ -26,8 +27,8 @@ jelezBtn.addEventListener('click', (e) => {
     svaiPrice = svai(jelezBtn.id, kolSvai);
     update(svaiPrice);
     saveSelectedElements();
-    document.getElementById('Svai_Vint').style.display="none";
-    document.getElementById('Svai_JB').style.display="block";
+    document.getElementById('Svai_Vint').style.display = "none";
+    document.getElementById('Svai_JB').style.display = "block";
 });
 
 
@@ -38,8 +39,8 @@ document.getElementById('smallWallBtn').addEventListener('click', () => {
     wallPrice = wallHeightPrice(length, width, 'smallWallBtn');
     update(wallPrice);
     saveSelectedElements();
-    document.getElementById('img_floor1').style.display="none";
-    document.getElementById('img_floor1_ready').style.display="block";
+    document.getElementById('img_floor1').style.display = "none";
+    document.getElementById('img_floor1_ready').style.display = "block";
 })
 
 // при клике на стену 2.8 метра
@@ -47,8 +48,8 @@ document.getElementById('bigWallBtn').addEventListener('click', () => {
     wallPrice = wallHeightPrice(length, width, 'bigWallBtn');
     update(wallPrice);
     saveSelectedElements();
-    document.getElementById('img_floor1').style.display="none";
-    document.getElementById('img_floor1_ready').style.display="block";
+    document.getElementById('img_floor1').style.display = "none";
+    document.getElementById('img_floor1_ready').style.display = "block";
 });
 
 // крыша
@@ -128,7 +129,7 @@ function saveSelectedElements() {
     localStorage.setItem('selectedElements', JSON.stringify(selectedElements));
 }
 
-
+afasf();
 // Функция для проверки временной метки в localStorage при загрузке страницы
 function checkLocalStorageTimestamp() {
     const selectedElementsString = localStorage.getItem('selectedElements');

@@ -26,7 +26,7 @@ require "../Header/header.php";
     </items>
 </body>
 <?php
-        $mysql= new mysqli('localhost', 'u2339146_default','avOYwHYpE4I3378E','u2339146_default');
+        // $mysql= new mysqli('localhost', 'u2339146_default','avOYwHYpE4I3378E','u2339146_default');
         // if(mysqli_connect('localhost','root')){
         //     echo "<script>console.log('Connect. OK')</script>";
         //   }

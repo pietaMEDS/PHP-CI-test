@@ -13,13 +13,14 @@ $passwordSend = $_POST['password'];
 
 $msgToUser = '';
 
-setcookie('username', $loginSend, time() + 10); // Храним куку 10 секунд (для проверки), чтобы человек не вводил заного логин и пароль.. 
-setcookie('userpassword', $passwordSend, time() + 10);
+print_r($_COOKIE);
 
-if (isset($_COOKIE['username']) && isset($_COOKIE['userpassword'])) {
+if ($_COOKIE['username'] === $adminLogin && $_COOKIE['userpassword'] === $adminPassword) {
     header('Location: ./../panel/admin.php');
 } else if (isset($loginSend)) {
     if ($loginSend === $adminLogin && $adminPassword === $passwordSend) {
+        setcookie('username', $loginSend, time() + 7 * 24 * 60 * 60); // Храним куку 7 дейс, чтобы человек не вводил заного логин и пароль.. 
+        setcookie('userpassword', $passwordSend, time() + 5);
         header('Location: ./../panel/admin.php');
     } else {
         $msgToUser = ("Вы ввели неверный логин или пароль!");

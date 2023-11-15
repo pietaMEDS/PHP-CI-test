@@ -7,6 +7,5 @@ $commands = [
 ];
 
 foreach ($commands as $command) {
-    echo "Running command: $command\n";
     shell_exec($command);
 }

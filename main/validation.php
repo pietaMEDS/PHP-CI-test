@@ -5,7 +5,7 @@ $msg = $_POST['msg'];
 
 if (!empty($email) && !empty($name) && !empty($msg)) {
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $receiver = 'vladoperation@bk.ru';
+        $receiver = 'domik.assistant@domik.space';
         $subject = "From: $name <$email>";
         $body = "Name: $name\nEmail: $email\nMessage:\n$msg\n\nRegards,\n$name";
         $sender = "From: $email";

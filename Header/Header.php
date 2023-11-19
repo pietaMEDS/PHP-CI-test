@@ -4,7 +4,7 @@
         <div class="header__text">
             <a href="./../main/index.php">Главная</a>
             <a id="calc" href="#">Калькулятор</a>
-            <a id="login" href="">Войти</a>
+            <a id="login" href="../admin/login1.php">Войти</a>
         </div>
     </div>
 </header>

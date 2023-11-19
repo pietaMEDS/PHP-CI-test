@@ -1,8 +1,8 @@
 export function zero(length, width){
-
+let aaa = 4000;
 
     // СТОЙМОСТЬ ДЛЯ КЛИЕНТА
-    let summ = 4000 + 4000 *0.15;
+    let summ = aaa + aaa *0.15;
     let ppp = 21500 + 21500 * 0.15;
     let pan = 2.5 * 1.25;
   

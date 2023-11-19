@@ -22,6 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $query->bind_param("sii", $name, $count, $id);
     $query->execute();
     $query->close();
+    $res['name'] = $name;
+    $res['count'] = $count;
 }
 ?>
 

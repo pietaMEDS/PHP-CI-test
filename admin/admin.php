@@ -8,7 +8,6 @@ $sql->bind_param("ss", $name, $password);
 $sql->execute();
 $result = $sql->get_result();
 $row = $result->fetch_assoc();
-print_r($row);
 
 $sql->close();
 $mysqli->close();

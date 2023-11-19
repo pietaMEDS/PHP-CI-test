@@ -1,3 +1,14 @@
+<?php 
+ require_once '../admin/connekt.php';
+ $sql = $mysqli->prepare("SELECT * FROM const");
+ $sql->execute();
+ $result = $sql->get_result();
+ $res = $result->fetch_assoc();
+ $sql->close();
+ $mysqli->close();
+?>
+
+
 <?php
 $pageStyles = './../calculator/calculator.css';
 require './../Header/Head.php';
@@ -210,7 +221,7 @@ require './../Header/Head.php';
 
                 <div class="contConst">
                   <li id="fundCost"></li>
-                  <li>12 938</li>
+                  <li><?php echo $res["count"] ?></li>
                   <li>7 763</li>
                   <li>10 000</li>
                 </div>

@@ -18,7 +18,7 @@ require './../Header/Head.php';
   <?php require './../Header/Header.php'; ?>
   <main class="main" id="main">
     <!-- <button id="btn">ПДФ АХА</button> -->
-    <a href="/mern.pdf" download="myDoc.pdf">Get pdf</a>
+    <!--<a href="/mern.pdf" download="myDoc.pdf">Get pdf</a>-->
     <div class="container_home">
       <div class="home">
         <!-- {/* ЧАСТИ ДОМА */} -->
@@ -213,8 +213,8 @@ require './../Header/Head.php';
                   <h2>Материалы:</h2>
                   <ul>
                     <li>Фундамент теплового контура</li>
-                    <li>Фундамент крыльца</li>
-                    <li>Фундамент террасы</li>
+                    <li><?php echo $res["name"] ?></li>
+                    <li>Крыльцо</li>
                     <li>Доставка фундамента</li>
                   </ul>
                 </div>

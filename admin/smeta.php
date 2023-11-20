@@ -3,7 +3,7 @@ if(!empty($_SESSION["login"])){
 echo "Добро пожаловать ".$_SESSION['login'];
 }
 else{
-    echo 'ГУЛЯЙ ВАСЯ';
+    header("Location: ../admin/hac.php");
 }
 ?>
 <!DOCTYPE html>

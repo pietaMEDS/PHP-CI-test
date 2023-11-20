@@ -15,8 +15,11 @@ $row = $result->fetch_assoc();
 $sql->close();
 $mysqli->close();
 
+echo $_COOKIE['PHPSESSID'];
+
 if ($row && $row["id"] > 0) {
     $_SESSION["login"] = $row["login"];
+
     header('Location:../admin/smeta.php');
 } else {
     header('Location:../admin/login.php');

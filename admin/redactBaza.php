@@ -65,7 +65,7 @@ else{
                 <form action="../admin/redactBaza.php" method="POST">
                 <tr>
                 <td><input name="name" readonly value="'.$row_rs["name"].'"></td>
-                <td><input name="count" id="ObjName" value="'.$row_rs["count"].'"></td>
+                <td><input name="count" type="number" id="ObjName" value="'.$row_rs["count"].'"></td>
                 <td><input name="nacenka" type="number" id="price" value="'.$row_rs["nacenka"].'"></td>
                 <td>1111</td>
             </tr>

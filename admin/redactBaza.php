@@ -46,6 +46,13 @@ else{
     <a href="../admin/logout.php">Выйти</a>
 
     <items>
+    <table>
+            <tr>
+                <th>Наименование</th>
+                <th>Себестоимость</th>
+                <th>Наценка</th>
+                <th>Итог</th>
+            </tr>
         <?php
     $name = mysqli_query($mysqli, "SELECT * FROM const");
     while($row_rs = mysqli_fetch_assoc($name)) // массив с данными
@@ -56,36 +63,14 @@ else{
             // {
                 echo '
                 <form action="../admin/redactBaza.php" method="POST">
-                <item>
-            <div class="img">
-                <input name="id" readonly value="'.$row_rs["id"].'">
-            </div>
-            <div class="name">
-                <input name="name" id="ObjName" value="'.$row_rs["name"].'">
-            </div>
-            <div class="price">
-                <input name="count" type="number" id="price" value="'.$row_rs["count"].'">
-                <span id="Obj">'.$row_rs["type"].'</span>
-            </div>
-            <input type="none" name="action" value="update" style="display:none">
-        </item>
-        <button type="submit">Сохранить</button>
+                <tr>
+                <td><input name="name" readonly value="'.$row_rs["name"].'"></td>
+                <td><input name="count" id="ObjName" value="'.$row_rs["count"].'"></td>
+                <td><input name="nacenka" type="number" id="price" value="'.$row_rs["nacenka"].'"></td>
+                <td>1111</td>
+            </tr>
         </form>';
         }?>
     </items>
-    <form action="../admin/redactBaza.php" method="POST">
-        <h2>Добавить таблицу</h2>
-        <label>Id</label>
-        <input type="number" name="id">
-        <label>Название</label>
-        <input type="text" name="name">
-        <label>Цена</label>
-        <input type="number" name="count">
-        <label>Тип</label>
-        <input type="text" name="type">
-        <input type="none" name="action" value="add" style="display:none">
-        <button type="submit">Добавить запись</button>
-    </form>
-    
 </body>
 </html>

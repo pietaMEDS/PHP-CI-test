@@ -5,6 +5,18 @@ import { svai } from "./vintovieSvai.js";
 import { wallHeightPrice } from "./wallHeight.js";
 import { zero } from "./zero_overlap.js";
 
+
+let response;
+
+$.ajax({
+    url: 'ajax.php',
+    method: 'GET',
+    success: function (data) {
+        response = JSON.parse(data);
+    }
+});
+
+
 let length = Number(localStorage.getItem('length'));
 let width = Number(localStorage.getItem('width'));
 const step = 2;
@@ -14,7 +26,7 @@ let kolSvai = (length / step + 1) * (width / step + 1);
 let svaiPrice = { price: 0 };
 const vintPricePlusBtn = document.getElementById('vintPricePlus');
 vintPricePlusBtn.addEventListener('click', (e) => {
-    svaiPrice = svai(vintPricePlusBtn.id, kolSvai);
+    svaiPrice = svai(vintPricePlusBtn.id, kolSvai, vintSvai);
     update(svaiPrice);
     saveSelectedElements();
     document.getElementById('Svai_JB').style.display = "none";
@@ -24,7 +36,7 @@ vintPricePlusBtn.addEventListener('click', (e) => {
 // Железобетоная свая
 const jelezBtn = document.getElementById('jelezPricePlus');
 jelezBtn.addEventListener('click', (e) => {
-    svaiPrice = svai(jelezBtn.id, kolSvai);
+    svaiPrice = svai(jelezBtn.id, kolSvai, jelezobeton);
     update(svaiPrice);
     saveSelectedElements();
     document.getElementById('Svai_Vint').style.display = "none";
@@ -161,11 +173,21 @@ window.addEventListener('load', () => {
 });
 
 // При переходе на калькулятор подругажет стоимость всех функций у модалок :)
+let vintSvai;
+let jelezobeton;
+setTimeout(() => {
+    vintSvai = response.variable1;
+    jelezobeton = response.variable2;
+
+    svai(jelezBtn.id, kolSvai, jelezobeton);
+    svai(vintPricePlusBtn.id, kolSvai, vintSvai);
+}, 1000);
+
+
+
 wallHeightPrice(length, width, 'bigWallBtn');
 wallHeightPrice(length, width, 'smallWallBtn');
-svai(jelezBtn.id, kolSvai);
-svai(vintPricePlusBtn.id, kolSvai);
 roof(length, width);
 stappingTotalPrice("vertObvDob", length, width, step);
 stappingTotalPrice("GorizObvDob", length, width, step);
-zero(length,width);
+zero(length, width);

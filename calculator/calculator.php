@@ -1,11 +1,11 @@
-<?php 
- require_once '../admin/connekt.php';
- $sql = $mysqli->prepare("SELECT * FROM const");
- $sql->execute();
- $result = $sql->get_result();
- $res = $result->fetch_assoc();
- $sql->close();
- $mysqli->close();
+<?php
+require_once '../admin/connekt.php';
+$sql = $mysqli->prepare("SELECT * FROM const");
+$sql->execute();
+$result = $sql->get_result();
+$res = $result->fetch_assoc();
+$sql->close();
+$mysqli->close();
 ?>
 
 
@@ -18,7 +18,7 @@ require './../Header/Head.php';
   <?php require './../Header/Header.php'; ?>
   <main class="main" id="main">
     <!-- <button id="btn">ПДФ АХА</button> -->
-    <a href="/mern.pdf" download="myDoc.pdf">Get pdf</a>
+    <!--<a href="/mern.pdf" download="myDoc.pdf">Get pdf</a>-->
     <div class="container_home">
       <div class="home">
         <!-- {/* ЧАСТИ ДОМА */} -->
@@ -213,8 +213,8 @@ require './../Header/Head.php';
                   <h2>Материалы:</h2>
                   <ul>
                     <li>Фундамент теплового контура</li>
-                    <li>Фундамент крыльца</li>
-                    <li>Фундамент террасы</li>
+                    <li><?php echo $res["name"] ?></li>
+                    <li>Крыльцо</li>
                     <li>Доставка фундамента</li>
                   </ul>
                 </div>
@@ -328,6 +328,7 @@ require './../Header/Head.php';
 
 
   </main>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="pdf.js"></script>
   <script src="./circle.js"></script>
   <script type="module" src='math.js'></script>

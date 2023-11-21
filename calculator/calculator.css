@@ -329,7 +329,6 @@ button .Empty {
   border-radius: 20px;
   width: 400px;
   margin-left: 42px;
-  margin-top: 30%;
   text-align: center;
   height: 180px;
 }
@@ -344,7 +343,7 @@ button .Empty {
 }
 
 .contName {
-  margin-top: -25%;
+
 }
 
 .prices {
@@ -401,7 +400,6 @@ button .Empty {
 .material {
   display: flex;
   justify-content: space-around;
-  margin-top: 45%;
 }
 
 .material h2 {
@@ -410,11 +408,11 @@ button .Empty {
 }
 
 .contWall {
-  margin-top: 30%;
+    
 }
 
 .matherialsWall {
-  margin-top: 50%;
+  margin-top: 21%;
   list-style-type: none;
   font-size: 22px;
   text-align: right;
@@ -434,7 +432,7 @@ button .Empty {
 }
 
 .contConst {
-  margin-top: -9%;
+  padding-top: 16%;
   list-style-type: none;
   font-size: 22px;
   text-align: right;
@@ -497,7 +495,7 @@ button .Empty {
 
 
 
-
+/* 
 @media (max-width:1500px) {
   .smeta {
     margin-top: -20%;
@@ -506,7 +504,7 @@ button .Empty {
   .itog-flex {
     margin-top: 10.5%;
   }
-}
+} */
 
 @media (max-width:1300px) {
   .home {

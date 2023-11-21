@@ -382,6 +382,7 @@ button .Empty {
   height: 100%;
   cursor: default;
   z-index: 10;
+  overflow-y: auto;
 }
 
 .itog-flex {

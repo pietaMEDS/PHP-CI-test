@@ -63,8 +63,6 @@ if (!empty($_SESSION["login"])) {
 </head>
 
 <body>
-    <h1>редактировать базу данных</h1>
-    <a href="../index.php">Выйти</a>
     <a href="../admin/logout.php">Выйти</a>
     <items>
     <table>
@@ -80,58 +78,17 @@ if (!empty($_SESSION["login"])) {
         {
         ?>
         <?php
-            // foreach($row_rs as $val) //перебор массива в цикле
-            // {
             echo '
-                <form action="../admin/redactBaza.php" method="POST">
-<<<<<<< HEAD
-                <item>
-            <div class="img">
-                <input name="id" readonly value="' . $row_rs["id"] . '">
-            </div>
-            <div class="name">
-                <input name="name" id="ObjName" value="' . $row_rs["name"] . '">
-            </div>
-            <div class="price">
-                <input name="count" type="number" id="price" value="' . $row_rs["count"] . '">
-
-                <span id="Obj">Руб</span>
-            </div>
-
-                <span id="Obj">' . $row_rs["type"] . '</span>
-            </div>
-            <input type="none" name="action" value="update" style="display:none">
-
-        </item>
-        <button type="submit">Сохранить</button>
-=======
                 <tr>
-                <td><input name="name" readonly value="'.$row_rs["name"].'"></td>
-                <td><input name="count" type="number" id="ObjName" value="'.$row_rs["count"].'"></td>
-                <td><input name="nacenka" type="number" id="price" value="'.$row_rs["nacenka"].'"></td>
-                <td>1111</td>
-            </tr>
->>>>>>> da6cbf87df0a44659b209c8139c4b4e7b3a64bdb
-        </form>';
+                    <td><input name="name" readonly value="'.$row_rs["name"].'"></td>
+                    <td><input name="count" type="number" id="ObjName" value="'.$row_rs["count"].'"></td>
+                    <td><input name="nacenka" type="number" id="price" value="'.$row_rs["nacenka"].'"></td>
+                    <td>1111</td>
+                </tr>
+                ';
         }
         ?>
     </items>
-<<<<<<< HEAD
-    <form action="../admin/redactBaza.php" method="POST">
-        <h2>Добавить таблицу</h2>
-        <label>Id</label>
-        <input type="number" name="id">
-        <label>Название</label>
-        <input type="text" name="name">
-        <label>Цена</label>
-        <input type="number" name="count">
-        <label>Тип</label>
-        <input type="text" name="type">
-        <input type="none" name="action" value="add" style="display:none">
-        <button type="submit">Добавить запись</button>
-    </form>
-=======
->>>>>>> da6cbf87df0a44659b209c8139c4b4e7b3a64bdb
 </body>
 
 </html>

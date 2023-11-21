@@ -32,6 +32,7 @@ function openModal(e) {
         // Открытие модалки с контентом (справа которая)
         function openModalContent(content, btn) {
             if (lastModalContent) {
+                document.querySelector("html").style.overflow = "hidden";
                 lastModalContent.style.display = 'none';
             }
             if (lastButton) {
@@ -55,6 +56,7 @@ function openModal(e) {
         // Закрытие обоих модалок
         function closeModal(e) {
             if (e.target === foundationModal) {
+                document.querySelector("html").style.overflow = "auto";
                 foundationModal.style.display = 'none';
                 if (lastModalContent) {
                     lastModalContent.style.display = 'none';
@@ -92,6 +94,7 @@ function openModal(e) {
         // Открытие модалки с контентом (справа которая)
         function openModalContent(content, btn) {
             if (lastModalContent) {
+                document.querySelector("html").style.overflow = "hidden";
                 lastModalContent.style.display = 'none';
             }
             if (lastButton) {
@@ -115,6 +118,7 @@ function openModal(e) {
         // Закрытие обоих модалок
         function closeModal(e) {
             if (e.target === wallModal) {
+                document.querySelector("html").style.overflow = "auto";
                 wallModal.style.display = 'none';
                 if (lastModalContent) {
                     lastModalContent.style.display = 'none';
@@ -144,6 +148,7 @@ function openModal(e) {
 
         function openModalContent(content, btn) {
             if (lastModalContent) {
+                document.querySelector("html").style.overflow = "hidden";
                 lastModalContent.style.display = 'none';
             }
             if (lastButton) {
@@ -160,6 +165,7 @@ function openModal(e) {
         }
 
         function closeModal(event) {
+            document.querySelector("html").style.overflow = "auto";
             const clickedElement = event.target;
             if (clickedElement.classList.contains('modalFloor')) {
                 floorModal.style.display = 'none';
@@ -192,28 +198,34 @@ function openModal(e) {
         function openModalContent(content, btn) {
             if (lastModalContent) {
                 lastModalContent.style.display = 'none';
+                document.querySelector("html").style.overflow = "hidden";
             }
             if (lastButton) {
+                document.querySelector("html").style.overflow = "hidden";
                 lastButton.classList.remove('active');
             }
 
             if (content === 'vertObv') {
+                document.querySelector("html").style.overflow = "hidden";
                 gorizlist.style.display = 'none';
                 vertical.style.display = 'block';
                 lastModalContent = vertical;
             } else if (content === 'gorizObv') {
+                document.querySelector("html").style.overflow = "hidden";
                 vertical.style.display = 'none';
                 gorizlist.style.display = 'block';
                 lastModalContent = gorizlist;
             }
 
             btn.classList.add('active');
-            lastButton = btn;
+            lastButton = btn; 
+            document.querySelector("html").style.overflow = "auto";
         }
 
         // Закрытие обоих модалок
         function closeModal(e) {
             if (e.target === strappingModal) {
+                document.querySelector("html").style.overflow = "auto";
                 strappingModal.style.display = 'none';
                 if (lastModalContent) {
                     lastModalContent.style.display = 'none';

@@ -1,11 +1,11 @@
-<?php 
- require_once '../admin/connekt.php';
- $sql = $mysqli->prepare("SELECT * FROM const");
- $sql->execute();
- $result = $sql->get_result();
- $res = $result->fetch_assoc();
- $sql->close();
- $mysqli->close();
+<?php
+require_once '../admin/connekt.php';
+$sql = $mysqli->prepare("SELECT * FROM const");
+$sql->execute();
+$result = $sql->get_result();
+$res = $result->fetch_assoc();
+$sql->close();
+$mysqli->close();
 ?>
 
 
@@ -328,6 +328,7 @@ require './../Header/Head.php';
 
 
   </main>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="pdf.js"></script>
   <script src="./circle.js"></script>
   <script type="module" src='math.js'></script>

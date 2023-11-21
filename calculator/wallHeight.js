@@ -1,5 +1,4 @@
 export function wallHeightPrice(length, width, id) {
-
     const sipPanel = (length + width) * (2 / 1.25);
     const pilomaterialKamennoySushki = 24725;
     let price = 0;

@@ -67,6 +67,13 @@ if (!empty($_SESSION["login"])) {
     <a href="../index.php">Выйти</a>
     <a href="../admin/logout.php">Выйти</a>
     <items>
+    <table>
+            <tr>
+                <th>Наименование</th>
+                <th>Себестоимость</th>
+                <th>Наценка</th>
+                <th>Итог</th>
+            </tr>
         <?php
         $name = mysqli_query($mysqli, "SELECT * FROM const");
         while ($row_rs = mysqli_fetch_assoc($name)) // массив с данными
@@ -77,6 +84,7 @@ if (!empty($_SESSION["login"])) {
             // {
             echo '
                 <form action="../admin/redactBaza.php" method="POST">
+<<<<<<< HEAD
                 <item>
             <div class="img">
                 <input name="id" readonly value="' . $row_rs["id"] . '">
@@ -96,10 +104,19 @@ if (!empty($_SESSION["login"])) {
 
         </item>
         <button type="submit">Сохранить</button>
+=======
+                <tr>
+                <td><input name="name" readonly value="'.$row_rs["name"].'"></td>
+                <td><input name="count" type="number" id="ObjName" value="'.$row_rs["count"].'"></td>
+                <td><input name="nacenka" type="number" id="price" value="'.$row_rs["nacenka"].'"></td>
+                <td>1111</td>
+            </tr>
+>>>>>>> da6cbf87df0a44659b209c8139c4b4e7b3a64bdb
         </form>';
         }
         ?>
     </items>
+<<<<<<< HEAD
     <form action="../admin/redactBaza.php" method="POST">
         <h2>Добавить таблицу</h2>
         <label>Id</label>
@@ -113,6 +130,8 @@ if (!empty($_SESSION["login"])) {
         <input type="none" name="action" value="add" style="display:none">
         <button type="submit">Добавить запись</button>
     </form>
+=======
+>>>>>>> da6cbf87df0a44659b209c8139c4b4e7b3a64bdb
 </body>
 
 </html>

@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST["name"];
     $count = $_POST["count"];
     $extra = $_POST['nacenka'];
-    $total = $_POST['total'];
+    $total = $count + ($count * $extra);
 
     $row = "UPDATE const SET name=?, costPrice=?, extraPrice=?, totalPrice=? WHERE id=?";
     $query = $mysqli->prepare($row);

@@ -1,8 +1,24 @@
 body,
 html{
+    font-size: 30px;
     color: white;
+    margin: 0;
+    padding: 0;
 }
-h1:first-child{
-    margin-left: 8.5%;
-    margin-top: 5%;
+#firstH{
+    text-align: center;
+    font-size: 48px;
+}
+.allElements{
+    margin-left: 202px;
+}
+.allElements p{
+    font-size: 26px;
+    color: #ADADAD;
+}
+.mainMat{
+    font-size: 32px;
+}
+.allElements ul li{
+    font-size: 30px;
 }

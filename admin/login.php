@@ -13,7 +13,7 @@
 <body>
     <form action="../admin/admin.php" method="POST">
          <div class="login_card">
-            <h2>Авторизация</h3>
+            <h2>Авторизация</h2>
             <input type="text" name="login" placeholder="Логин" class="inputs"></input>
             <input type="password" name="password" placeholder="Пароль" class="inputs"></input>
             <button type="submit" class="submitBtn" id="submitId">Войти</button>

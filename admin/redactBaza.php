@@ -1,11 +1,10 @@
 <?php
 session_start();
+
 $pageStyles = 'admin.css';
 require "../Header/Head.php";
 require "../Header/Header.php";
 require_once '../admin/connekt.php';
-
-
 
 
 

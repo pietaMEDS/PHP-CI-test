@@ -500,7 +500,7 @@ button .Empty {
 
 
 
-@media (max-width:800px) {
+@media (max-width:1300px) {
   .home {
     position: static;
     display: flex;

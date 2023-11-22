@@ -8,11 +8,12 @@ html{
     color: white;
 }
 .gridContainer{
-    margin-left: 110px;
     display: grid;
     grid-template-columns: 45% 45%;
-    grid-column-gap: 80px;
+    grid-column-gap: 50px;
     grid-row-gap: 32px;
+    justify-content: center;
+
 }
 #firstH{
     margin-top: 34px;
@@ -40,6 +41,7 @@ html{
     font-size: 40px;
 }
 .majorType{
+    margin-top: 12px;
     font-size: 18px;
     color: #7E7E7E;
     margin-left: 26px;

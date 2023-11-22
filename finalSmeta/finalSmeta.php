@@ -22,8 +22,6 @@ require './../Header/Header.php';
             </div>
         </div>
     </div>
-    <script>
-        
-    </script>
+    <script src="finalSmeta.js"></script>
 </body>
 

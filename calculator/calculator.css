@@ -499,18 +499,8 @@ button .Empty {
 
 
 
-/* 
-@media (max-width:1500px) {
-  .smeta {
-    margin-top: -20%;
-  }
 
-  .itog-flex {
-    margin-top: 10.5%;
-  }
-} */
-
-@media (max-width:1300px) {
+@media (max-width:800px) {
   .home {
     position: static;
     display: flex;
@@ -588,8 +578,6 @@ button .Empty {
     height: 50px;
     border: 5px solid #FF855D !important;
   }
-}
-@media (max-width:800px){
   .header__inner img{
     display: none;
   }

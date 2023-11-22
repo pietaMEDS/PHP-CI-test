@@ -17,8 +17,6 @@ require './../Header/Head.php';
 <body>
   <?php require './../Header/Header.php'; ?>
   <main class="main" id="main">
-    <!-- <button id="btn">ПДФ АХА</button> -->
-    <!--<a href="/mern.pdf" download="myDoc.pdf">Get pdf</a>-->
     <div class="container_home">
       <div class="home">
         <!-- {/* ЧАСТИ ДОМА */} -->
@@ -81,8 +79,7 @@ require './../Header/Head.php';
       <div class="matherials_table">
         <h4>Стоимость материалов дома</h4>
         <div class="matherials_row"></div>
-        <div class="houseprice">
-        </div>
+        <div class="houseprice"></div>
       </div>
       <!-- Модалка стен -->
       <div class="modalWall">

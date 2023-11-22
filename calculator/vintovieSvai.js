@@ -1,16 +1,15 @@
-export function svai(id, kolSvai, type) {
-console.log(type);    
+export function svai(id, kolSvai, typeSvai, svaiDostavka, motnaj) {
     let price = 0;
-    if (id === 'jelezPricePlus') {
-        let jelezSv = Number(type.totalPrice);
-        let jelezMont = 2420;
-        console.log(jelezSv);
+    let dostavka = Number(svaiDostavka.totalPrice);
+    let svaiType = Number(typeSvai.totalPrice);
+    let typeMontaj = Number(motnaj.totalPrice);
 
-        let jelezFirst = kolSvai * (jelezSv + jelezMont);
+    if (id === 'jelezPricePlus') {
+        let jelezFirst = kolSvai * (svaiType + typeMontaj);
         let firstLi = document.getElementById('jelezFundCost');
         firstLi.innerText = jelezFirst;
 
-        price = jelezFirst + 14025 + 8415 + 15000;
+        price = jelezFirst + 14025 + 8415 + dostavka;
         let ttlJelez = document.getElementById('jelezTotalCost');
         ttlJelez.innerText = price + " руб.";
 
@@ -23,24 +22,20 @@ console.log(type);
             f1: "Фундамент теплового контура " + jelezFirst,
             f2: "Фундамент крыльца " + 14025,
             f3: "Фундамент терассы " + 8415,
-            f4: "Доставка фундамента " + 15000,
+            f4: "Доставка фундамента " + dostavka,
             price,
         }
     }
     else if (id === 'vintPricePlus') {
         let ttlCost = document.getElementById('totalCost');
         let teplovoiContur = document.getElementById('fundCost');
+        let foundationSvaiDostavka = document.getElementById('dostavkaSvai');
+        let vintFundCost = kolSvai * (svaiType + typeMontaj);
 
-        let costSvai = Number(type.totalPrice);
-        console.log(costSvai);
-        let costMontajka = 2300;
-
-        let vintFundCost = kolSvai * (costSvai + costMontajka);
-        console.log('kolSvai: ', kolSvai);
-        console.log('vintFundCost: ', vintFundCost);
+        foundationSvaiDostavka.innerText = dostavka;
 
         teplovoiContur.innerText = vintFundCost;
-        price = vintFundCost + 12938 + 7763 + 10000;
+        price = vintFundCost + 12938 + 7763 + dostavka;
         ttlCost.innerText = price + " руб.";
 
         return {
@@ -52,7 +47,7 @@ console.log(type);
             f1: "Фундамент теплового контура " + vintFundCost,
             f2: "Фундамент крыльца " + 12938,
             f3: "Фундамент терассы " + 7763,
-            f4: "Доставка фундамента " + 10000,
+            f4: "Доставка фундамента " + dostavka,
             price,
         }
     }

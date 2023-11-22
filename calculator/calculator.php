@@ -224,6 +224,7 @@ require './../Header/Head.php';
                   <li><?php echo $res["count"] ?></li>
                   <li>7 763</li>
                   <li>10 000</li>
+                  <li id="dostavkaSvai"></li>
                 </div>
               </div>
 

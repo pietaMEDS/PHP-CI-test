@@ -61,10 +61,10 @@ if (!empty($_SESSION["login"])) {
                 echo '<form action="redactBaza.php" method="POST">
                     <tr>
                 <td><input name="name" readonly value="' . $row_rs["name"] . '"></td>
-                <td><input name="count" type="number" id="ObjName_' . $row_rs["id"] . '" value="' . $row_rs["costPrice"] . '"></td>
-                <td><input name="nacenka" type="number" id="price_' . $row_rs["id"] . '" value="' . $row_rs["extraPrice"] . '"></td>
-                <td><input name="total" type="number" id="total_' . $row_rs["id"] . '" value="' . $row_rs["totalPrice"] . '"></td>
-                <td><input name="id" type="number" id"id_"' . $row_rs["id"] . '" value="' . $row_rs["id"] . '"></td>
+                <td><input name="count" type="number" value="' . $row_rs["costPrice"] . '"></td>
+                <td><input name="nacenka" type="text" value="' . $row_rs["extraPrice"] . '"></td>
+                <td><input name="total" type="number" value="' . $row_rs["totalPrice"] . '"></td>
+                <td><input name="id" type="number" value="' . $row_rs["id"] . '"></td>
         </tr>
         <button type="submit">сохранить</button>
         </form>';

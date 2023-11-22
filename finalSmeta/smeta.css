@@ -1,16 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+}
 body,
 html{
     font-size: 30px;
     color: white;
-    margin: 0;
-    padding: 0;
+}
+.gridContainer{
+    margin-left: 110px;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-column-gap: 80px;
+    grid-row-gap: 32px;
 }
 #firstH{
-    text-align: center;
+    margin-top: 34px;
+    margin-bottom: 53px;
+    margin-left: 110px;
     font-size: 48px;
 }
-.allElements{
-    margin-left: 202px;
+.elementContainer{
+    height: 100px;
+    border: 3px solid #FF855D;
+    border-radius: 30px;
 }
 .allElements p{
     font-size: 26px;
@@ -21,4 +34,32 @@ html{
 }
 .allElements ul li{
     font-size: 30px;
+}
+.gridZag{
+    text-align: center;
+    font-size: 40px;
+}
+.majorType{
+    font-size: 18px;
+    color: #7E7E7E;
+    margin-left: 26px;
+}
+.minorType{
+    margin-left: 26px;
+}
+.priceNBtn{
+    float: right;
+    padding-right: 25px;
+}
+.opener{
+    color: #FF855D;
+    background-color: rgba(0,0,0,0);
+    border-color: rgba(0,0,0,0);
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+.opener svg{
+    width: 100%;
+    height: 100%;
 }

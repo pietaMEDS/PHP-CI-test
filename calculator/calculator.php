@@ -221,9 +221,9 @@ require './../Header/Head.php';
 
                 <div class="contConst">
                   <li id="fundCost"></li>
-                  <li><?php echo $res["count"] ?></li>
                   <li>7 763</li>
                   <li>10 000</li>
+                  <li id="dostavkaSvai"></li>
                 </div>
               </div>
 

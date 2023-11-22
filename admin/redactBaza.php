@@ -1,16 +1,10 @@
 <?php
 session_start();
+
 $pageStyles = 'admin.css';
 require "../Header/Head.php";
 require "../Header/Header.php";
 require_once '../admin/connekt.php';
-
-
-if (!empty($_SESSION["login"])) {
-    echo "Добро пожаловать " . $_SESSION['login'];
-} else {
-    echo 'Unknow';
-}
 
 
 
@@ -20,18 +14,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST["name"];
     $count = $_POST["count"];
     $extra = $_POST['nacenka'];
-    $total = $count + ($count * $extra);
+    $total = array(); // Create an empty array for storing the calculated totals
+
+    // Iterate over the arrays and perform calculations
+    for ($i = 0; $i < count($id); $i++) {
+        $subtotal = $count[$i] + ($count[$i] * ($extra[$i] / 100));
+        $total[] = $subtotal; // Store the calculated total in the array
+    }
 
     $row = "UPDATE const SET name=?, costPrice=?, extraPrice=?, totalPrice=? WHERE id=?";
     $query = $mysqli->prepare($row);
-    $query->bind_param("sssss", $name, $count, $extra, $total, $id); // Исправлен порядок параметров
-    $query->execute();
+
+    // Iterate over the arrays and bind the parameters in the loop
+    for ($i = 0; $i < count($id); $i++) {
+        $query->bind_param("sssss", $name[$i], $count[$i], $extra[$i], $total[$i], $id[$i]);
+        $query->execute();
+    }
+
     $query->close();
-}
-if (!empty($_SESSION["login"])) {
-    echo "<h1>Редактировать базу данных</h1>" . "</br>";
-} else {
-    header("Location: ./../admin/hac.php");
 }
 
 ?>
@@ -48,29 +48,35 @@ if (!empty($_SESSION["login"])) {
 <body>
     <a href="../admin/logout.php">Выйти</a>
     <items>
-        <table>
+    <table>
+    <tr>
+        <th>Id</th>
+        <th>Наименование</th>
+        <th>Себестоимость</th>
+        <th>Наценка в %</th>
+        <th>Итог</th>
+    </tr>
+    <form action="redactBaza.php" method="POST">
+        <?php
+        $name = mysqli_query($mysqli, "SELECT * FROM const");
+        while ($row_rs = mysqli_fetch_assoc($name)) {
+            echo '
             <tr>
-                <th>Наименование</th>
-                <th>Себестоимость</th>
-                <th>Наценка</th>
-                <th>Итог</th>
-            </tr>
-            <?php
-            $name = mysqli_query($mysqli, "SELECT * FROM const");
-            while ($row_rs = mysqli_fetch_assoc($name)) {
-                echo '<form action="redactBaza.php" method="POST">
-                    <tr>
-                <td><input name="name" readonly value="' . $row_rs["name"] . '"></td>
-                <td><input name="count" type="number" id="ObjName_' . $row_rs["id"] . '" value="' . $row_rs["costPrice"] . '"></td>
-                <td><input name="nacenka" type="number" id="price_' . $row_rs["id"] . '" value="' . $row_rs["extraPrice"] . '"></td>
-                <td><input name="total" type="number" id="total_' . $row_rs["id"] . '" value="' . $row_rs["totalPrice"] . '"></td>
-                <td><input name="id" type="number" id"id_"' . $row_rs["id"] . '" value="' . $row_rs["id"] . '"></td>
+                <td><input name="id[]" readonly value="' . $row_rs["id"] . '"></td>
+                <td><input name="name[]" readonly value="' . $row_rs["name"] . '"></td>
+                <td><input name="count[]" type="number" id="ObjName_' . $row_rs["id"] . '" value="' . $row_rs["costPrice"] . '"></td>
+                <td><input name="nacenka[]" type="number" id="price_' . $row_rs["id"] . '" value="' . $row_rs["extraPrice"] . '"></td>
+                <td><input name="total[]" type="number" id="total_' . $row_rs["id"] . '" value="' . $row_rs["totalPrice"] . '"></td>
+            </tr>';
+        }
+        ?>
+        <tr>
+            <td colspan="5">
+                <button type="submit">Сохранить</button>
+            </td>
         </tr>
-        <button type="submit">сохранить</button>
-        </form>';
-            }
-            ?>
-        </table>
+    </form>
+</table>
     </items>
 </body>
 

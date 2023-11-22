@@ -17,8 +17,6 @@ require './../Header/Head.php';
 <body>
   <?php require './../Header/Header.php'; ?>
   <main class="main" id="main">
-    <!-- <button id="btn">ПДФ АХА</button> -->
-    <!--<a href="/mern.pdf" download="myDoc.pdf">Get pdf</a>-->
     <div class="container_home">
       <div class="home">
         <!-- {/* ЧАСТИ ДОМА */} -->
@@ -43,25 +41,25 @@ require './../Header/Head.php';
         </div>
         <!-- {/* ЛИНИИ ВЫБОРА */} -->
         <div class="container_choice" id="wall">
-          <div class="circle" id="circleWall"></div>
+          <div class="circle" id="circleWall">4</div>
           <div class="line" id="lineWall"></div>
           <div class="Empty" id="emptyWall"></div>
         </div>
 
         <div class="container_choice" id="foundation">
-          <div class="circle" id="circleFoundation"></div>
+          <div class="circle" id="circleFoundation">3</div>
           <div class="line" id="lineFoundation"></div>
           <div class="Empty" id="emptyFoundation"></div>
         </div>
         <div class="container_choice" id="floor">
           <div class="Empty" id="emptyFloor"></div>
           <div class="line" id="lineFloor"></div>
-          <div class="circle" id="circleFloor"></div>
+          <div class="circle" id="circleFloor">2</div>
         </div>
         <div class="container_choice" id="support">
           <div class="Empty" id="emptySupport"></div>
           <div class="line" id="lineSupport"></div>
-          <div class="circle" id="circleSupport"></div>
+          <div class="circle" id="circleSupport">1</div>
         </div>
       </div>
     </div>
@@ -81,8 +79,7 @@ require './../Header/Head.php';
       <div class="matherials_table">
         <h4>Стоимость материалов дома</h4>
         <div class="matherials_row"></div>
-        <div class="houseprice">
-        </div>
+        <div class="houseprice"></div>
       </div>
       <!-- Модалка стен -->
       <div class="modalWall">
@@ -221,9 +218,9 @@ require './../Header/Head.php';
 
                 <div class="contConst">
                   <li id="fundCost"></li>
-                  <li><?php echo $res["count"] ?></li>
                   <li>7 763</li>
                   <li>10 000</li>
+                  <li id="dostavkaSvai"></li>
                 </div>
               </div>
 

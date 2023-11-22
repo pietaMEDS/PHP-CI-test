@@ -6,11 +6,6 @@ require "../Header/Header.php";
 require_once '../admin/connekt.php';
 
 
-if (!empty($_SESSION["login"])) {
-    echo "Добро пожаловать " . $_SESSION['login'];
-} else {
-    echo 'Unknow';
-}
 
 
 
@@ -20,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST["name"];
     $count = $_POST["count"];
     $extra = $_POST['nacenka'];
-    $total = $count + ($count * $extra);
+    $total = $count + ($count * ($extra / 100));
 
     $row = "UPDATE const SET name=?, costPrice=?, extraPrice=?, totalPrice=? WHERE id=?";
     $query = $mysqli->prepare($row);
@@ -50,26 +45,32 @@ if (!empty($_SESSION["login"])) {
     <items>
         <table>
             <tr>
+                <th>Id</th>
                 <th>Наименование</th>
                 <th>Себестоимость</th>
-                <th>Наценка</th>
+                <th>Наценка в %</th>
                 <th>Итог</th>
             </tr>
+            <form action="redactBaza.php" method="POST">
             <?php
             $name = mysqli_query($mysqli, "SELECT * FROM const");
             while ($row_rs = mysqli_fetch_assoc($name)) {
-                echo '<form action="redactBaza.php" method="POST">
+                echo '
                     <tr>
+                <td><input name="id" readonly ' . $row_rs["id"] . '" value="' . $row_rs["id"] . '"></td>
                 <td><input name="name" readonly value="' . $row_rs["name"] . '"></td>
                 <td><input name="count" type="number" id="ObjName_' . $row_rs["id"] . '" value="' . $row_rs["costPrice"] . '"></td>
                 <td><input name="nacenka" type="number" id="price_' . $row_rs["id"] . '" value="' . $row_rs["extraPrice"] . '"></td>
                 <td><input name="total" type="number" id="total_' . $row_rs["id"] . '" value="' . $row_rs["totalPrice"] . '"></td>
-                <td><input name="id" type="number" id"id_"' . $row_rs["id"] . '" value="' . $row_rs["id"] . '"></td>
+               
         </tr>
-        <button type="submit">сохранить</button>
-        </form>';
+
+        ';
             }
+            
             ?>
+                    <button type="submit">сохранить</button>
+                    </form>
         </table>
     </items>
 </body>

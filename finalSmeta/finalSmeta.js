@@ -1,6 +1,32 @@
+let length = Number(localStorage.getItem('length'));
+let width = Number(localStorage.getItem('width'));
+
+
+let sipPan = length * width / (2.5 * 1.25);
+let obrezki = 0.1;
+let itogSip = sipPan + sipPan * obrezki;
+let sipNaNulev = itogSip * 4600; // поменять на итоговую с бд(какие-то сипы)
+
+let pilmatLng = itogSip * 2 * (2.5 + 1.25 / 2) * 2.8;
+let V = pilmatLng * 0.04 * (0.224 - 0.024);
+let obrezkiTwo = 0.15;
+let itogV = V + V * obrezkiTwo;
+let pilomatNaNulev = itogV * 24725; // поменять на итоговую с бд(пиломат каменной сушки)
+let resultNulev = sipNaNulev + pilomatNaNulev;
+
+
+let nullevPerekrit = {
+    majorType: 'Нулевое перекрытие',
+    minorType: 'Нулевое перекрытие',
+    total: Math.round(resultNulev) + ' руб.'
+}
+
+
+
+
 for(let i = 0; i < 13; i++){
     if(i === 7 || i === 8 || i === 9 || i === 10 || i === 11 || i === 12){
-        var grid = document.querySelector(".gridContainer");
+        let  grid = document.querySelector(".gridContainer");
         let pusto = document.createElement("div");
         grid.appendChild(pusto);
     }
@@ -9,18 +35,18 @@ for(let i = 0; i < 13; i++){
 
     let spanMajorType = document.createElement("p");
     spanMajorType.classList.add("majorType");
-    spanMajorType.textContent = "Название ";
+    spanMajorType.textContent = nullevPerekrit.majorType;
 
     let spanMinorType = document.createElement("span");
     spanMinorType.classList.add("minorType");
-    spanMinorType.textContent = "Описание ";
+    spanMinorType.textContent = nullevPerekrit.minorType;
 
     let priceNBtnContainer = document.createElement("div");
     priceNBtnContainer.classList.add("priceNBtn");
 
     let spanMajorPrice = document.createElement("span");
     spanMajorPrice.classList.add("majorPrice");
-    spanMajorPrice.textContent = "Цена элемента";
+    spanMajorPrice.textContent = nullevPerekrit.total;
 
     let buttonOpener = document.createElement("button");
     buttonOpener.classList.add("opener");
@@ -33,8 +59,9 @@ for(let i = 0; i < 13; i++){
     newElementContainer.appendChild(spanMinorType);
     newElementContainer.appendChild(priceNBtnContainer);
 
-    var gridContainer = document.querySelector(".gridContainer");
+    let gridContainer = document.querySelector(".gridContainer");
 
     // Добавляем новый элемент в родительский элемент
     gridContainer.appendChild(newElementContainer);
 }
+

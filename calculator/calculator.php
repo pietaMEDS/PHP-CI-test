@@ -41,25 +41,25 @@ require './../Header/Head.php';
         </div>
         <!-- {/* ЛИНИИ ВЫБОРА */} -->
         <div class="container_choice" id="wall">
-          <div class="circle" id="circleWall"></div>
+          <div class="circle" id="circleWall">4</div>
           <div class="line" id="lineWall"></div>
           <div class="Empty" id="emptyWall"></div>
         </div>
 
         <div class="container_choice" id="foundation">
-          <div class="circle" id="circleFoundation"></div>
+          <div class="circle" id="circleFoundation">3</div>
           <div class="line" id="lineFoundation"></div>
           <div class="Empty" id="emptyFoundation"></div>
         </div>
         <div class="container_choice" id="floor">
           <div class="Empty" id="emptyFloor"></div>
           <div class="line" id="lineFloor"></div>
-          <div class="circle" id="circleFloor"></div>
+          <div class="circle" id="circleFloor">2</div>
         </div>
         <div class="container_choice" id="support">
           <div class="Empty" id="emptySupport"></div>
           <div class="line" id="lineSupport"></div>
-          <div class="circle" id="circleSupport"></div>
+          <div class="circle" id="circleSupport">1</div>
         </div>
       </div>
     </div>

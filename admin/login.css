@@ -1,0 +1,43 @@
+html,
+body{
+    color: white;
+    background-color: #DDDAD8;
+}
+.login_card{
+    background-color: #39363E;
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    margin-top: 45px;
+    text-align: center;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.login_card h2{
+    margin-top: 15%;
+    font-size: 32px;
+}
+.login_card .inputs{
+    width: 90%;
+    height: 5%;
+    border: none;
+    border-bottom: 2.5px solid #FF855D;
+    background-color: transparent;
+    color: inherit;
+    outline: none;
+    font-size: 32px;
+    margin-top: 5%;
+}
+.submitBtn{
+    width: 300px;
+    height: 65px;
+    border-radius: 20px;
+    border: 2px solid #FF855D;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    font-size: 28px;
+    margin-top: 10%;
+    cursor: pointer;
+}

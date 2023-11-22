@@ -26,7 +26,7 @@ let kolSvai = (length / step + 1) * (width / step + 1);
 let svaiPrice = { price: 0 };
 const vintPricePlusBtn = document.getElementById('vintPricePlus');
 vintPricePlusBtn.addEventListener('click', (e) => {
-    svaiPrice = svai(vintPricePlusBtn.id, kolSvai, vintSvai);
+    svaiPrice = svai(vintPricePlusBtn.id, kolSvai, vintSvai, vintSvaiDostavka, montajVint);
     update(svaiPrice);
     saveSelectedElements();
     document.getElementById('Svai_JB').style.display = "none";
@@ -36,7 +36,7 @@ vintPricePlusBtn.addEventListener('click', (e) => {
 // Железобетоная свая
 const jelezBtn = document.getElementById('jelezPricePlus');
 jelezBtn.addEventListener('click', (e) => {
-    svaiPrice = svai(jelezBtn.id, kolSvai, jelezobeton);
+    svaiPrice = svai(jelezBtn.id, kolSvai, jelezobeton, jelezSvaiDostavka, montajJelez);
     update(svaiPrice);
     saveSelectedElements();
     document.getElementById('Svai_Vint').style.display = "none";
@@ -173,14 +173,26 @@ window.addEventListener('load', () => {
 });
 
 // При переходе на калькулятор подругажет стоимость всех функций у модалок :)
-let vintSvai;
-let jelezobeton;
-setTimeout(() => {
-    vintSvai = response.variable1;
-    jelezobeton = response.variable2;
 
-    svai(jelezBtn.id, kolSvai, jelezobeton);
-    svai(vintPricePlusBtn.id, kolSvai, vintSvai);
+let vintSvai;
+let vintSvaiDostavka;
+let montajVint;
+
+let jelezSvaiDostavka;
+let jelezobeton;
+let montajJelez;
+setTimeout(() => {
+    // СВАИ
+    vintSvai = response.variable1;
+    vintSvaiDostavka = response.variable3;
+    montajVint = response.variable5;
+    svai(vintPricePlusBtn.id, kolSvai, vintSvai, vintSvaiDostavka, montajVint);
+
+    jelezobeton = response.variable2;
+    jelezSvaiDostavka = response.variable4;
+    montajJelez = response.variable6;
+    svai(jelezBtn.id, kolSvai, jelezobeton, jelezSvaiDostavka, montajJelez);
+
 }, 1000);
 
 

@@ -218,7 +218,7 @@ require './../Header/Head.php';
 
                 <div class="contConst">
                   <li id="fundCost"></li>
-                  <li>7 763</li>
+                  <li><?php echo $res['costPrice'] ?></li>
                   <li>10 000</li>
                   <li id="dostavkaSvai"></li>
                 </div>

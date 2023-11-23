@@ -1,5 +1,5 @@
-export function stappingTotalPrice(id, length, width, step) {
-    // Обвязка
+export function stappingTotalPrice(id, length, width, step, sushka) {
+    const typeSushka = Number(sushka.totalPrice);
     // обвязка вертикальная
     let price = 0;
     if (id === 'vertObvDob') {
@@ -9,7 +9,7 @@ export function stappingTotalPrice(id, length, width, step) {
         let obiemGoriz = (lenghtGorizDsk * 0.2 * 0.05);
         let obiemPilomat = obiemVert + obiemGoriz;
         obiemPilomat += (obiemPilomat * 0.15);
-        let resultObvazkaFund = Math.round(obiemPilomat * 24725);
+        let resultObvazkaFund = Math.round(obiemPilomat * typeSushka);
         document.getElementById("vertTtl").innerText = resultObvazkaFund + ' руб.';
         price = resultObvazkaFund;
 
@@ -31,7 +31,7 @@ export function stappingTotalPrice(id, length, width, step) {
         let obiemScnd = lenghtGorizGoriz * 0.2 * 0.05;
         let obiemSum = obiemFrst + obiemScnd;
         let finalObiem = obiemSum + obiemSum * 0.15;
-        let resultObvazkaGoriz = Math.round(finalObiem * 24725);
+        let resultObvazkaGoriz = Math.round(finalObiem * typeSushka);
         document.getElementById("gorizTtl").innerText = resultObvazkaGoriz + ' руб.';
         price = resultObvazkaGoriz;
 

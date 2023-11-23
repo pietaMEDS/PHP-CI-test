@@ -3,7 +3,7 @@ import { stappingTotalPrice } from "./stapping.js";
 import { afasf } from "./toaliets.js";
 import { svai } from "./vintovieSvai.js";
 import { wallHeightPrice } from "./wallHeight.js";
-import { zero } from "./zero_overlap.js";
+
 
 
 let response;
@@ -202,4 +202,3 @@ wallHeightPrice(length, width, 'smallWallBtn');
 roof(length, width);
 stappingTotalPrice("vertObvDob", length, width, step);
 stappingTotalPrice("GorizObvDob", length, width, step);
-zero(length, width);

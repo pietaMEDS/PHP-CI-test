@@ -1,3 +1,4 @@
+//Нулевое перекрытие
 let length = Number(localStorage.getItem('length'));
 let width = Number(localStorage.getItem('width'));
 
@@ -15,11 +16,34 @@ let pilomatNaNulev = itogV * 24725; // поменять на итоговую с
 let resultNulev = sipNaNulev + pilomatNaNulev;
 
 
-let nullevPerekrit = {
+//Потолок первого этажа
+let obrezkiRoof = 0.1;
+let itogSipRoof = sipPan + sipPan * obrezkiRoof;
+let sipPanRoof = itogSipRoof * 4140; // Поменять на D35
+let pilmatRoofLng = itogSipRoof * (2.5 + 1.25 / 2) * 2;
+let VRoof = pilmatRoofLng * 0.04 * (0.174 - 0.024);
+let obrezkiRoofTwo = 0.15;
+let itogVRoof = VRoof + VRoof * obrezkiRoofTwo;
+let pilomatRoofItog = itogVRoof * 24725 //Поменять на D42
+let fullRoof = sipPanRoof + pilomatRoofItog;
+
+
+
+let matObjArr = [
+    nullevPerekrit = {
+        id: 5,
     majorType: 'Нулевое перекрытие',
     minorType: 'Нулевое перекрытие',
     total: Math.round(resultNulev) + ' руб.'
-}
+    }]
+[
+    roofObj = {
+        id: 6,
+        majorType: 'Потолок первого этажа',
+        minorType: 'Потолок первого этажа',
+        total: Math.round(fullRoof) + ' руб.'
+    }
+];
 
 
 
@@ -35,18 +59,18 @@ for(let i = 0; i < 13; i++){
 
     let spanMajorType = document.createElement("p");
     spanMajorType.classList.add("majorType");
-    spanMajorType.textContent = nullevPerekrit.majorType;
+    spanMajorType.textContent = matObjArr[i].majorType;
 
     let spanMinorType = document.createElement("span");
     spanMinorType.classList.add("minorType");
-    spanMinorType.textContent = nullevPerekrit.minorType;
+    spanMinorType.textContent = matObjArr[i].minorType;
 
     let priceNBtnContainer = document.createElement("div");
     priceNBtnContainer.classList.add("priceNBtn");
 
     let spanMajorPrice = document.createElement("span");
     spanMajorPrice.classList.add("majorPrice");
-    spanMajorPrice.textContent = nullevPerekrit.total;
+    spanMajorPrice.textContent = matObjArr[i].total;
 
     let buttonOpener = document.createElement("button");
     buttonOpener.classList.add("opener");

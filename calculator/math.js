@@ -220,14 +220,4 @@ setTimeout(() => {
 
 }, 1000);
 
-<<<<<<< HEAD
-
-
-wallHeightPrice(length, width, 'bigWallBtn');
-wallHeightPrice(length, width, 'smallWallBtn');
-roof(length, width);
-stappingTotalPrice("vertObvDob", length, width, step);
-stappingTotalPrice("GorizObvDob", length, width, step);
-=======
 zero(length, width);
->>>>>>> 68547a0aa74b2674cf6283b26c470e0d30a907ec

@@ -48,7 +48,7 @@ jelezBtn.addEventListener('click', (e) => {
 let wallPrice = { price: 0 };
 // при клике на стену 2.5 метра
 document.getElementById('smallWallBtn').addEventListener('click', () => {
-    wallPrice = wallHeightPrice(length, width, 'smallWallBtn');
+    wallPrice = wallHeightPrice(length, width, 'smallWallBtn', sushkaKamennaya, sip1);
     update(wallPrice);
     saveSelectedElements();
     document.getElementById('img_floor1').style.display = "none";
@@ -57,7 +57,7 @@ document.getElementById('smallWallBtn').addEventListener('click', () => {
 
 // при клике на стену 2.8 метра
 document.getElementById('bigWallBtn').addEventListener('click', () => {
-    wallPrice = wallHeightPrice(length, width, 'bigWallBtn');
+    wallPrice = wallHeightPrice(length, width, 'bigWallBtn', sushkaKamennaya, sip2);
     update(wallPrice);
     saveSelectedElements();
     document.getElementById('img_floor1').style.display = "none";
@@ -67,7 +67,7 @@ document.getElementById('bigWallBtn').addEventListener('click', () => {
 // крыша
 let roofPrice = { price: 0 };
 document.getElementById('roofPrice').addEventListener('click', () => {
-    roofPrice = roof(length, width);
+    roofPrice = roof(length, width, sushkaKamennaya, krovlyaCherepica);
     update(roofPrice);
     saveSelectedElements();
     document.getElementById('img_roof').style.display = 'none';
@@ -76,18 +76,19 @@ document.getElementById('roofPrice').addEventListener('click', () => {
 
 let stappingPrice = { price: 0 };
 document.getElementById('GorizObvDob').addEventListener('click', () => {
-    stappingPrice = stappingTotalPrice("GorizObvDob", length, width, step);
+    stappingPrice = stappingTotalPrice("GorizObvDob", length, width, step, sushkaKamennaya);
     update(stappingPrice);
     saveSelectedElements();
 });
 document.getElementById('vertObvDob').addEventListener('click', () => {
-    stappingPrice = stappingTotalPrice("vertObvDob", length, width, step);
+    stappingPrice = stappingTotalPrice("vertObvDob", length, width, step, sushkaKamennaya);
     update(stappingPrice);
     saveSelectedElements();
 });
 
 // Обновляет изменения при клике на добавить)
 function update(current) {
+    console.log(current);
     let main = document.getElementById('totalNumber');
     let RESULT = wallPrice.price + svaiPrice.price + roofPrice.price + stappingPrice.price; // ...
     main.innerText = RESULT;
@@ -174,6 +175,7 @@ window.addEventListener('load', () => {
 
 // При переходе на калькулятор подругажет стоимость всех функций у модалок :)
 
+// СВАИ
 let vintSvai;
 let vintSvaiDostavka;
 let montajVint;
@@ -181,20 +183,44 @@ let montajVint;
 let jelezSvaiDostavka;
 let jelezobeton;
 let montajJelez;
+
+// КРЫША
+let sushkaKamennaya;
+let krovlyaCherepica;
+
+// СТЕНЫ
+let sip1;
+let sip2;
+let sushka;
 setTimeout(() => {
     // СВАИ
     vintSvai = response.variable1;
     vintSvaiDostavka = response.variable3;
-    montajVint = response.variable5;
+    montajVint = response.variable2;
     svai(vintPricePlusBtn.id, kolSvai, vintSvai, vintSvaiDostavka, montajVint);
 
-    jelezobeton = response.variable2;
-    jelezSvaiDostavka = response.variable4;
-    montajJelez = response.variable6;
+    jelezobeton = response.variable4;
+    jelezSvaiDostavka = response.variable6;
+    montajJelez = response.variable5;
     svai(jelezBtn.id, kolSvai, jelezobeton, jelezSvaiDostavka, montajJelez);
+
+    sushkaKamennaya = response.variable11;
+    krovlyaCherepica = response.variable13;
+    roof(length, width, sushkaKamennaya, krovlyaCherepica)
+
+    sip1 = response.variable7;
+    sip2 = response.variable8;
+    wallHeightPrice(length, width, 'bigWallBtn', sushkaKamennaya, sip2);
+    wallHeightPrice(length, width, 'smallWallBtn', sushkaKamennaya, sip1);
+
+    stappingTotalPrice("vertObvDob", length, width, step, sushkaKamennaya);
+    stappingTotalPrice("GorizObvDob", length, width, step, sushkaKamennaya);
+
+
 
 }, 1000);
 
+<<<<<<< HEAD
 
 
 wallHeightPrice(length, width, 'bigWallBtn');
@@ -202,3 +228,6 @@ wallHeightPrice(length, width, 'smallWallBtn');
 roof(length, width);
 stappingTotalPrice("vertObvDob", length, width, step);
 stappingTotalPrice("GorizObvDob", length, width, step);
+=======
+zero(length, width);
+>>>>>>> 68547a0aa74b2674cf6283b26c470e0d30a907ec

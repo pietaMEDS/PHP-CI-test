@@ -46,12 +46,23 @@ html{
     color: #7E7E7E;
     margin-left: 26px;
 }
+.priceNBtn{
+    border-bottom: 3px solid #FF855D;
+    width: 100%;
+    padding-bottom: 29px;
+    border-radius: 30px;
+}
+.priceNBtn .opener{
+    float: right;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.priceNBtn .majorPrice{
+    float: right;
+}
+
 .minorType{
     margin-left: 26px;
-}
-.priceNBtn{
-    float: right;
-    padding-right: 25px;
 }
 .opener{
     color: #FF855D;
@@ -64,4 +75,21 @@ html{
 .opener svg{
     width: 100%;
     height: 100%;
+}
+
+.minorMaterials{
+    margin-left: 29px;
+    margin-top: 23px;
+    font-size: 24px;
+    visibility: hidden;
+}
+.minorMatPrice{
+    float: right;
+    margin-right: 40px;
+}
+.activeContainer{
+    height: 300px;
+}
+.activeText{
+    visibility: visible;
 }

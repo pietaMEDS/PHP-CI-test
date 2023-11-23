@@ -28,15 +28,20 @@ let pilomatRoofItog = itogVRoof * 24725 //Поменять на D42
 let fullRoof = sipPanRoof + pilomatRoofItog;
 
 
-
 let matObjArr = [
     nullevPerekrit = {
-        id: 5,
+    id: 5,
     majorType: 'Нулевое перекрытие',
     minorType: 'Нулевое перекрытие',
-    total: Math.round(resultNulev) + ' руб.'
-    }]
-[
+    total: Math.round(resultNulev) + ' руб.',
+    firstMat: 'СИП панели на нулевое перекрытие',
+    firstMatPrice: Math.round(sipNaNulev) + ' руб.',
+    secondMat: 'Пиломатериал на нулевое перекрытие',
+        secondMatPrice: Math.round(pilomatNaNulev) + ' руб.',
+    thirdMat: 'СИП панели',
+    thirdMatPrice: Math.round(itogSip) + ' шт.'
+    },
+
     roofObj = {
         id: 6,
         majorType: 'Потолок первого этажа',
@@ -44,8 +49,6 @@ let matObjArr = [
         total: Math.round(fullRoof) + ' руб.'
     }
 ];
-
-
 
 
 for(let i = 0; i < 13; i++){
@@ -76,16 +79,59 @@ for(let i = 0; i < 13; i++){
     buttonOpener.classList.add("opener");
     buttonOpener.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>';
 
-    priceNBtnContainer.appendChild(spanMajorPrice);
+    let pMinorMaterials = document.createElement("p");
+    pMinorMaterials.classList.add('minorMaterials');
+    pMinorMaterials.textContent = matObjArr[i].firstMat;
+
+    let spanMinorMatPrice = document.createElement('span');
+    spanMinorMatPrice.classList.add('minorMatPrice');
+    spanMinorMatPrice.textContent = matObjArr[i].firstMatPrice;
+
+    let pMinorMaterialsTwo = document.createElement("p");
+    pMinorMaterialsTwo.classList.add('minorMaterials');
+    pMinorMaterialsTwo.textContent = matObjArr[i].secondMat;
+
+    let spanMinorMatPriceTwo = document.createElement('span');
+    spanMinorMatPriceTwo.classList.add('minorMatPrice');
+    spanMinorMatPriceTwo.textContent = matObjArr[i].secondMatPrice;
+
+    let pMinorMaterialsThree = document.createElement("p");
+    pMinorMaterialsThree.classList.add('minorMaterials');
+    pMinorMaterialsThree.textContent = matObjArr[i].thirdMat;
+
+    let spanMinorMatPriceThree = document.createElement('span');
+    spanMinorMatPriceThree.classList.add('minorMatPrice');
+    spanMinorMatPriceThree.textContent = matObjArr[i].thirdMatPrice;
+
+    priceNBtnContainer.appendChild(spanMinorType);
     priceNBtnContainer.appendChild(buttonOpener);
+    priceNBtnContainer.appendChild(spanMajorPrice);
 
     newElementContainer.appendChild(spanMajorType);
-    newElementContainer.appendChild(spanMinorType);
     newElementContainer.appendChild(priceNBtnContainer);
+    newElementContainer.appendChild(pMinorMaterials);
+    newElementContainer.appendChild(pMinorMaterialsTwo);
+    newElementContainer.appendChild(pMinorMaterialsThree);
+
+    pMinorMaterials.appendChild(spanMinorMatPrice);
+    pMinorMaterialsTwo.appendChild(spanMinorMatPriceTwo);
+    pMinorMaterialsThree.appendChild(spanMinorMatPriceThree);
 
     let gridContainer = document.querySelector(".gridContainer");
 
     // Добавляем новый элемент в родительский элемент
     gridContainer.appendChild(newElementContainer);
+
+    buttonOpener.addEventListener('click', () =>
+    newElementContainer.classList.add("activeContainer"));
+
+    buttonOpener.addEventListener('click', () =>
+    pMinorMaterials.classList.add('activeText'));
+
+    buttonOpener.addEventListener('click', () =>
+    pMinorMaterialsTwo.classList.add('activeText'));
+
+    buttonOpener.addEventListener('click', () =>
+    pMinorMaterialsThree.classList.add('activeText'));
 }
 

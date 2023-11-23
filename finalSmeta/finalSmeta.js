@@ -27,6 +27,17 @@ let itogVRoof = VRoof + VRoof * obrezkiRoofTwo;
 let pilomatRoofItog = itogVRoof * 24725 //Поменять на D42
 let fullRoof = sipPanRoof + pilomatRoofItog;
 
+//Обвязка крыльца
+let lengthVerDosk = 3 * 2 * 3;
+let lengthGorDosk = (3 / 2 + 1)* 2 * 3;
+let valueObv = 0.33;
+let itogObv = valueObv * 24725; //d42
+// let valuePil = (((2+3)*2/0.6*2+2.5*4+2/0.6*3*4)) * 0.15 * 0.05; ХУЙ ПАЙМИ КАК ЭТО СЧИТАЕТСЯ
+// console.log(valuePil);
+
+
+
+
 
 let matObjArr = [
     nullevPerekrit = {

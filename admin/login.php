@@ -9,8 +9,6 @@ if (isset($_COOKIE["login"]) && isset($_COOKIE["password"])) {
     $password = "";
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

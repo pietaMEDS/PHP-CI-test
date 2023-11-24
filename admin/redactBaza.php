@@ -1,14 +1,15 @@
 <?php
+session_start();
+if (isset($_COOKIE["login"])) {
+    echo "" ;
+} else {
+    header("Location: ../admin/hac.php");
+}
 $pageStyles = 'admin.css';
 require "../Header/Head.php";
 require "../Header/Header.php";
 require_once '../admin/connekt.php';
-session_start();
-if (isset($_COOKIE["login"])) {
-    echo "<h2>Добро пожаловать admin</h2>" ;
-} else {
-    header("Location: ../admin/hac.php");
-}
+echo "<h2>Добро пожаловать admin</h2>";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST["id"];

@@ -35,18 +35,26 @@ let matObjArr = [
     minorType: 'Нулевое перекрытие',
     total: Math.round(resultNulev) + ' руб.',
     firstMat: 'СИП панели на нулевое перекрытие',
-    firstMatPrice: Math.round(sipNaNulev) + ' руб.',
+        firstMatPrice: Math.round(sipNaNulev) + ' руб.',
     secondMat: 'Пиломатериал на нулевое перекрытие',
         secondMatPrice: Math.round(pilomatNaNulev) + ' руб.',
     thirdMat: 'СИП панели',
-    thirdMatPrice: Math.round(itogSip) + ' шт.'
+        thirdMatPrice: Math.round(itogSip) + ' шт.'
     },
+
+
 
     roofObj = {
         id: 6,
         majorType: 'Потолок первого этажа',
         minorType: 'Потолок первого этажа',
-        total: Math.round(fullRoof) + ' руб.'
+        total: Math.round(fullRoof) + ' руб.',
+        firstMat: 'СИП панели на потолок 1-го этажа',
+        firstMatPrice: Math.round(sipPanRoof) + ' руб.',
+        secondMat: 'Пиломатериал на потолок 1-го этажа',
+        secondMatPrice: Math.round(pilomatRoofItog) + ' руб.',
+        thirdMat: 'СИП панели',
+        thirdMatPrice: Math.round(itogSipRoof) + ' шт.'
     }
 ];
 
@@ -133,5 +141,7 @@ for(let i = 0; i < 13; i++){
 
     buttonOpener.addEventListener('click', () =>
     pMinorMaterialsThree.classList.add('activeText'));
+    
+
 }
 

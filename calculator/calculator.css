@@ -501,6 +501,20 @@ button .Empty {
 
 
 @media (max-width:1300px) {
+    .header__inner img{
+    display: none;
+  }
+  .header__text{
+      margin-left:12%;
+      margin-top:1%;
+     
+  }
+  .totalPrice{
+      text-align:center;
+  }
+  .header__text a{
+      font-size:27px;
+  }
   .home {
     position: static;
     display: flex;
@@ -566,7 +580,7 @@ button .Empty {
   }
 
   .smeta {
-    margin-left: 33%;;
+    margin-left: 29%;;
     position: block;
     margin-top: -51%;
   }
@@ -585,8 +599,9 @@ button .Empty {
   }
   .header__text a{
     text-align: center;
-    margin-right: 0;
+    margin-right: 26px;
     margin-top: 29px;
+    font-size: 19px;
   }
   .container{
     margin-top: 30%;

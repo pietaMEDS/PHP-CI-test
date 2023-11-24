@@ -372,6 +372,9 @@ a {
     .home_container{
         display: none;
     }
+    .header__inner img{
+    margin: 10px 22% 10px 10%
+    }
     .aboutBlock{
         width: 100%;
         display: flex;
@@ -429,8 +432,12 @@ a {
 .formcalc{
     max-width: 100%;
 }
+.header__text{
+    margin-left: 12%;
+    margin-top: 4%;
+}
 .header__inner img{
-    margin: 0;
+  display:none;
 }
 .title{
     margin-bottom: 16%;

@@ -3,7 +3,7 @@ $pageStyles = 'login.css';
 ?>
 
 
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

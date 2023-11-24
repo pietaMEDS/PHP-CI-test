@@ -20,7 +20,7 @@ $mysqli->close();
 if ($row && $row["id"] > 0) {
     $_SESSION["login"] = $row["login"];
 
-    header('Location:../admin/smeta.php');
+    header('Location:../admin/redactBaza.php');
 } else {
     header('Location:../admin/login.php');
 }

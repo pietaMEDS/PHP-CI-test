@@ -43,7 +43,7 @@ let rabotaKril = 3 * 2 * 3600 //D48
 let fullKril = itogObv + valuePil + krepejKril + krovlKril + rabotaKril;
 
 
-let j = 2;
+let j = 3;
 let matObjArr = [
     nullevPerekrit = {
         majorType: 'Нулевое перекрытие',
@@ -73,7 +73,7 @@ let matObjArr = [
     krilcoObj = {
         majorType: 'Обвязка крыльца',
         minorType: 'Обвязка крыльца',
-        total: Math.round(fullKril) + ' руб.',
+        price: Math.round(fullKril) + ' руб.',
         firstMat: 'Работа крыльцо',
         firstMatPrice: Math.round(rabotaKril) + ' руб.',
         secondMat: 'Кровля крыльца',
@@ -88,7 +88,7 @@ if (svai !== null) {
     matObjArr[j] = typeSvai = {
         majorType: svai.majorType,
         minorType: svai.minorType,
-        price: svai.price,
+        price: svai.price + ' руб.',
         firstMat: svai.firstMat,
         firstMatPrice: svai.firstMatPrice,
         secondMat: svai.secondMat,
@@ -104,7 +104,7 @@ if (wall !== null) {
     matObjArr[j] = typeWall = {
         majorType: wall.majorType,
         minorType: wall.minorType,
-        price: wall.price,
+        price: wall.price + ' руб.',
         firstMat: wall.firstMat,
         firstMatPrice: wall.firstMatPrice,
         secondMat: wall.secondMat,

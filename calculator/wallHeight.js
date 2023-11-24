@@ -20,15 +20,19 @@ export function wallHeightPrice(length, width, id, kamennayaSushka, sip) {
         smallWallPrice.innerHTML = price + ' руб.';
 
         return {
-            name: 'Высота потолка',
+            majorType: 'Потолок 2.5 метра',
+            minorType: 'Высота потолка',
             styleName: 'heightWall',
             secondName: 'Стена 2.5 метра',
             styleSecondName: 'big_Wall',
             id: 'wallSmall25',
+            firstMat: "СИП панели стен",
+            firstMatPrice: Math.round(sipPanel * typeSipPanel),
+            secondMat: "Пиломатериалы на стены",
+            secondMatPrice: piloMaterialSten,
             price,
         }
-    }
-    else if (id === 'bigWallBtn') {
+    } else if (id === 'bigWallBtn') {
         const sipPanelWall = document.getElementById('sipPanel1');
         const pilomaterialWall = document.getElementById('pilomaterialWall1');
         const lengthPilMat = sipPanel * (2.8 + 1.25) * 2;
@@ -43,11 +47,16 @@ export function wallHeightPrice(length, width, id, kamennayaSushka, sip) {
         pilomaterialWall.innerHTML = piloMaterialSten;
 
         return {
-            name: 'Высота потолка',
+            majorType: 'Потолок 2.8 метра',
+            minorType: 'Высота потолка',
             styleName: 'heightWall',
             secondName: 'Стена 2.8 метра',
             styleSecondName: 'small_Wall',
             id: 'wallBig28',
+            firstMat: "СИП панели стен",
+            firstMatPrice: Math.round(sipPanel * typeSipPanel),
+            secondMat: "Пиломатериалы на стены",
+            secondMatPrice: piloMaterialSten,
             price,
         }
     }

@@ -1,9 +1,8 @@
-import { roof } from "./roof.js";
-import { stappingTotalPrice } from "./stapping.js";
-import { afasf } from "./toaliets.js";
-import { svai } from "./vintovieSvai.js";
-import { wallHeightPrice } from "./wallHeight.js";
-
+import {roof} from "./roof.js";
+import {stappingTotalPrice} from "./stapping.js";
+import {afasf} from "./toaliets.js";
+import {svai} from "./vintovieSvai.js";
+import {wallHeightPrice} from "./wallHeight.js";
 
 
 let response;
@@ -23,7 +22,7 @@ const step = 2;
 let kolSvai = (length / step + 1) * (width / step + 1);
 
 // винтовая свая
-let svaiPrice = { price: 0 };
+let svaiPrice = {price: 0};
 const vintPricePlusBtn = document.getElementById('vintPricePlus');
 vintPricePlusBtn.addEventListener('click', (e) => {
     svaiPrice = svai(vintPricePlusBtn.id, kolSvai, vintSvai, vintSvaiDostavka, montajVint);
@@ -31,6 +30,7 @@ vintPricePlusBtn.addEventListener('click', (e) => {
     saveSelectedElements();
     document.getElementById('Svai_JB').style.display = "none";
     document.getElementById('Svai_Vint').style.display = "block";
+    localStorage.setItem('svaiPrice', JSON.stringify(svaiPrice));
 });
 
 // Железобетоная свая
@@ -41,11 +41,12 @@ jelezBtn.addEventListener('click', (e) => {
     saveSelectedElements();
     document.getElementById('Svai_Vint').style.display = "none";
     document.getElementById('Svai_JB').style.display = "block";
+    localStorage.setItem('svaiPrice', JSON.stringify(svaiPrice));
 });
 
 
 // wallHeight used
-let wallPrice = { price: 0 };
+let wallPrice = {price: 0};
 // при клике на стену 2.5 метра
 document.getElementById('smallWallBtn').addEventListener('click', () => {
     wallPrice = wallHeightPrice(length, width, 'smallWallBtn', sushkaKamennaya, sip1);
@@ -53,6 +54,7 @@ document.getElementById('smallWallBtn').addEventListener('click', () => {
     saveSelectedElements();
     document.getElementById('img_floor1').style.display = "none";
     document.getElementById('img_floor1_ready').style.display = "block";
+    localStorage.setItem('wallPrice', JSON.stringify(wallPrice));
 })
 
 // при клике на стену 2.8 метра
@@ -62,10 +64,11 @@ document.getElementById('bigWallBtn').addEventListener('click', () => {
     saveSelectedElements();
     document.getElementById('img_floor1').style.display = "none";
     document.getElementById('img_floor1_ready').style.display = "block";
+    localStorage.setItem('wallPrice', JSON.stringify(wallPrice));
 });
 
 // крыша
-let roofPrice = { price: 0 };
+let roofPrice = {price: 0};
 document.getElementById('roofPrice').addEventListener('click', () => {
     roofPrice = roof(length, width, sushkaKamennaya, krovlyaCherepica);
     update(roofPrice);
@@ -74,7 +77,7 @@ document.getElementById('roofPrice').addEventListener('click', () => {
     document.getElementById('img_roof_ready').style.display = 'block';
 })
 
-let stappingPrice = { price: 0 };
+let stappingPrice = {price: 0};
 document.getElementById('GorizObvDob').addEventListener('click', () => {
     stappingPrice = stappingTotalPrice("GorizObvDob", length, width, step, sushkaKamennaya);
     update(stappingPrice);
@@ -112,7 +115,7 @@ function update(current) {
                 } else if ((child.classList.contains(current.styleName))) {
                     let el = document.getElementById(child.id);
                     secondElement.innerHTML = current.secondName + ' ' + current.price + ' руб.';
-                    el.innerHTML = current.name;
+                    el.innerHTML = current.majorType;
                     el.id = current.id;
                     el.appendChild(secondElement);
                     flag = false;
@@ -122,7 +125,7 @@ function update(current) {
 
         if (flag) {
             secondElement.innerHTML = current.secondName + ' ' + current.price + ' руб.';
-            childElement.innerHTML = current.name;
+            childElement.innerHTML = current.majorType;
             childElement.appendChild(secondElement);
             smetaRow.appendChild(childElement);
         }
@@ -143,6 +146,7 @@ function saveSelectedElements() {
 }
 
 afasf();
+
 // Функция для проверки временной метки в localStorage при загрузке страницы
 function checkLocalStorageTimestamp() {
     const selectedElementsString = localStorage.getItem('selectedElements');
@@ -151,10 +155,10 @@ function checkLocalStorageTimestamp() {
         const timestamp = selectedElements.timestamp;
 
         if (timestamp && Date.now() < timestamp) {
-            wallPrice = selectedElements.wallPrice || { price: 0 };
-            svaiPrice = selectedElements.svaiPrice || { price: 0 };
-            roofPrice = selectedElements.roofPrice || { price: 0 };
-            stappingPrice = selectedElements.stappingPrice || { price: 0 };
+            wallPrice = selectedElements.wallPrice || {price: 0};
+            svaiPrice = selectedElements.svaiPrice || {price: 0};
+            roofPrice = selectedElements.roofPrice || {price: 0};
+            stappingPrice = selectedElements.stappingPrice || {price: 0};
 
             // Обновляем состояние на странице
             update(wallPrice);
@@ -215,7 +219,6 @@ setTimeout(() => {
 
     stappingTotalPrice("vertObvDob", length, width, step, sushkaKamennaya);
     stappingTotalPrice("GorizObvDob", length, width, step, sushkaKamennaya);
-
 
 
 }, 1000);

@@ -1,11 +1,10 @@
 <?php
-
 $pageStyles = 'admin.css';
 require "../Header/Head.php";
 require "../Header/Header.php";
 require_once '../admin/connekt.php';
 session_start();
-if (!empty($_SESSION["login"])) {
+if (isset($_COOKIE["login"])) {
     echo "<h2>Добро пожаловать admin</h2>" ;
 } else {
     header("Location: ../admin/hac.php");

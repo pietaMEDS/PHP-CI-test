@@ -27,13 +27,18 @@ let itogVRoof = VRoof + VRoof * obrezkiRoofTwo;
 let pilomatRoofItog = itogVRoof * 24725 //Поменять на D42
 let fullRoof = sipPanRoof + pilomatRoofItog;
 
+
 //Обвязка крыльца
-let lengthVerDosk = 3 * 2 * 3;
-let lengthGorDosk = (3 / 2 + 1)* 2 * 3;
+//let lengthVerDosk = 3 * 2 * 3;
+//let lengthGorDosk = (3 / 2 + 1)* 2 * 3;
 let valueObv = 0.33;
 let itogObv = valueObv * 24725; //d42
-// let valuePil = (((2+3)*2/0.6*2+2.5*4+2/0.6*3*4)) * 0.15 * 0.05; ХУЙ ПАЙМИ КАК ЭТО СЧИТАЕТСЯ
-// console.log(valuePil);
+ let valuePil = (((2 + 3) * 2 / 0.6 * 2 + 2.8 * 3 * 4 + 2 / 0.6 * 3 * 4)) * 0.15 * 0.05;
+//let pilmatCost = valuePil * 24725; //D42
+let krepejKril = 2 * 3 * 500;
+let krovlKril = 2 * 3 * 2070 //D46
+let rabotaKril = 3 * 2 * 3600 //D48
+let fullKril = itogObv + valuePil + krepejKril + krovlKril + rabotaKril;
 
 
 
@@ -41,7 +46,6 @@ let itogObv = valueObv * 24725; //d42
 
 let matObjArr = [
     nullevPerekrit = {
-    id: 5,
     majorType: 'Нулевое перекрытие',
     minorType: 'Нулевое перекрытие',
     total: Math.round(resultNulev) + ' руб.',
@@ -56,7 +60,6 @@ let matObjArr = [
 
 
     roofObj = {
-        id: 6,
         majorType: 'Потолок первого этажа',
         minorType: 'Потолок первого этажа',
         total: Math.round(fullRoof) + ' руб.',
@@ -66,6 +69,19 @@ let matObjArr = [
         secondMatPrice: Math.round(pilomatRoofItog) + ' руб.',
         thirdMat: 'СИП панели',
         thirdMatPrice: Math.round(itogSipRoof) + ' шт.'
+    },
+
+
+    krilcoObj = {
+        majorType: 'Обвязка крыльца',
+        minorType: 'Обвязка крыльца',
+        total: Math.round(fullKril) + ' руб.',
+        firstMat: 'Работа крыльцо',
+        firstMatPrice: Math.round(rabotaKril) + ' руб.',
+        secondMat: 'Кровля крыльца',
+        secondMatPrice: Math.round(krovlKril) + ' руб.',
+        thirdMat: 'Стоимость обвязки и Крепеж крыльца',
+        thirdMatPrice: Math.round(itogObv) + Math.round(krepejKril) + ' руб.'
     }
 ];
 

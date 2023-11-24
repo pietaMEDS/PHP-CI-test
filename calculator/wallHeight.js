@@ -1,6 +1,7 @@
-export function wallHeightPrice(length, width, id) {
+export function wallHeightPrice(length, width, id, kamennayaSushka, sip) {
     const sipPanel = (length + width) * (2 / 1.25);
-    const pilomaterialKamennoySushki = 24725;
+    const pilomaterialKamennoySushki = Number(kamennayaSushka.totalPrice);
+    const typeSipPanel = Number(sip.totalPrice);
     let price = 0;
 
     if (id === 'smallWallBtn') {
@@ -12,9 +13,9 @@ export function wallHeightPrice(length, width, id) {
         const obyem = lengthPilMat * 0.04 * (0.174 - 0.024);
         const itogoObyem = obyem + obyem * 0.1;
         const piloMaterialSten = Math.round(itogoObyem * pilomaterialKamennoySushki);
-        price = Math.round(sipPanel * 4140) + piloMaterialSten;
+        price = Math.round(sipPanel * typeSipPanel) + piloMaterialSten;
 
-        sipPanelWall.innerHTML = Math.round(sipPanel * 4140);
+        sipPanelWall.innerHTML = Math.round(sipPanel * typeSipPanel);
         pilomaterialWall.innerHTML = piloMaterialSten;
         smallWallPrice.innerHTML = price + ' руб.';
 
@@ -36,9 +37,9 @@ export function wallHeightPrice(length, width, id) {
         const piloMaterialSten = Math.round(itogoObyem * pilomaterialKamennoySushki);
 
         let bigWallPrice = document.getElementById('bigWallPrice');
-        price = Math.round(sipPanel * 4485) + piloMaterialSten;
+        price = Math.round(sipPanel * typeSipPanel) + piloMaterialSten;
         bigWallPrice.innerHTML = price + ' руб.';
-        sipPanelWall.innerHTML = Math.round(sipPanel * 4485);
+        sipPanelWall.innerHTML = Math.round(sipPanel * typeSipPanel);
         pilomaterialWall.innerHTML = piloMaterialSten;
 
         return {

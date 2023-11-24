@@ -1,4 +1,11 @@
-export function roof(length, width) {
+export function roof(length, width, pilomaterialItog, krovlyaCherepica) {
+
+    let krovlya = Number(krovlyaCherepica.totalPrice);
+    let pilomaterial = Number(pilomaterialItog.totalPrice);
+
+    console.log(pilomaterial);
+    console.log(krovlya);
+
     let volumFlor = (length + width) * 2 * 0.15 * 0.05;
 
     // Объём пиламатериала на промежуточный мауэрлат и опоры под стропилами
@@ -54,27 +61,24 @@ export function roof(length, width) {
     let volueKrov = (volumFlor + volumPil + stoyka + volumStrop + volumObreshotka + volueKontrobreshotka + stoykaFron + itogZapas);
 
     // Пиломатериал под кровлю
-    let Pilomat = Math.round(volueKrov * 24725);
+    let Pilomat = Math.round(volueKrov * pilomaterial);
     document.getElementById("pil").innerHTML = Pilomat;
     // Количество металлочерепицы 
     let cherepica = (length + 0.5) * lengthKrov * 2;
 
     // Стоимость кровли из металлочерепицы
-    let metalCherepica = Math.round(cherepica * 2070);
+    let metalCherepica = Math.round(cherepica * krovlya);
     document.getElementById("metalCherepica").innerHTML = metalCherepica;
 
     // Стоимость кровли
     let price = Math.round(Pilomat + metalCherepica);
     document.querySelector(".summ").innerHTML = price + ' руб.';
+    console.log(price);
     return {
         name: 'Кровля крыши',
         secondName: 'Металлочерепица',
         styleName: 'roofKrovlya',
         id: 'krovlya',
-        f1: "Фундамент теплового контура ",
-        f1: "Фундамент крыльца " + 12938,
-        f1: "Фундамент терассы " + 7763,
-        f1: "Доставка фундамента " + 10000,
         price,
     };
 }

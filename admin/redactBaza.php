@@ -1,13 +1,15 @@
 <?php
-session_start();
 
 $pageStyles = 'admin.css';
 require "../Header/Head.php";
 require "../Header/Header.php";
 require_once '../admin/connekt.php';
-
-
-
+session_start();
+if (!empty($_SESSION["login"])) {
+    echo "<h2>Добро пожаловать admin</h2>" ;
+} else {
+    header("Location: ../admin/hac.php");
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST["id"];
@@ -46,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-    <a href="../admin/logout.php">Выйти</a>
+    <h2><a href="../admin/logout.php">Выйти</a></h2>
     <items>
     <table>
     <tr>

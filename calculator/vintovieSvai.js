@@ -4,6 +4,10 @@ export function svai(id, kolSvai, typeSvai, svaiDostavka, motnaj) {
     let svaiType = Number(typeSvai.totalPrice);
     let typeMontaj = Number(motnaj.totalPrice);
 
+    console.log(dostavka);
+    console.log(svaiType);
+    console.log(typeMontaj);
+
     if (id === 'jelezPricePlus') {
         let jelezFirst = kolSvai * (svaiType + typeMontaj);
         let firstLi = document.getElementById('jelezFundCost');

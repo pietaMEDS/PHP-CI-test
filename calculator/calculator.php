@@ -71,7 +71,7 @@ require './../Header/Head.php';
           <span id="totalNumber"></span>
           <span class="currency">руб</span>
         </p>
-        <button class="button">Итоговая цена</button>
+        <button class="button" id="itogBtn">Итоговая цена</button>
       </div>
     </div>
     </div>
@@ -218,7 +218,7 @@ require './../Header/Head.php';
 
                 <div class="contConst">
                   <li id="fundCost"></li>
-                  <li>7 763</li>
+                  <li><?php echo $res['costPrice'] ?></li>
                   <li>10 000</li>
                   <li id="dostavkaSvai"></li>
                 </div>
@@ -332,4 +332,5 @@ require './../Header/Head.php';
   <script src="./../calculator/modal.js"></script>
   <script src='./../main/slider.js'></script>
   <script src='./../calculator/modalStage.js'></script>
+  <script src="./../calculator/send.js"></script>
 </body>

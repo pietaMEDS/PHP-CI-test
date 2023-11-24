@@ -20,7 +20,7 @@ export function wallHeightPrice(length, width, id, kamennayaSushka, sip) {
         smallWallPrice.innerHTML = price + ' руб.';
 
         return {
-            majorType: 'Высота потолка',
+            majorType: 'Потолок 2.5 метра',
             minorType: 'Высота потолка',
             styleName: 'heightWall',
             secondName: 'Стена 2.5 метра',
@@ -47,7 +47,7 @@ export function wallHeightPrice(length, width, id, kamennayaSushka, sip) {
         pilomaterialWall.innerHTML = piloMaterialSten;
 
         return {
-            majorType: 'Высота потолка',
+            majorType: 'Потолок 2.8 метра',
             minorType: 'Высота потолка',
             styleName: 'heightWall',
             secondName: 'Стена 2.8 метра',

@@ -4,10 +4,6 @@ export function svai(id, kolSvai, typeSvai, svaiDostavka, motnaj) {
     let svaiType = Number(typeSvai.totalPrice);
     let typeMontaj = Number(motnaj.totalPrice);
 
-    console.log(dostavka);
-    console.log(svaiType);
-    console.log(typeMontaj);
-
     if (id === 'jelezPricePlus') {
         let jelezFirst = kolSvai * (svaiType + typeMontaj);
         let firstLi = document.getElementById('jelezFundCost');
@@ -18,19 +14,22 @@ export function svai(id, kolSvai, typeSvai, svaiDostavka, motnaj) {
         ttlJelez.innerText = price + " руб.";
 
         return {
-            name: 'Фундамент дома',
+            majorType: 'Фундамент дома',
+            minorType: 'Фундамент дома',
             styleName: 'foundationS',
             secondName: 'Железобетонные сваи',
             styleSecondName: 'jelezoBeton',
             id: 'jelezSvai',
-            f1: "Фундамент теплового контура " + jelezFirst,
-            f2: "Фундамент крыльца " + 14025,
-            f3: "Фундамент терассы " + 8415,
+            firstMat: "Фундамент теплового контура",
+            firstMatPrice: jelezFirst,
+            secondMat: "Фундамент крыльца",
+            secondMatPrice: 14025,
+            thirdMat: "Фундамент терассы",
+            thirdMatPrice: 8415,
             f4: "Доставка фундамента " + dostavka,
             price,
         }
-    }
-    else if (id === 'vintPricePlus') {
+    } else if (id === 'vintPricePlus') {
         let ttlCost = document.getElementById('totalCost');
         let teplovoiContur = document.getElementById('fundCost');
         let foundationSvaiDostavka = document.getElementById('dostavkaSvai');
@@ -43,14 +42,18 @@ export function svai(id, kolSvai, typeSvai, svaiDostavka, motnaj) {
         ttlCost.innerText = price + " руб.";
 
         return {
-            name: 'Фундамент дома',
+            majorType: 'Фундамент дома',
+            minorType: 'Фундамент дома',
             styleName: 'foundationS',
             secondName: 'Винтовые сваи',
             styleSecondName: 'vintovayaSvai',
             id: 'vintSvai',
-            f1: "Фундамент теплового контура " + vintFundCost,
-            f2: "Фундамент крыльца " + 12938,
-            f3: "Фундамент терассы " + 7763,
+            firstMat: "Фундамент теплового контура",
+            firstMatPrice: vintFundCost,
+            secondMat: "Фундамент крыльца",
+            secondMatPrice: 14025,
+            thirdMat: "Фундамент терассы",
+            thirdMatPrice: 8415,
             f4: "Доставка фундамента " + dostavka,
             price,
         }

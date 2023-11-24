@@ -29,10 +29,6 @@ let fullRoof = sipPanRoof + pilomatRoofItog;
 
 
 //Обвязка крыльца
-let lengthVerDosk = 3 * 2 * 3;
-let lengthGorDosk = (3 / 2 + 1) * 2 * 3;
-//let lengthVerDosk = 3 * 2 * 3;
-//let lengthGorDosk = (3 / 2 + 1)* 2 * 3;
 let valueObv = 0.33;
 let itogObv = valueObv * 24725; //d42
 let valuePil = (((2 + 3) * 2 / 0.6 * 2 + 2.8 * 3 * 4 + 2 / 0.6 * 3 * 4)) * 0.15 * 0.05;
@@ -43,8 +39,11 @@ let rabotaKril = 3 * 2 * 3600 //D48
 let fullKril = itogObv + valuePil + krepejKril + krovlKril + rabotaKril;
 
 
-let j = 3;
+let j = 0;
 let matObjArr = [
+
+    '',
+
     nullevPerekrit = {
         majorType: 'Нулевое перекрытие',
         minorType: 'Нулевое перекрытие',
@@ -56,6 +55,8 @@ let matObjArr = [
         thirdMat: 'СИП панели',
         thirdMatPrice: Math.round(itogSip) + ' шт.'
     },
+
+    '',
 
     roofObj = {
         majorType: 'Потолок первого этажа',
@@ -69,6 +70,7 @@ let matObjArr = [
         thirdMatPrice: Math.round(itogSipRoof) + ' шт.'
     },
 
+    '',
 
     krilcoObj = {
         majorType: 'Обвязка крыльца',
@@ -80,7 +82,11 @@ let matObjArr = [
         secondMatPrice: Math.round(krovlKril) + ' руб.',
         thirdMat: 'Стоимость обвязки и Крепеж крыльца',
         thirdMatPrice: Math.round(itogObv) + Math.round(krepejKril) + ' руб.'
-    }
+    },
+
+    '',
+
+
 ];
 
 let svai = JSON.parse(localStorage.getItem('svaiPrice'));
@@ -90,25 +96,25 @@ if (svai !== null) {
         minorType: svai.minorType,
         price: svai.price + ' руб.',
         firstMat: svai.firstMat,
-        firstMatPrice: svai.firstMatPrice,
+        firstMatPrice: svai.firstMatPrice + ' руб.',
         secondMat: svai.secondMat,
-        secondMatPrice: svai.secondMatPrice,
+        secondMatPrice: svai.secondMatPrice + ' руб.',
         thirdMat: svai.thirdMat,
-        thirdMatPrice: svai.thirdMatPrice,
+        thirdMatPrice: svai.thirdMatPrice + ' руб.',
     }
     j++;
 }
 
 let wall = JSON.parse(localStorage.getItem('wallPrice'));
 if (wall !== null) {
-    matObjArr[j] = typeWall = {
+    matObjArr[j + 1] = typeWall = {
         majorType: wall.majorType,
         minorType: wall.minorType,
         price: wall.price + ' руб.',
         firstMat: wall.firstMat,
-        firstMatPrice: wall.firstMatPrice,
+        firstMatPrice: wall.firstMatPrice + ' руб.',
         secondMat: wall.secondMat,
-        secondMatPrice: wall.secondMatPrice,
+        secondMatPrice: wall.secondMatPrice + ' руб.',
     }
     j++;
 }

@@ -308,16 +308,16 @@ require './../Header/Head.php';
             </div>
           </div>
   </main>
-  <smeta>
-      <item>
+  <div id="smeta">
+      <div class="item">
           <div class="matherials_table">
             <h4>Стоимость материалов дома</h4>
             <div class="matherials_row"></div>
             <div class="houseprice"></div>
           </div>
-      </item>
-  </smeta>
-  <Finalsmeta>
+      </div>
+      </div>
+  <div id="Finalsmeta">
        <div class="itog-flex">
       <div class="container">
         <p class="totalPrice">Стоимость составляющих</p>
@@ -328,7 +328,7 @@ require './../Header/Head.php';
         <button class="button" id="itogBtn">Итоговая цена</button>
       </div>
     </div>
-  </Finalsmeta>
+  </div>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="pdf.js"></script>
   <script src="./circle.js"></script>

@@ -75,10 +75,15 @@ export function roof(length, width, pilomaterialItog, krovlyaCherepica) {
     document.querySelector(".summ").innerHTML = price + ' руб.';
     console.log(price);
     return {
-        name: 'Кровля крыши',
+        majorType: 'Кровля',
+        minorType: 'Кровля',
         secondName: 'Металлочерепица',
         styleName: 'roofKrovlya',
         id: 'krovlya',
+        firstMat: 'Пиломатериал под кровлю',
+        firstMatPrice: Pilomat,
+        secondMat: 'Кровля из металочерипицы',
+        secondMatPrice: metalCherepica,
         price,
     };
 }

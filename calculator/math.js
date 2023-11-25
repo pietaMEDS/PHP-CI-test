@@ -75,6 +75,7 @@ document.getElementById('roofPrice').addEventListener('click', () => {
     saveSelectedElements();
     document.getElementById('img_roof').style.display = 'none';
     document.getElementById('img_roof_ready').style.display = 'block';
+    localStorage.setItem('roofPrice', JSON.stringify(roofPrice));
 })
 
 let stappingPrice = {price: 0};
@@ -82,11 +83,13 @@ document.getElementById('GorizObvDob').addEventListener('click', () => {
     stappingPrice = stappingTotalPrice("GorizObvDob", length, width, step, sushkaKamennaya);
     update(stappingPrice);
     saveSelectedElements();
+    localStorage.setItem('stappingPrice', JSON.stringify(stappingPrice));
 });
 document.getElementById('vertObvDob').addEventListener('click', () => {
     stappingPrice = stappingTotalPrice("vertObvDob", length, width, step, sushkaKamennaya);
     update(stappingPrice);
     saveSelectedElements();
+    localStorage.setItem('stappingPrice', JSON.stringify(stappingPrice));
 });
 
 // Обновляет изменения при клике на добавить)

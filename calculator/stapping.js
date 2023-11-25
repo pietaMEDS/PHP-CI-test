@@ -14,11 +14,16 @@ export function stappingTotalPrice(id, length, width, step, sushka) {
         price = resultObvazkaFund;
 
         return {
-            name: 'Обвязка фундамента',
+            majorType: 'Обвязка теплового контура',
+            minorType: 'Обвязка по вертикали',
             styleName: 'stappingHouse',
             secondName: 'Обвязка вертикальная',
             styleSecondName: 'vertStapping',
             id: 'stappingGoriz',
+            firstMat:'Пиломатериал каменной сушки',
+            firstMatPrice: typeSushka,
+            secondMat: 'Объем пиломатериала на обвязку',
+            secondMatPrice: obiemPilomat,
             price,
         }
     }
@@ -36,11 +41,16 @@ export function stappingTotalPrice(id, length, width, step, sushka) {
         price = resultObvazkaGoriz;
 
         return {
-            name: 'Обвязка фундамента',
+            majorType: 'Обвязка теплового контура',
+            minorType: 'Обвязка по горизонтали',
             styleName: 'stappingHouse',
             secondName: 'Обвязка горизонтальная',
             styleSecondName: 'gorizStapping',
             id: 'stappingVert',
+            firstMat:'Пиломатериал каменной сушки',
+            firstMatPrice: typeSushka,
+            secondMat: 'Объем пиломатериала на обвязку',
+            secondMatPrice: finalObiem,
             price,
         }
     }

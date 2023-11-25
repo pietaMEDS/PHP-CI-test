@@ -41,8 +41,8 @@ let fullKril = itogObv + valuePil + krepejKril + krovlKril + rabotaKril;
 
 let j = 0;
 let matObjArr = [
-
     '',
+
 
     nullevPerekrit = {
         majorType: 'Нулевое перекрытие',
@@ -70,7 +70,7 @@ let matObjArr = [
         thirdMatPrice: Math.round(itogSipRoof) + ' шт.'
     },
 
-    '',
+'',
 
     krilcoObj = {
         majorType: 'Обвязка крыльца',
@@ -84,7 +84,7 @@ let matObjArr = [
         thirdMatPrice: Math.round(itogObv) + Math.round(krepejKril) + ' руб.'
     },
 
-    '',
+
 
 
 ];
@@ -107,7 +107,7 @@ if (svai !== null) {
 
 let wall = JSON.parse(localStorage.getItem('wallPrice'));
 if (wall !== null) {
-    matObjArr[j + 1] = typeWall = {
+    matObjArr[j+1] = typeWall = {
         majorType: wall.majorType,
         minorType: wall.minorType,
         price: wall.price + ' руб.',
@@ -118,6 +118,35 @@ if (wall !== null) {
     }
     j++;
 }
+
+let strapping = JSON.parse(localStorage.getItem('stappingPrice'));
+if (strapping !== null) {
+    matObjArr[j+2] = typeWall = {
+        majorType: strapping.majorType,
+        minorType: strapping.minorType,
+        price: strapping.price + ' руб.',
+        firstMat: strapping.firstMat,
+        firstMatPrice: strapping.firstMatPrice + ' руб.',
+        secondMat: strapping.secondMat,
+        secondMatPrice: strapping.secondMatPrice + ' руб.',
+    }
+    j++;
+}
+
+let roofPrice = JSON.parse(localStorage.getItem('roofPrice'));
+if (roofPrice !== null) {
+    matObjArr[j+3] = typeWall = {
+        majorType: roofPrice.majorType,
+        minorType: roofPrice.minorType,
+        price: roofPrice.price + ' руб.',
+        firstMat: roofPrice.firstMat,
+        firstMatPrice: roofPrice.firstMatPrice + ' руб.',
+        secondMat: roofPrice.secondMat,
+        secondMatPrice: roofPrice.secondMatPrice + ' руб.',
+    }
+    j++;
+}
+
 
 for (let i = 0; i < 13; i++) {
     if (i > 7) {

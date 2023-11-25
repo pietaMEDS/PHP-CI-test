@@ -30,7 +30,6 @@ function activeCircleLine(circle, line, empty) {
 function localTimeStamp() {
     const objectCircles = JSON.parse(localStorage.getItem('object'));
     const timestamp = localStorage.getItem('timestamp');
-    console.log(timestamp);
     if (timestamp && Date.now() < parseInt(timestamp) && objectCircles) {
 
         console.log(objectCircles['circleFoundation']);

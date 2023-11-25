@@ -15,6 +15,8 @@ $.ajax({
     }
 });
 
+let itogBtn = document.getElementById('itogBtn');
+itogBtn.disabled = true;
 
 let length = Number(localStorage.getItem('length'));
 let width = Number(localStorage.getItem('width'));
@@ -24,7 +26,7 @@ let kolSvai = (length / step + 1) * (width / step + 1);
 // винтовая свая
 let svaiPrice = {price: 0};
 const vintPricePlusBtn = document.getElementById('vintPricePlus');
-vintPricePlusBtn.addEventListener('click', (e) => {
+vintPricePlusBtn.addEventListener('click', () => {
     svaiPrice = svai(vintPricePlusBtn.id, kolSvai, vintSvai, vintSvaiDostavka, montajVint);
     update(svaiPrice);
     saveSelectedElements();
@@ -35,7 +37,7 @@ vintPricePlusBtn.addEventListener('click', (e) => {
 
 // Железобетоная свая
 const jelezBtn = document.getElementById('jelezPricePlus');
-jelezBtn.addEventListener('click', (e) => {
+jelezBtn.addEventListener('click', () => {
     svaiPrice = svai(jelezBtn.id, kolSvai, jelezobeton, jelezSvaiDostavka, montajJelez);
     update(svaiPrice);
     saveSelectedElements();
@@ -43,7 +45,6 @@ jelezBtn.addEventListener('click', (e) => {
     document.getElementById('Svai_JB').style.display = "block";
     localStorage.setItem('svaiPrice', JSON.stringify(svaiPrice));
 });
-
 
 // wallHeight used
 let wallPrice = {price: 0};
@@ -94,9 +95,8 @@ document.getElementById('vertObvDob').addEventListener('click', () => {
 
 // Обновляет изменения при клике на добавить)
 function update(current) {
-    console.log(current);
     let main = document.getElementById('totalNumber');
-    let RESULT = wallPrice.price + svaiPrice.price + roofPrice.price + stappingPrice.price; // ...
+    let RESULT = wallPrice.price + svaiPrice.price + roofPrice.price + stappingPrice.price;
     main.innerText = RESULT;
 
     if (current.id) {
@@ -132,6 +132,11 @@ function update(current) {
             childElement.appendChild(secondElement);
             smetaRow.appendChild(childElement);
         }
+
+
+
+        if (smetaRow.children.length === 4)
+            itogBtn.disabled = false;
 
         saveSelectedElements();
     }
@@ -223,7 +228,4 @@ setTimeout(() => {
     stappingTotalPrice("vertObvDob", length, width, step, sushkaKamennaya);
     stappingTotalPrice("GorizObvDob", length, width, step, sushkaKamennaya);
 
-
 }, 1000);
-
-zero(length, width);

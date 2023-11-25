@@ -39,6 +39,31 @@ let rabotaKril = 3 * 2 * 3600 //D48
 let fullKril = itogObv + valuePil + krepejKril + krovlKril + rabotaKril;
 
 
+//Работы
+let krepej = length * width * 1320 // D44
+let montajRab = width * length * 3600 //D48
+let projivanie = 40000 + 40000;
+let fullRab = krepej + montajRab + projivanie;
+
+
+// двери / окна / вентиляционные выходы
+let kolvodver = 1;
+let dverSebes = kolvodver * 50000;
+let ustanovkaDver = kolvodver * 4000;
+let dver = dverSebes + ustanovkaDver; // 1-колво двер
+
+let kolvoOkn = 3;
+let oknSebes = kolvoOkn * 20000;
+let ustanovkaOkn = kolvoOkn * 1000
+let okna = oknSebes + ustanovkaOkn;
+
+let kolvoVent = 3;
+let ventSebes = kolvoVent * 12000;  // 12000 - D55
+let ustanovkaVent = kolvoVent * 2000;
+let vent = ventSebes + ustanovkaVent;
+
+
+
 let j = 0;
 let matObjArr = [
     '',
@@ -84,8 +109,55 @@ let matObjArr = [
         thirdMatPrice: Math.round(itogObv) + Math.round(krepejKril) + ' руб.'
     },
 
+    '',
 
+    rabotaObj = {
+        majorType: 'Работы',
+        minorType: 'Работы',
+        price: Math.round(fullRab) + ' руб.',
+        firstMat: 'Крепеж',
+        firstMatPrice: Math.round(krepej) + ' руб.',
+        secondMat: 'Монтажные работы',
+        secondMatPrice: Math.round(montajRab) + ' руб.',
+        thirdMat: 'Проживание и доставка',
+        thirdMatPrice: Math.round(projivanie) + ' руб.'
+    },
 
+    dverObj = {
+        majorType: 'Стоимость входных дверей с терморазрывом',
+        minorType: 'Двери',
+        price: Math.round(dver) + ' руб.',
+        firstMat: 'Стоимость дверей',
+        firstMatPrice: Math.round(dverSebes) + ' руб.',
+        secondMat: 'Установка',
+        secondMatPrice: Math.round(ustanovkaDver) + ' руб.',
+        thirdMat: 'Кол-во',
+        thirdMatPrice: Math.round(kolvodver) + ' шт.'
+    },
+
+    oknaObj = {
+        majorType: 'Стоимость оконных конструкций с монтажем',
+        minorType: 'Окна',
+        price: Math.round(okna) + ' руб.',
+        firstMat: 'Стоимость окон',
+        firstMatPrice: Math.round(oknSebes) + ' руб.',
+        secondMat: 'Установка',
+        secondMatPrice: Math.round(ustanovkaOkn) + ' руб.',
+        thirdMat: 'Кол-во',
+        thirdMatPrice: Math.round(kolvoOkn) + ' шт.'
+    },
+
+    ventObj = {
+        majorType: 'Стоимость вентиляционных выходов',
+        minorType: 'Вентиляция',
+        price: Math.round(vent) + ' руб.',
+        firstMat: 'Стоимость вентиляционных выходов',
+        firstMatPrice: Math.round(ventSebes) + ' руб.',
+        secondMat: 'Монтаж',
+        secondMatPrice: Math.round(ustanovkaVent) + ' руб.',
+        thirdMat: 'Кол-во',
+        thirdMatPrice: Math.round(kolvoVent) + ' шт.'
+    },
 
 ];
 

@@ -62,6 +62,15 @@ require './../Header/Head.php';
           <div class="circle" id="circleSupport"><span id="media-helper">1</span></div>
         </div>
       </div>
+      <div class="list">
+        <div class="item">
+            <div class="matherials_table">
+              <h4>Стоимость материалов дома</h4>
+              <div class="matherials_row"></div>
+              <div class="houseprice"></div>
+            </div>
+        </div>
+      </div>
     </div>
     </div>
     <div>
@@ -304,19 +313,12 @@ require './../Header/Head.php';
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
   </main>
   <div id="smeta">
-      <div class="item">
-          <div class="matherials_table">
-            <h4>Стоимость материалов дома</h4>
-            <div class="matherials_row"></div>
-            <div class="houseprice"></div>
-          </div>
-      </div>
-      </div>
+      
+    </div>
   <div id="Finalsmeta">
        <div class="itog-flex">
       <div class="container">

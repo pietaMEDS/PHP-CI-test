@@ -6,13 +6,9 @@ html {
   font-family: 'Montserrat', sans-serif;
 }
 
-#smeta{
-    margin-top:35%;
-    display: flex;
-    justify-content: center;
-}
-#smeta .item{
-    width: 35%;
+.container_home .list .item{
+  margin-top: 50%;
+    width: 100%;
     border: 4px solid #FF855D;
 }
 #Finalsmeta{
@@ -25,8 +21,7 @@ html {
 }
 .container_home {
   display: flex;
-  justify-content: center;
-  margin-left: -30%;
+  justify-content: space-around;
   height: 80%;
 }
 
@@ -35,7 +30,7 @@ html {
 }
 
 .home {
-  position: absolute;
+  position: static;
   height: 80%;
 }
 
@@ -521,15 +516,15 @@ button .Empty {
 
 
 @media (max-width:1300px) {
-    smeta{
-        margin-top: 5%;
-    }
-    .header__inner img{
+  #smeta{
+    margin-top: 5%;
+  }
+  .header__inner img{
     display: none;
   }
   #media-helper{
     display:block;
-}
+  }
   .header__text{
       margin-left:12%;
       margin-top:1%;
@@ -556,9 +551,16 @@ button .Empty {
     display: flex;
     justify-content: center;
   }
-
-  .container_home {
+  .list{
     display: flex;
+    justify-content: center;
+  }
+  .item{
+    margin-top: 5% !important;
+    width: 35% !important;
+  }
+  .container_home {
+    display: block;
     justify-content: center;
     margin-left: 0;
     height: 80%;
@@ -611,7 +613,7 @@ button .Empty {
     margin-top: -51%;
   }
   .container{
-    margin-left: 3%;
+    margin-top: 0;
   }
   .circle{
     width: 50px;

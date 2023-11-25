@@ -6,6 +6,23 @@ html {
   font-family: 'Montserrat', sans-serif;
 }
 
+smeta{
+    margin-top:35%;
+    display: flex;
+    justify-content: center;
+}
+smeta item{
+    width: 35%;
+    border: 4px solid #FF855D;
+}
+Finalsmeta{
+    display: flex;
+    justify-content: center; 
+}
+Finalsmeta item{
+    width: 35%;
+    border: 4px solid #FF855D;
+}
 .container_home {
   display: flex;
   justify-content: center;
@@ -195,7 +212,6 @@ html {
   border: 2px solid #FF855D;
   border-radius: 8px;
   margin-top: 35%;
-  width: 30%;
 }
 
 .totalPrice {
@@ -505,6 +521,9 @@ button .Empty {
 
 
 @media (max-width:1300px) {
+    smeta{
+        margin-top: 5%;
+    }
     .header__inner img{
     display: none;
   }

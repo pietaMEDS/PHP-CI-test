@@ -41,25 +41,25 @@ require './../Header/Head.php';
         </div>
         <!-- {/* ЛИНИИ ВЫБОРА */} -->
         <div class="container_choice" id="wall">
-          <div class="circle" id="circleWall">4</div>
+          <div class="circle" id="circleWall"><span id="media-helper">4</span></div>
           <div class="line" id="lineWall"></div>
           <div class="Empty" id="emptyWall"></div>
         </div>
 
         <div class="container_choice" id="foundation">
-          <div class="circle" id="circleFoundation">3</div>
+          <div class="circle" id="circleFoundation"><span id="media-helper">3</span></div>
           <div class="line" id="lineFoundation"></div>
           <div class="Empty" id="emptyFoundation"></div>
         </div>
         <div class="container_choice" id="floor">
           <div class="Empty" id="emptyFloor"></div>
           <div class="line" id="lineFloor"></div>
-          <div class="circle" id="circleFloor">2</div>
+          <div class="circle" id="circleFloor"><span id="media-helper">2</span></div>
         </div>
         <div class="container_choice" id="support">
           <div class="Empty" id="emptySupport"></div>
           <div class="line" id="lineSupport"></div>
-          <div class="circle" id="circleSupport">1</div>
+          <div class="circle" id="circleSupport"><span id="media-helper">1</span></div>
         </div>
       </div>
     </div>
@@ -323,7 +323,10 @@ require './../Header/Head.php';
             </div>
           </div>
 
-
+    <smeta>
+        // Если не могёте правильно модалки делать
+        // так не делайте вовсе
+    </smeta>
   </main>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="pdf.js"></script>

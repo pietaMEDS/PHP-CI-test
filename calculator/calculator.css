@@ -13,6 +13,10 @@ html {
   height: 80%;
 }
 
+#media-helper{
+    display:none;
+}
+
 .home {
   position: absolute;
   height: 80%;
@@ -504,6 +508,9 @@ button .Empty {
     .header__inner img{
     display: none;
   }
+  #media-helper{
+    display:block;
+}
   .header__text{
       margin-left:12%;
       margin-top:1%;
@@ -603,6 +610,9 @@ button .Empty {
     margin-top: 29px;
     font-size: 19px;
   }
+  #media-helper{
+    display:block;
+}
   .container{
     margin-top: 30%;
     width: 328px;

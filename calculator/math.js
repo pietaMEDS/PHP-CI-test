@@ -135,8 +135,10 @@ function update(current) {
 
 
 
-        if (smetaRow.children.length === 4)
+        if (smetaRow.children.length === 4){
             itogBtn.disabled = false;
+            itogBtn.classList.add('activeBtn');
+        }
 
         saveSelectedElements();
     }

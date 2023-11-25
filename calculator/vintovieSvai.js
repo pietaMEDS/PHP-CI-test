@@ -14,8 +14,8 @@ export function svai(id, kolSvai, typeSvai, svaiDostavka, motnaj) {
         ttlJelez.innerText = price + " руб.";
 
         return {
-            majorType: 'Железобетонные сваи',
-            minorType: 'Фундамент дома',
+            majorType: 'Фундамент дома',
+            minorType: 'Железобетонные сваи',
             styleName: 'foundationS',
             secondName: 'Железобетонные сваи',
             styleSecondName: 'jelezoBeton',
@@ -42,8 +42,8 @@ export function svai(id, kolSvai, typeSvai, svaiDostavka, motnaj) {
         ttlCost.innerText = price + " руб.";
 
         return {
-            majorType: 'Винтовые сваи',
-            minorType: 'Фундамент дома',
+            majorType: 'Фундамент дома',
+            minorType: 'Винтовые сваи',
             styleName: 'foundationS',
             secondName: 'Винтовые сваи',
             styleSecondName: 'vintovayaSvai',

@@ -630,3 +630,25 @@ button .Empty {
   }
 }
 
+.activeBtn{
+  box-shadow: 0 0 0 0 rgba(100, 52, 36, 1);
+  transform: scale(1);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(100, 52, 36, 1);
+  }
+
+	70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(100, 52, 36, 0);
+  }
+
+	100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(100, 52, 36, 0);
+  }
+}

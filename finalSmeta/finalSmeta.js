@@ -29,10 +29,6 @@ let fullRoof = sipPanRoof + pilomatRoofItog;
 
 
 //Обвязка крыльца
-let lengthVerDosk = 3 * 2 * 3;
-let lengthGorDosk = (3 / 2 + 1) * 2 * 3;
-//let lengthVerDosk = 3 * 2 * 3;
-//let lengthGorDosk = (3 / 2 + 1)* 2 * 3;
 let valueObv = 0.33;
 let itogObv = valueObv * 24725; //d42
 let valuePil = (((2 + 3) * 2 / 0.6 * 2 + 2.8 * 3 * 4 + 2 / 0.6 * 3 * 4)) * 0.15 * 0.05;
@@ -43,8 +39,36 @@ let rabotaKril = 3 * 2 * 3600 //D48
 let fullKril = itogObv + valuePil + krepejKril + krovlKril + rabotaKril;
 
 
-let j = 3;
+//Работы
+let krepej = length * width * 1320 // D44
+let montajRab = width * length * 3600 //D48
+let projivanie = 40000 + 40000;
+let fullRab = krepej + montajRab + projivanie;
+
+
+// двери / окна / вентиляционные выходы
+let kolvodver = 1;
+let dverSebes = kolvodver * 50000;
+let ustanovkaDver = kolvodver * 4000;
+let dver = dverSebes + ustanovkaDver; // 1-колво двер
+
+let kolvoOkn = 3;
+let oknSebes = kolvoOkn * 20000;
+let ustanovkaOkn = kolvoOkn * 1000
+let okna = oknSebes + ustanovkaOkn;
+
+let kolvoVent = 3;
+let ventSebes = kolvoVent * 12000;  // 12000 - D55
+let ustanovkaVent = kolvoVent * 2000;
+let vent = ventSebes + ustanovkaVent;
+
+
+
+let j = 0;
 let matObjArr = [
+    '',
+
+
     nullevPerekrit = {
         majorType: 'Нулевое перекрытие',
         minorType: 'Нулевое перекрытие',
@@ -56,6 +80,8 @@ let matObjArr = [
         thirdMat: 'СИП панели',
         thirdMatPrice: Math.round(itogSip) + ' шт.'
     },
+
+    '',
 
     roofObj = {
         majorType: 'Потолок первого этажа',
@@ -69,6 +95,7 @@ let matObjArr = [
         thirdMatPrice: Math.round(itogSipRoof) + ' шт.'
     },
 
+'',
 
     krilcoObj = {
         majorType: 'Обвязка крыльца',
@@ -80,7 +107,58 @@ let matObjArr = [
         secondMatPrice: Math.round(krovlKril) + ' руб.',
         thirdMat: 'Стоимость обвязки и Крепеж крыльца',
         thirdMatPrice: Math.round(itogObv) + Math.round(krepejKril) + ' руб.'
-    }
+    },
+
+    '',
+
+    rabotaObj = {
+        majorType: 'Работы',
+        minorType: 'Работы',
+        price: Math.round(fullRab) + ' руб.',
+        firstMat: 'Крепеж',
+        firstMatPrice: Math.round(krepej) + ' руб.',
+        secondMat: 'Монтажные работы',
+        secondMatPrice: Math.round(montajRab) + ' руб.',
+        thirdMat: 'Проживание и доставка',
+        thirdMatPrice: Math.round(projivanie) + ' руб.'
+    },
+
+    dverObj = {
+        majorType: 'Стоимость входных дверей с терморазрывом',
+        minorType: 'Двери',
+        price: Math.round(dver) + ' руб.',
+        firstMat: 'Стоимость дверей',
+        firstMatPrice: Math.round(dverSebes) + ' руб.',
+        secondMat: 'Установка',
+        secondMatPrice: Math.round(ustanovkaDver) + ' руб.',
+        thirdMat: 'Кол-во',
+        thirdMatPrice: Math.round(kolvodver) + ' шт.'
+    },
+
+    oknaObj = {
+        majorType: 'Стоимость оконных конструкций с монтажем',
+        minorType: 'Окна',
+        price: Math.round(okna) + ' руб.',
+        firstMat: 'Стоимость окон',
+        firstMatPrice: Math.round(oknSebes) + ' руб.',
+        secondMat: 'Установка',
+        secondMatPrice: Math.round(ustanovkaOkn) + ' руб.',
+        thirdMat: 'Кол-во',
+        thirdMatPrice: Math.round(kolvoOkn) + ' шт.'
+    },
+
+    ventObj = {
+        majorType: 'Стоимость вентиляционных выходов',
+        minorType: 'Вентиляция',
+        price: Math.round(vent) + ' руб.',
+        firstMat: 'Стоимость вентиляционных выходов',
+        firstMatPrice: Math.round(ventSebes) + ' руб.',
+        secondMat: 'Монтаж',
+        secondMatPrice: Math.round(ustanovkaVent) + ' руб.',
+        thirdMat: 'Кол-во',
+        thirdMatPrice: Math.round(kolvoVent) + ' шт.'
+    },
+
 ];
 
 let svai = JSON.parse(localStorage.getItem('svaiPrice'));
@@ -90,28 +168,57 @@ if (svai !== null) {
         minorType: svai.minorType,
         price: svai.price + ' руб.',
         firstMat: svai.firstMat,
-        firstMatPrice: svai.firstMatPrice,
+        firstMatPrice: svai.firstMatPrice + ' руб.',
         secondMat: svai.secondMat,
-        secondMatPrice: svai.secondMatPrice,
+        secondMatPrice: svai.secondMatPrice + ' руб.',
         thirdMat: svai.thirdMat,
-        thirdMatPrice: svai.thirdMatPrice,
+        thirdMatPrice: svai.thirdMatPrice + ' руб.',
     }
     j++;
 }
 
 let wall = JSON.parse(localStorage.getItem('wallPrice'));
 if (wall !== null) {
-    matObjArr[j] = typeWall = {
+    matObjArr[j+1] = typeWall = {
         majorType: wall.majorType,
         minorType: wall.minorType,
         price: wall.price + ' руб.',
         firstMat: wall.firstMat,
-        firstMatPrice: wall.firstMatPrice,
+        firstMatPrice: wall.firstMatPrice + ' руб.',
         secondMat: wall.secondMat,
-        secondMatPrice: wall.secondMatPrice,
+        secondMatPrice: wall.secondMatPrice + ' руб.',
     }
     j++;
 }
+
+let strapping = JSON.parse(localStorage.getItem('stappingPrice'));
+if (strapping !== null) {
+    matObjArr[j+2] = typeWall = {
+        majorType: strapping.majorType,
+        minorType: strapping.minorType,
+        price: strapping.price + ' руб.',
+        firstMat: strapping.firstMat,
+        firstMatPrice: strapping.firstMatPrice + ' руб.',
+        secondMat: strapping.secondMat,
+        secondMatPrice: strapping.secondMatPrice + ' руб.',
+    }
+    j++;
+}
+
+let roofPrice = JSON.parse(localStorage.getItem('roofPrice'));
+if (roofPrice !== null) {
+    matObjArr[j+3] = typeWall = {
+        majorType: roofPrice.majorType,
+        minorType: roofPrice.minorType,
+        price: roofPrice.price + ' руб.',
+        firstMat: roofPrice.firstMat,
+        firstMatPrice: roofPrice.firstMatPrice + ' руб.',
+        secondMat: roofPrice.secondMat,
+        secondMatPrice: roofPrice.secondMatPrice + ' руб.',
+    }
+    j++;
+}
+
 
 for (let i = 0; i < 13; i++) {
     if (i > 7) {

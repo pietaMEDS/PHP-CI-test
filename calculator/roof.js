@@ -3,9 +3,6 @@ export function roof(length, width, pilomaterialItog, krovlyaCherepica) {
     let krovlya = Number(krovlyaCherepica.totalPrice);
     let pilomaterial = Number(pilomaterialItog.totalPrice);
 
-    console.log(pilomaterial);
-    console.log(krovlya);
-
     let volumFlor = (length + width) * 2 * 0.15 * 0.05;
 
     // Объём пиламатериала на промежуточный мауэрлат и опоры под стропилами
@@ -73,12 +70,16 @@ export function roof(length, width, pilomaterialItog, krovlyaCherepica) {
     // Стоимость кровли
     let price = Math.round(Pilomat + metalCherepica);
     document.querySelector(".summ").innerHTML = price + ' руб.';
-    console.log(price);
     return {
-        name: 'Кровля крыши',
+        majorType: 'Кровля',
+        minorType: 'Кровля',
         secondName: 'Металлочерепица',
         styleName: 'roofKrovlya',
         id: 'krovlya',
+        firstMat: 'Пиломатериал под кровлю',
+        firstMatPrice: Pilomat,
+        secondMat: 'Кровля из металочерипицы',
+        secondMatPrice: metalCherepica,
         price,
     };
 }

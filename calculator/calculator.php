@@ -65,7 +65,7 @@ require './../Header/Head.php';
       <div class="list">
         <div class="item">
             <div class="matherials_table">
-              <h4>Стоимость материалов дома</h4>
+              <h4 class="pr">Стоимость материалов дома</h4>
               <div class="matherials_row"></div>
               <div class="houseprice"></div>
             </div>

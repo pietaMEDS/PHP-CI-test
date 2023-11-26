@@ -359,11 +359,6 @@ button .Empty {
 .price button {
   margin: 0;
 }
-
-.contName {
-
-}
-
 .prices {
   border: 3px solid #FF855D;
   border-radius: 20px;
@@ -424,10 +419,6 @@ button .Empty {
 .material h2 {
   font-size: 28px;
   margin-left: 20px;
-}
-
-.contWall {
-    
 }
 
 .matherialsWall {
@@ -496,7 +487,10 @@ button .Empty {
 .matherials_table h4 {
   margin-top: 1%;
 }
-
+.pr{
+  color: white;
+  text-align: center;
+}
 
 .houseprice {
   display: flex;
@@ -557,7 +551,10 @@ button .Empty {
   }
   .item{
     margin-top: 5% !important;
-    width: 35% !important;
+    width: 61% !important;
+  }
+  .matherials_table{
+    text-align: center;
   }
   .container_home {
     display: block;
@@ -625,6 +622,38 @@ button .Empty {
   .header__inner img{
     display: none;
   }
+  .modal_main:last-child h1 {
+    margin-top: 80px;
+    margin-left: 91px;
+    font-size: 29px;
+  }
+  .modal_main:last-child p {
+    font-size: 22px;
+    margin-left: 116px;
+}
+.price{
+  margin-left: 87px;
+}
+.material h2 {
+  font-size: 27px;
+  margin-left: 76px;
+  text-align: center;
+}
+.material ul li {
+  font-size: 20px;
+  margin-left: 74px;
+}
+.prices{
+  margin-left: 90px;
+}
+.modalWall h2{
+margin-left: 212px;
+}
+.modalWall li {
+  margin-left: 93px;
+  font-size: 18px;
+}
+
   .header__text a{
     text-align: center;
     margin-right: 26px;

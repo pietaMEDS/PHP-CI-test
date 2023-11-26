@@ -157,7 +157,7 @@ let matObjArr = [
         secondMatPrice: Math.round(ustanovkaVent) + ' руб.',
         thirdMat: 'Кол-во',
         thirdMatPrice: Math.round(kolvoVent) + ' шт.'
-    },
+    },]
 
 const { jsPDF } = window.jspdf;
 // Получение кнопки "createpdf" по идентификатору

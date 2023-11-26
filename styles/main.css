@@ -421,11 +421,16 @@ a {
 
     }
     #demo,#demotwo{
-        width:10%;
+        width:13%;
     }
     .select{
         height: 36px;
 
+    }
+    .continue{
+        width: 100%;
+        margin-left: 10px;
+        
     }
 }
 @media(max-width:800px){
@@ -457,5 +462,10 @@ a {
 }
 .continue,#floors{
     font-size: 21px;
+}
+.continue{
+    height: 42px;
+    margin-left: 101px;
+    width: 45%;
 }
 }

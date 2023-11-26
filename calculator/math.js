@@ -205,7 +205,6 @@ let krovlyaCherepica;
 // СТЕНЫ
 let sip1;
 let sip2;
-let sushka;
 setTimeout(() => {
     // СВАИ
     vintSvai = response.variable1;

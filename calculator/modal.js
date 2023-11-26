@@ -1,7 +1,9 @@
 const circles = document.querySelectorAll('.circle');
 let lastModalContent = 0;
 let lastButton = 0;
+document.getElementById("CloseModalButt").addEventListener("click",()=>{
 
+})
 circles.forEach(circle => {
     circle.addEventListener('click', openModal);
 });
@@ -237,6 +239,5 @@ function openModal(e) {
                 }
             }
         }
-
     }
 }

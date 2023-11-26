@@ -41,25 +41,25 @@ require './../Header/Head.php';
         </div>
         <!-- {/* ЛИНИИ ВЫБОРА */} -->
         <div class="container_choice" id="wall">
-          <div class="circle" id="circleWall"><span id="media-helper">4</span></div>
+          <div class="circle" id="circleWall"></div>
           <div class="line" id="lineWall"></div>
           <div class="Empty" id="emptyWall"></div>
         </div>
 
         <div class="container_choice" id="foundation">
-          <div class="circle" id="circleFoundation"><span id="media-helper">3</span></div>
+          <div class="circle" id="circleFoundation"></div>
           <div class="line" id="lineFoundation"></div>
           <div class="Empty" id="emptyFoundation"></div>
         </div>
         <div class="container_choice" id="floor">
           <div class="Empty" id="emptyFloor"></div>
           <div class="line" id="lineFloor"></div>
-          <div class="circle" id="circleFloor"><span id="media-helper">2</span></div>
+          <div class="circle" id="circleFloor"></div>
         </div>
         <div class="container_choice" id="support">
           <div class="Empty" id="emptySupport"></div>
           <div class="line" id="lineSupport"></div>
-          <div class="circle" id="circleSupport"><span id="media-helper">1</span></div>
+          <div class="circle" id="circleSupport"></div>
         </div>
       </div>
       <div class="list">
@@ -316,9 +316,9 @@ require './../Header/Head.php';
             </div>
           </div>
   </main>
-  <div id="smeta">
-      
-    </div>
+  <div id="CloseModal">
+    <img id="CloseModalButt" src="pictures/close.png">
+  </div>
   <div id="Finalsmeta">
        <div class="itog-flex">
       <div class="container">

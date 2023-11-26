@@ -32,11 +32,25 @@ let fullRoof = sipPanRoof + pilomatRoofItog;
 let valueObv = 0.33;
 let itogObv = valueObv * 24725; //d42
 let valuePil = (((2 + 3) * 2 / 0.6 * 2 + 2.8 * 3 * 4 + 2 / 0.6 * 3 * 4)) * 0.15 * 0.05;
-//let pilmatCost = valuePil * 24725; //D42
+// let pilmatCost = valuePil * 24725; //D42
 let krepejKril = 2 * 3 * 500;
 let krovlKril = 2 * 3 * 2070 //D46
 let rabotaKril = 3 * 2 * 3600 //D48
 let fullKril = itogObv + valuePil + krepejKril + krovlKril + rabotaKril;
+
+// Обвязка терассы
+let lengthVertDosk = 4 * 2 * 3;
+let lengthGorDosk = (4 / 2 + 1) * 1 * 3;
+let itoge = valueObv * 24725; //d42
+let valuePilContur = ((1+4) * 2 * 3 + 1/0.6 * 4 + 2 * 2.8 * 3 + 1/0.6 * 4 * 3) * 0.15 * 0.05; //ТУТ ОШИБКА
+let karkasTer = valuePilContur * 24725;
+let krepTerassa = 1 * 4 * 500;
+let krovTerass = 1 * 4 * 2070;
+let rabTerassa = 1 * 4 * 3600;
+let fullItog = rabTerassa + krovTerass + krepTerassa + karkasTer + itoge;
+console.log(fullItog);
+
+
 
 
 //Работы
@@ -62,6 +76,9 @@ let ventSebes = kolvoVent * 12000;  // 12000 - D55
 let ustanovkaVent = kolvoVent * 2000;
 let vent = ventSebes + ustanovkaVent;
 
+// Объём ОСП на фронтоны
+let radians = (Math.PI / 180) * 30;
+let valueOSP = (Math.tan(radians) * 10 / 2) * (10 / 2) * 2;
 
 
 let j = 0;

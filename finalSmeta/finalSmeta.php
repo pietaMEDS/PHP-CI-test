@@ -19,7 +19,7 @@ require './../Header/Header.php';
 
 <div class="itogPrice">
     <h2>Итоговая цена</h2>
-    <input type="text" name="itogPrice" id="itogPrice" readonly>
+    <h1 id="itogPrice"></h1>
 </div>
 
 <button class="modalBtn">Скачать итоговую смету</button>

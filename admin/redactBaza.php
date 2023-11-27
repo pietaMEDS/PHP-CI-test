@@ -8,7 +8,7 @@ if (isset($_COOKIE["login"])) {
 $pageStyles = 'admin.css';
 require "../Header/Head.php";
 require "../Header/Header.php";
-require_once '../admin/connekt.php';
+require '../admin/connekt.php';
 echo "<h2>Добро пожаловать admin</h2>";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

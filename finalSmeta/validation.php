@@ -1,13 +1,23 @@
 <?php
+require './../admin/connekt.php';
+
 $username = $_POST['name'];
 $usermail = $_POST['email'];
 $userphone = $_POST['phone'];
 
 if (!empty($username) && !empty($usermail) && !empty($userphone)) {
-    $formattedPhone = validatePhoneNumber($userphone);
-    if ($formattedPhone) {
+
+    if (validatePhoneNumber($userphone)) {
         if (validateEmail($usermail)) {
             echo "Спасибо за обратную связь!";
+            $sql = "SELECT * FROM user_info WHERE email = '$usermail' OR phone = '$userphone'";
+            $result = $mysqli->query($sql);
+
+            if ($result->num_rows<=0) {
+                $sql = "INSERT INTO user_info (name, email, phone) VALUES ('$username', '$usermail', '$userphone')";
+                $mysqli->query($sql);
+            }
+            $mysqli->close();
         } else {
             echo "Введен неккоректный email!";
         }

@@ -240,7 +240,7 @@ function totalPrice () {
     for (let i = 0; i < matObjArr.length; i++) {
         sum += Number(matObjArr[i].price.substring(0, matObjArr.length - 5));
     }
-    document.getElementById('itogPrice').value = sum + ' руб.';
+    document.getElementById('itogPrice').innerHTML = sum + ' руб.';
 }
 
 totalPrice();

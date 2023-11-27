@@ -38,3 +38,7 @@ table {
     color: #ffffff;
     font-size: 24px;
   }
+
+  input  {
+      outline: none;
+  }

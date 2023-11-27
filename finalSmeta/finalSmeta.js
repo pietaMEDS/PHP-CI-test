@@ -48,10 +48,6 @@ let krepTerassa = 1 * 4 * 500;
 let krovTerass = 1 * 4 * 2070;
 let rabTerassa = 1 * 4 * 3600;
 let fullItog = rabTerassa + krovTerass + krepTerassa + karkasTer + itoge;
-console.log(fullItog);
-
-
-
 
 //Работы
 let krepej = length * width * 1320 // D44
@@ -84,7 +80,6 @@ let valueOSP = (Math.tan(radians) * 10 / 2) * (10 / 2) * 2;
 let j = 0;
 let matObjArr = [
     '',
-
 
     nullevPerekrit = {
         majorType: 'Нулевое перекрытие',
@@ -176,74 +171,7 @@ let matObjArr = [
         thirdMatPrice: Math.round(kolvoVent) + ' шт.'
     },]
 
-const { jsPDF } = window.jspdf;
-// Получение кнопки "createpdf" по идентификатору
-const createPdfButton = document.getElementById('createpdf');
 
-// Добавление обработчика события click на кнопку "createpdf"
-createPdfButton.addEventListener('click', function() {
-    // Создание нового документа PDF
-    const doc = new jsPDF(  'UTF-8');
-
-    // Функция для добавления содержимого в PDF
-    function addContent() {
-        // Заголовок
-        doc.setFontSize(18);
-        doc.text('Смета', 10, 10);
-
-        // Добавление материалов и цен
-        let y = 20; // Начальная позиция по вертикали
-        for (let i = 0; i < matObjArr.length; i++) {
-            const obj = matObjArr[i];
-            if (obj.majorType !== undefined && obj.majorType !== '') {
-                doc.setFontSize(14);
-                doc.text(obj.majorType, 10, y + 10);
-                doc.setFontSize(12);
-                doc.text(obj.minorType, 10, y + 20);
-                doc.text(`Цена: ${obj.price}`, 10, y + 30);
-                doc.text(obj.firstMat, 10, y + 40);
-                doc.text(`Цена: ${obj.firstMatPrice}`, 10, y + 50);
-                doc.text(obj.secondMat, 10, y + 60);
-                doc.text(`Цена: ${obj.secondMatPrice}`, 10, y + 70);
-
-                y += 100; // Увеличение позиции по вертикали для следующей записи
-            }
-        }
-    }
-
-    // Вызов функции для добавления содержимого в PDF
-    addContent();
-
-    // Получение строкового представления PDF
-    const pdfContent = doc.output();
-
-    // Создание Blob из строкового представления PDF
-    const blob = new Blob([pdfContent], { type: 'application/pdf' });
-
-    // Сохранение файла
-    const filename = 'smeta.pdf';
-    if (navigator.msSaveBlob) {
-        // Для IE/Edge
-        navigator.msSaveBlob(blob, filename);
-    } else {
-        // Для других браузеров
-        const link = document.createElement('a');
-        if (link.download !== undefined) {
-            // Создаем временную ссылку и задаем атрибуты
-            const url = URL.createObjectURL(blob);
-            link.href = url;
-            link.download = filename;
-
-            // Симулируем щелчок по ссылке для скачивания файла
-            document.body.appendChild(link);
-            link.click();
-
-            // Удаляем временную ссылку
-            document.body.removeChild(link);
-            URL.revokeObjectURL(url);
-        }
-    }
-});
 
 
 let svai = JSON.parse(localStorage.getItem('svaiPrice'));
@@ -303,6 +231,19 @@ if (roofPrice !== null) {
     }
     j++;
 }
+
+function totalPrice () {
+    console.log('click');
+    let sum = 0;
+
+
+    for (let i = 0; i < matObjArr.length; i++) {
+        sum += Number(matObjArr[i].price.substring(0, matObjArr.length - 5));
+    }
+    document.getElementById('itogPrice').value = sum + ' руб.';
+}
+
+totalPrice();
 
 for (let i = 0; i < 13; i++) {
     if (i > 7) {

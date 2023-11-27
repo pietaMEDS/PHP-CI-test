@@ -16,11 +16,40 @@ require './../Header/Header.php';
     <h2 class="gridZag">Обязательные эллементы</h2>
 </div>
 
-<input type="button" name="createpdf" id="createpdf" value="CREATE PDF">
+
+<div class="itogPrice">
+    <h2>Итоговая цена</h2>
+    <input type="text" name="itogPrice" id="itogPrice" readonly>
+</div>
+
+<button class="modalBtn">Скачать итоговую смету</button>
+
+<!-- МОДАЛЬНОЕ ОКНО-->
+<div class="modal-wrapper">
+    <div class="head"></div>
+    <div class="modal">
+        <div class="content">
+            <div class="good-job">
+                <p style="margin-bottom: 20px;">Прежде чем скачать смету, оставьте свои данные</p>
+                <form class="form_modal_window" action="" method="POST">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input type="email" name="email" placeholder="Ваш email" required>
+                    <input type="tel" name="phone" placeholder="Ваш телефон" required>
+                    <button class="downloadPDF">Скачать PDF</button>
+                    <button class="downloadExcel">Скачать Excel</button>
+                    <span class="requireAboutus"></span>
+                </form>
+                <div id="erconts"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="validationAjax.js"></script>
+<script src="modalPDF.js"></script>
 <script src="finalSmeta.js"></script>
 </body>
 

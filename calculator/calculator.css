@@ -36,6 +36,7 @@ html {
 }
 
 .home {
+  width: 60%;
   position: static;
   height: 80%;
 }
@@ -235,9 +236,9 @@ html {
 .button {
   padding: 10px 20px;
   font-size: 17px;
-  border: 2px solid #FF855D;
+  border: 2px solid #494949;
   border-radius: 8px;
-  background-color: #36363E;
+  background-color: #363637;
   color: #fff;
   margin-top: -3%;
   cursor: pointer;
@@ -517,8 +518,8 @@ button .Empty {
 
 @media (max-width:1300px) {
   #CloseModal{
-    top: 90%;
-    left: 93%;
+    top: 92%;
+    left: 83%;
     display: block;
     position: fixed;
     z-index: 20;
@@ -549,6 +550,7 @@ button .Empty {
       font-size:27px;
   }
   .home {
+    width: 90;
     position: static;
     display: flex;
     justify-content: center;
@@ -650,7 +652,9 @@ button .Empty {
     margin-left: 116px;
 }
 .price{
-  margin-left: 87px;
+    margin-left: 87px;
+    width: 84%;
+}
 }
 .material h2 {
   font-size: 27px;
@@ -680,7 +684,7 @@ margin-left: 212px;
   }
   #media-helper{
     display:block;
-}
+  }
   .container{
     margin-top: 30%;
     width: 328px;
@@ -696,9 +700,10 @@ margin-left: 212px;
   .totalPrice{
     text-align: center;
   }
-}
 
 .activeBtn{
+  border: 2px solid #FF855D;
+  background-color: #36363E;
   box-shadow: 0 0 0 0 rgba(100, 52, 36, 1);
   transform: scale(1);
   animation: pulse 2s infinite;

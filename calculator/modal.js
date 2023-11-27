@@ -1,9 +1,8 @@
 const circles = document.querySelectorAll('.circle');
 let lastModalContent = 0;
 let lastButton = 0;
-document.getElementById("CloseModalButt").addEventListener("click",()=>{
 
-})
+let mobileBtn = document.getElementById("CloseModalButt");
 circles.forEach(circle => {
     circle.addEventListener('click', openModal);
 });
@@ -28,6 +27,7 @@ function openModal(e) {
         });
 
         foundationModal.addEventListener('click', closeModal);
+        mobileBtn.addEventListener('click', closeModal);
 
         foundationModal.style.display = 'block';
 
@@ -57,7 +57,7 @@ function openModal(e) {
 
         // Закрытие обоих модалок
         function closeModal(e) {
-            if (e.target === foundationModal) {
+            if (e.target === foundationModal || e.target === mobileBtn) {
                 document.querySelector("html").style.overflow = "auto";
                 foundationModal.style.display = 'none';
                 if (lastModalContent) {
@@ -90,6 +90,7 @@ function openModal(e) {
         });
 
         wallModal.addEventListener('click', closeModal);
+        mobileBtn.addEventListener('click', closeModal);
 
         wallModal.style.display = 'block';
 
@@ -119,7 +120,7 @@ function openModal(e) {
 
         // Закрытие обоих модалок
         function closeModal(e) {
-            if (e.target === wallModal) {
+            if (e.target === wallModal || e.target === mobileBtn) {
                 document.querySelector("html").style.overflow = "auto";
                 wallModal.style.display = 'none';
                 if (lastModalContent) {
@@ -145,6 +146,7 @@ function openModal(e) {
         });
 
         floorModal.addEventListener('click', closeModal);
+        mobileBtn.addEventListener('click', closeModal);
 
         floorModal.style.display = 'block';
 
@@ -169,7 +171,7 @@ function openModal(e) {
         function closeModal(event) {
             document.querySelector("html").style.overflow = "auto";
             const clickedElement = event.target;
-            if (clickedElement.classList.contains('modalFloor')) {
+            if (clickedElement.classList.contains('modalFloor') || event.target === mobileBtn) {
                 floorModal.style.display = 'none';
                 flor.style.display = 'none';
             }
@@ -193,6 +195,7 @@ function openModal(e) {
         });
 
         strappingModal.addEventListener('click', closeModal);
+        mobileBtn.addEventListener('click', closeModal);
 
         strappingModal.style.display = 'block';
 
@@ -226,7 +229,7 @@ function openModal(e) {
 
         // Закрытие обоих модалок
         function closeModal(e) {
-            if (e.target === strappingModal) {
+            if (e.target === strappingModal || e.target === mobileBtn) {
                 document.querySelector("html").style.overflow = "auto";
                 strappingModal.style.display = 'none';
                 if (lastModalContent) {

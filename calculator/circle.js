@@ -32,7 +32,6 @@ function localTimeStamp() {
     const timestamp = localStorage.getItem('timestamp');
     if (timestamp && Date.now() < parseInt(timestamp) && objectCircles) {
 
-        console.log(objectCircles['circleFoundation']);
         // activeCircleLine(activeCircle, activeLine, activeEmpty);
         if (objectCircles['circleFoundation']) {
             activeCircleLine('circleFoundation', 'lineFoundation', 'emptyFoundation')

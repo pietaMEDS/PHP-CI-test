@@ -229,4 +229,4 @@ setTimeout(() => {
     stappingTotalPrice("vertObvDob", length, width, step, sushkaKamennaya);
     stappingTotalPrice("GorizObvDob", length, width, step, sushkaKamennaya);
 
-}, 1000);
+}, 1300);

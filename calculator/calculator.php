@@ -322,7 +322,6 @@ require './../Header/Head.php';
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="pdf.js"></script>
 <script src="./circle.js"></script>
 <script type="module" src='math.js'></script>
 <script src="./../calculator/modal.js"></script>

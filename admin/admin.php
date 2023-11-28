@@ -19,8 +19,8 @@ $mysqli->close();
 
 if ($row && $row["id"] > 0) {
     $_SESSION["login"] = $row["login"];
-    setcookie("login", $name, time() + 20);
-    setcookie("password", $password, time() + 20);
+    setcookie("login", $name, time() + 220);
+    setcookie("password", $password, time() + 220);
     header('Location:../admin/redactBaza.php');
 } else {
     header('Location:../admin/login.php');

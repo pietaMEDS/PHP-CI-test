@@ -18,7 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $extra = $_POST['nacenka'];
     $total = array(); // Create an empty array for storing the calculated totals
 
-    // Iterate over the arrays and perform calculations
     for ($i = 0; $i < count($id); $i++) {
         $subtotal = $count[$i] + ($count[$i] * ($extra[$i] / 100));
         $total[] = $subtotal; // Store the calculated total in the array
@@ -27,7 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $row = "UPDATE const SET name=?, costPrice=?, extraPrice=?, totalPrice=? WHERE id=?";
     $query = $mysqli->prepare($row);
 
-    // Iterate over the arrays and bind the parameters in the loop
     for ($i = 0; $i < count($id); $i++) {
         $query->bind_param("sssss", $name[$i], $count[$i], $extra[$i], $total[$i], $id[$i]);
         $query->execute();

@@ -17,7 +17,7 @@ setTimeout(() => {
     let crep = Number(response.variable12.totalPrice);
     let vents =Number(response.variable15.totalPrice);
     calculations(sip2500, sip174, sushka, metalocherepica,montaj,crep,vents)
-}, 500);
+}, 100);
 
 
 

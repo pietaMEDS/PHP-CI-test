@@ -45,6 +45,7 @@ require './../Header/Header.php';
     </div>
 </div>
 
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src='./pdfMake/pdfmake.min.js'></script>
 <script src='./pdfMake/vfs_fonts.js'></script>

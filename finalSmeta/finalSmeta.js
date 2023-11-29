@@ -276,6 +276,14 @@ function calculations(sip2500, sip174, sushka, metalocherepica, montaj, crep, ve
                 createPdfFile();
         }, 100)
     })
+    excelBtn.addEventListener("click", () => {
+        console.log(!excelBtn.classList.contains('off'))
+        setTimeout(() =>{
+            if (!excelBtn.classList.contains('off'))
+                createExcelFile();
+        }, 100)
+    });
+
 
     function createPdfFile() {
         let docInfo = {
@@ -300,7 +308,7 @@ function calculations(sip2500, sip174, sushka, metalocherepica, montaj, crep, ve
             docInfo.content.push({text: matObjArr[i].majorType, fontSize: 28, margin: [0, 20, 0, 8]});
             docInfo.content.push({text: matObjArr[i].firstMat + ': ' + matObjArr[i].firstMatPrice});
             docInfo.content.push({text: matObjArr[i].secondMat + ': ' + matObjArr[i].secondMatPrice});
-            if(matObjArr[i].thirdMat != undefined){
+            if(matObjArr[i].thirdMat !== undefined){
                 docInfo.content.push({text: matObjArr[i].thirdMat + ': ' + matObjArr[i].thirdMatPrice});
             }
             docInfo.content.push({text: 'Полная цена за ' + matObjArr[i].majorType + ' - ' + matObjArr[i].price});
@@ -308,6 +316,49 @@ function calculations(sip2500, sip174, sushka, metalocherepica, montaj, crep, ve
         docInfo.content.push({text: "Итоговая цена: " + finalPrice + ' рублей', fontSize: 28, margin: [0, 20, 0, 8]});
         pdfMake.createPdf(docInfo).download('name.pdf');
     }
+
+    function createExcelFile() {
+        let wb = XLSX.utils.book_new(); // Создаёт новую рабочую книгу
+
+        let wsData = [['Итоговая цена']]; // Данные для первого листа
+
+        for (let i = 0; i < matObjArr.length; i++) {
+            wsData.push([matObjArr[i].majorType],
+                [matObjArr[i].firstMat + ': ' + matObjArr[i].firstMatPrice],
+                [matObjArr[i].secondMat + ': ' + matObjArr[i].secondMatPrice]);
+            if (matObjArr[i].thirdMat !== undefined) {
+                wsData.push([matObjArr[i].thirdMat + ': ' + matObjArr[i].thirdMatPrice]);
+            }
+            wsData.push(['Полная цена за ' + matObjArr[i].majorType + ' - ' + matObjArr[i].price]);
+        }
+
+        wsData.push(["Итоговая цена: " + finalPrice + ' рублей']);
+
+        let ws = XLSX.utils.aoa_to_sheet(wsData); // Преобразует данные в лист
+
+        XLSX.utils.book_append_sheet(wb, ws, 'Sheet 1'); // Добавляет лист в рабочую книгу
+
+        let excelBuffer = XLSX.write(wb, { type: 'array', bookType: 'xlsx' }); // Преобразует рабочую книгу в буфер Excel
+
+        saveExcelFile(excelBuffer, 'itog.xlsx');
+    }
+
+    function saveExcelFile(buffer, fileName) {
+        let data = new Blob([buffer], { type: 'application/octet-stream' }); //помогает браузеру распознать файл как двоичный файл для сохранения.
+
+        let a = document.createElement('a');
+        document.body.appendChild(a);
+        a.style.display = 'none';
+
+        let url = window.URL.createObjectURL(data);
+        a.href = url;
+        a.download = fileName;
+        a.click();
+
+        window.URL.revokeObjectURL(url);
+    }
+
+
 
     for (let i = 0; i < 13; i++) {
         if (i > 7) {

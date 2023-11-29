@@ -15,13 +15,12 @@ setTimeout(() => {
     let metalocherepica = Number(response.variable13.totalPrice);
     let montaj = Number(response.variable14.totalPrice);
     let crep = Number(response.variable12.totalPrice);
-    let vents =Number(response.variable15.totalPrice);
-    calculations(sip2500, sip174, sushka, metalocherepica,montaj,crep,vents)
-}, 100);
+    let vents = Number(response.variable15.totalPrice);
+    calculations(sip2500, sip174, sushka, metalocherepica, montaj, crep, vents)
+}, 500);
 
 
-
-function calculations(sip2500, sip174, sushka, metalocherepica,montaj,crep,vents) {
+function calculations(sip2500, sip174, sushka, metalocherepica, montaj, crep, vents) {
 //Нулевое перекрытие
     let length = Number(localStorage.getItem('length'));
     let width = Number(localStorage.getItem('width'));
@@ -74,7 +73,7 @@ function calculations(sip2500, sip174, sushka, metalocherepica,montaj,crep,vents
     let fullItog = rabTerassa + krovTerass + krepTerassa + karkasTer + itoge;
 
 //Работы
-    let krepej = length * width * crep ;
+    let krepej = length * width * crep;
     let montajRab = width * length * montaj;
     let projivanie = 40000 + 40000;
     let fullRab = krepej + montajRab + projivanie;
@@ -258,12 +257,55 @@ function calculations(sip2500, sip174, sushka, metalocherepica,montaj,crep,vents
     function totalPrice() {
         let sum = 0;
         for (let i = 0; i < matObjArr.length; i++) {
-            sum += Number(matObjArr[i].price.substring(0, matObjArr.length - 5));
+            sum += Number(matObjArr[i].price.substring(0, matObjArr[i].price.length - 5));
         }
         document.getElementById('itogPrice').innerHTML = sum + ' руб.';
+        return sum;
     }
 
-    totalPrice();
+    const finalPrice = totalPrice();
+
+
+    const pdfBtn = document.querySelector('.downloadPDF'),
+        excelBtn = document.querySelector('.downloadExcel');
+
+    pdfBtn.addEventListener("click", () => {
+        console.log(!pdfBtn.classList.contains('off'))
+        setTimeout(() => {
+            if (!pdfBtn.classList.contains('off'))
+                createPdfFile();
+        }, 100)
+    })
+
+    function createPdfFile() {
+        let docInfo = {
+
+            info: {
+                title: 'Итоговая смета',
+                author: 'unknown',
+                subject: 'unknown',
+                keywords: 'unknown'
+            },
+
+            pageSize: 'A4',
+            pageOrientation: 'landscape',//'portrait'
+            pageMargins: [50, 50, 30, 60],
+
+            content: []
+        }
+
+        docInfo.content.push({text: 'Итоговая цена', fontSize: 32, margin: [250, 10, 10, 10]})
+
+        for (let i = 0; i < matObjArr.length; i++) {
+            docInfo.content.push({text: matObjArr[i].majorType, fontSize: 28, margin: [0, 20, 0, 8]});
+            docInfo.content.push({text: matObjArr[i].firstMat + ': ' + matObjArr[i].firstMatPrice});
+            docInfo.content.push({text: matObjArr[i].secondMat + ': ' + matObjArr[i].secondMatPrice});
+            docInfo.content.push({text: matObjArr[i].thirdMat + ': ' + matObjArr[i].thirdMatPrice});
+            docInfo.content.push({text: 'Полная цена за ' + matObjArr[i].majorType + ' - ' + matObjArr[i].price});
+        }
+        docInfo.content.push({text: "Итоговая цена: " + finalPrice + ' рублей', fontSize: 28, margin: [0, 20, 0, 8]});
+        pdfMake.createPdf(docInfo).download('name.pdf');
+    }
 
     for (let i = 0; i < 13; i++) {
         if (i > 7) {
@@ -337,7 +379,7 @@ function calculations(sip2500, sip174, sushka, metalocherepica,montaj,crep,vents
             // Добавляем новый элемент в родительский элемент
             gridContainer.appendChild(newElementContainer);
 
-            buttonOpener.addEventListener('click', () =>{
+            buttonOpener.addEventListener('click', () => {
                 if (!newElementContainer.classList.contains("activeContainer")) {
                     newElementContainer.classList.add("activeContainer");
                     pMinorMaterials.classList.add('activeText');

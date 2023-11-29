@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6282a3d0-98be-4985-94a8-d77845fe80cf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/finalSmeta/pdfMake/pdfmake.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finalSmeta/pdfMake/vfs_fonts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/connekt.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/connekt.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finalSmeta/finalSmeta.js" beforeDir="false" afterPath="$PROJECT_DIR$/finalSmeta/finalSmeta.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalSmeta/finalSmeta.php" beforeDir="false" afterPath="$PROJECT_DIR$/finalSmeta/finalSmeta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalSmeta/validationAjax.js" beforeDir="false" afterPath="$PROJECT_DIR$/finalSmeta/validationAjax.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +20,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,6 +58,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\OSPanel\domains\Vanilla\finalSmeta\pdfMake" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -56,7 +73,7 @@
       <updated>1701097204598</updated>
       <workItem from="1701097205634" duration="1509000" />
       <workItem from="1701103124775" duration="934000" />
-      <workItem from="1701156289884" duration="4188000" />
+      <workItem from="1701156289884" duration="11522000" />
     </task>
     <servers />
   </component>

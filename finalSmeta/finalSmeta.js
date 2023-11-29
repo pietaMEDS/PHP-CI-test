@@ -300,7 +300,9 @@ function calculations(sip2500, sip174, sushka, metalocherepica, montaj, crep, ve
             docInfo.content.push({text: matObjArr[i].majorType, fontSize: 28, margin: [0, 20, 0, 8]});
             docInfo.content.push({text: matObjArr[i].firstMat + ': ' + matObjArr[i].firstMatPrice});
             docInfo.content.push({text: matObjArr[i].secondMat + ': ' + matObjArr[i].secondMatPrice});
-            docInfo.content.push({text: matObjArr[i].thirdMat + ': ' + matObjArr[i].thirdMatPrice});
+            if(matObjArr[i].thirdMat != undefined){
+                docInfo.content.push({text: matObjArr[i].thirdMat + ': ' + matObjArr[i].thirdMatPrice});
+            }
             docInfo.content.push({text: 'Полная цена за ' + matObjArr[i].majorType + ' - ' + matObjArr[i].price});
         }
         docInfo.content.push({text: "Итоговая цена: " + finalPrice + ' рублей', fontSize: 28, margin: [0, 20, 0, 8]});

@@ -46,8 +46,11 @@ require './../Header/Header.php';
 </div>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="validationAjax.js"></script>
-<script src="modalPDF.js"></script>
-<script src="finalSmeta.js"></script>
+    <script src="validationAjax.js"></script>
+    <script src="modalPDF.js"></script>
+    <script src="finalSmeta.js"></script>
+    <script src="validationAjax.js"></script>
+    <script src="modalPDF.js"></script>
+    <script src="finalSmeta.js"></script>
 </body>
 

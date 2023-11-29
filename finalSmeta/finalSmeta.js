@@ -337,17 +337,19 @@ function calculations(sip2500, sip174, sushka, metalocherepica,montaj,crep,vents
             // Добавляем новый элемент в родительский элемент
             gridContainer.appendChild(newElementContainer);
 
-            buttonOpener.addEventListener('click', () =>
-                newElementContainer.classList.add("activeContainer"));
-
-            buttonOpener.addEventListener('click', () =>
-                pMinorMaterials.classList.add('activeText'));
-
-            buttonOpener.addEventListener('click', () =>
-                pMinorMaterialsTwo.classList.add('activeText'));
-
-            buttonOpener.addEventListener('click', () =>
-                pMinorMaterialsThree.classList.add('activeText'));
+            buttonOpener.addEventListener('click', () =>{
+                if (!newElementContainer.classList.contains("activeContainer")) {
+                    newElementContainer.classList.add("activeContainer");
+                    pMinorMaterials.classList.add('activeText');
+                    pMinorMaterialsTwo.classList.add('activeText');
+                    pMinorMaterialsThree.classList.add('activeText');
+                } else {
+                    newElementContainer.classList.remove("activeContainer");
+                    pMinorMaterials.classList.remove('activeText');
+                    pMinorMaterialsTwo.classList.remove('activeText');
+                    pMinorMaterialsThree.classList.remove('activeText');
+                }
+            });
 
         }
     }

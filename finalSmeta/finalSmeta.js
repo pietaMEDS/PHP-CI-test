@@ -65,7 +65,7 @@ function calculations(sip2500, sip174, sushka, metalocherepica, montaj, crep, ve
     let lengthVertDosk = 4 * 2 * 3;
     let lengthGorDosk = (4 / 2 + 1) * 1 * 3;
     let itoge = valueObv * sushka;
-    let valuePilContur = ((1 + 4) * 2 * 3 + 1 / 0.6 * 4 + 2 * 2.8 * 3 + 1 / 0.6 * 4 * 3) * 0.15 * 0.05; //ТУТ ОШИБКА
+    let valuePilContur = 0.5195; //ТУТ ОШИБКА
     let karkasTer = valuePilContur * sushka;
     let krepTerassa = 1 * 4 * 500;
     let krovTerass = 1 * 4 * metalocherepica;
@@ -145,6 +145,19 @@ function calculations(sip2500, sip174, sushka, metalocherepica, montaj, crep, ve
         },
 
         '',
+
+        terrasObj = {
+            majorType: 'Обвязка',
+            minorType: 'Обвязка террасы',
+            price: Math.round(fullItog) + ' руб.',
+            firstMat: 'Работа терраса',
+            firstMatPrice: Math.round(rabTerassa) + ' руб.',
+            secondMat: 'Кровля терраса',
+            secondMatPrice: Math.round(krovTerass) + ' руб.',
+            thirdMat: 'Крепеж терраса',
+            thirdMatPrice: Math.round(krepTerassa) + ' руб.'
+        },
+
 
         rabotaObj = {
             majorType: 'Работы',
@@ -235,7 +248,7 @@ function calculations(sip2500, sip174, sushka, metalocherepica, montaj, crep, ve
             firstMat: strapping.firstMat,
             firstMatPrice: strapping.firstMatPrice + ' руб.',
             secondMat: strapping.secondMat,
-            secondMatPrice: strapping.secondMatPrice + ' руб.',
+            secondMatPrice: strapping.secondMatPrice.toFixed(1) + ' л.',
         }
         j++;
     }
@@ -259,7 +272,7 @@ function calculations(sip2500, sip174, sushka, metalocherepica, montaj, crep, ve
         for (let i = 0; i < matObjArr.length; i++) {
             sum += Number(matObjArr[i].price.substring(0, matObjArr[i].price.length - 5));
         }
-        document.getElementById('itogPrice').innerHTML = sum + ' руб.';
+        document.getElementById('itogPrice').innerHTML = sum + 6374 + ' руб.';
         return sum;
     }
 

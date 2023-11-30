@@ -4,7 +4,7 @@ const form = document.querySelector(".form_modal_window"),
     excelBtn = document.querySelector('.downloadExcel');
 
 pdfBtn.classList.add('off');
-excelBtn.disabled = true;
+excelBtn.classList.add('off');
 
 form.onsubmit = (e) => {
     e.preventDefault();
@@ -16,14 +16,13 @@ form.onsubmit = (e) => {
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "./validation.php", true);
     xhr.onload = () => {
-        if (xhr.readyState == 4 && xhr.status == 200) {
+        if (xhr.readyState === 4 && xhr.status === 200) {
             let response = xhr.response;
             if (response.indexOf("email") != -1 || response.indexOf("должны") != -1 || response.indexOf("телефона") != -1) {
                 statusTxt.style.color = "red";
             } else {
                 pdfBtn.classList.remove('off');
-                excelBtn.disabled = false;
-                form.reset();
+                excelBtn.classList.remove('off');
                 setTimeout(() => {
                     statusTxt.style.display = "none";
                 }, 3000);

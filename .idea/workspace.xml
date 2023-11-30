@@ -8,7 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/connekt.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/connekt.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finalSmeta/finalSmeta.js" beforeDir="false" afterPath="$PROJECT_DIR$/finalSmeta/finalSmeta.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalSmeta/finalSmeta.php" beforeDir="false" afterPath="$PROJECT_DIR$/finalSmeta/finalSmeta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalSmeta/validationAjax.js" beforeDir="false" afterPath="$PROJECT_DIR$/finalSmeta/validationAjax.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +60,25 @@
       <recent name="D:\OSPanel\domains\Vanilla\finalSmeta\pdfMake" />
     </key>
   </component>
+  <component name="RunManager" selected="PHP Script.validation.php">
+    <configuration name="finalSmeta.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/finalSmeta/finalSmeta.js" working-dir="$PROJECT_DIR$/finalSmeta">
+      <method v="2" />
+    </configuration>
+    <configuration name="Vanilla" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="validation.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/finalSmeta/validation.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.validation.php" />
+        <item itemvalue="Node.js.finalSmeta.js" />
+        <item itemvalue="PHPUnit.Vanilla" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -70,7 +89,7 @@
       <updated>1701097204598</updated>
       <workItem from="1701097205634" duration="1509000" />
       <workItem from="1701103124775" duration="934000" />
-      <workItem from="1701156289884" duration="11522000" />
+      <workItem from="1701156289884" duration="15471000" />
     </task>
     <servers />
   </component>

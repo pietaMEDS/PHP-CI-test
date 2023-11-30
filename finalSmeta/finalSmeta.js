@@ -270,18 +270,16 @@ function calculations(sip2500, sip174, sushka, metalocherepica, montaj, crep, ve
         excelBtn = document.querySelector('.downloadExcel');
 
     pdfBtn.addEventListener("click", () => {
-        console.log(!pdfBtn.classList.contains('off'))
         setTimeout(() => {
             if (!pdfBtn.classList.contains('off'))
                 createPdfFile();
-        }, 100)
+        }, 200)
     })
     excelBtn.addEventListener("click", () => {
-        console.log(!excelBtn.classList.contains('off'))
         setTimeout(() =>{
             if (!excelBtn.classList.contains('off'))
                 createExcelFile();
-        }, 100)
+        }, 200)
     });
 
 

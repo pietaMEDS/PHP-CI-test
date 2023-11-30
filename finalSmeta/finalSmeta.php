@@ -52,5 +52,6 @@ require './../Header/Header.php';
 <script src="./validationAjax.js"></script>
 <script src="./modalPDF.js"></script>
 <script src="./finalSmeta.js"></script>
+
 </body>
 

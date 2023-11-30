@@ -241,15 +241,8 @@ html {
   background-color: #363637;
   color: #fff;
   margin-top: -3%;
-  cursor: pointer;
+  cursor: not-allowed;
 }
-
-.button:hover {
-  background-color: #fd7e54;
-}
-
-
-
 
 button .Empty {
 
@@ -429,7 +422,7 @@ button .Empty {
 }
 
 .matherialsWall {
-  margin-top: 21%;
+  margin-top: 14%;
   list-style-type: none;
   font-size: 22px;
   text-align: right;
@@ -669,10 +662,9 @@ button .Empty {
   margin-left: 90px;
 }
 .modalWall h2{
-margin-left: 212px;
+margin-left: 5%;
 }
 .modalWall li {
-  margin-left: 93px;
   font-size: 18px;
 }
 
@@ -695,7 +687,7 @@ margin-left: 212px;
   .circle{
     width: 35px;
     height: 35px;
-    border: 3px solid #FF855D !important;
+    border: 3px solid #FF855D;
   }
   .totalPrice{
     text-align: center;
@@ -706,7 +698,11 @@ margin-left: 212px;
   background-color: #36363E;
   box-shadow: 0 0 0 0 rgba(100, 52, 36, 1);
   transform: scale(1);
+  cursor: pointer;
   animation: pulse 2s infinite;
+}
+.activeBtn:hover{
+    background-color: #FF855D;
 }
 
 @keyframes pulse {

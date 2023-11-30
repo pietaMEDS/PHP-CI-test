@@ -317,7 +317,8 @@ require './../Header/Head.php';
                 <span id="totalNumber"></span>
                 <span class="currency">руб</span>
             </p>
-            <button class="button" id="itogBtn">Итоговая цена</button>
+            <button class="button" id="itogBtn" >Итоговая цена</button>
+           
         </div>
     </div>
 </div>

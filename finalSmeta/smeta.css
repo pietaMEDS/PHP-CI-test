@@ -249,3 +249,18 @@ a.btn {
 #itogPrice {
     background: none;
 }
+
+.modalBtn{
+  padding: 10px 20px;
+  font-size: 17px;
+  border-radius: 8px;
+  background-color: #363637;
+  color: #fff;
+  border: 3px solid #FF855D;
+}
+#flex_Finalbtn{
+    margin-top: 2%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+}

@@ -1,7 +1,7 @@
 <?php
   $db_host = 'localhost';
-  $db_user = 'u2339146_Changer';
-  $db_password = 'neqde2-bAkryh-nyttyt';
+  $db_user = 'root';
+  $db_password = '';
   $db_db = 'u2339146_Materials';
  
   $mysqli = @new mysqli(

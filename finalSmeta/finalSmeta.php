@@ -21,8 +21,9 @@ require './../Header/Header.php';
     <h2>Итоговая цена</h2>
     <h1 id="itogPrice"></h1>
 </div>
-
-<button class="modalBtn">Скачать итоговую смету</button>
+<div id="flex_Finalbtn">
+    <button class="modalBtn">Скачать итоговую смету</button>
+</div>
 
 <!-- МОДАЛЬНОЕ ОКНО-->
 <div class="modal-wrapper">
